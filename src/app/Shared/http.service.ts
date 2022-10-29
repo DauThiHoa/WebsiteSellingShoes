@@ -3,27 +3,20 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
-
 })
-
 export class HttpService {
   test = "How r u?";
-  data : {name : any , email : any};
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-    let data : {name : any , email : any};
-  }
-
-  httpGet(url: string) {
+  httpGet(url : string) {
     return this.http.get(url);
   }
 
-  httpPost(url: string, {}) {
+  httpPost(url : string , {}) {
     return this.http.post(url, { name: "Subrat" });
   }
 
-  sendEmail(url: string, data : {name : any , email : any} ) {
+  sendEmail(url : string , data : any) {
     return this.http.post(url, data);
   }
-
 }
