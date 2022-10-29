@@ -1,0 +1,274 @@
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <a [routerLink]="['/home']"><i class="fa fa-home"></i> Home</a>
+          <a [routerLink]="['/listproduct']" >Danh mục sản phẩm</a>
+          <a [routerLink]="['/walletproduct']" >WALLET</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb End -->
+
+<div class="main__sort" style=" margin-left: 15%">
+  <h3 class="sort__title">
+    Hiển thị kết quả theo
+  </h3>
+  <form action="" method="POST" role="form" [formGroup]="cartFormOneQuantity"  >
+<!--  <select class="sort__select">-->
+
+    <button style="margin-right: 2% ; background-color: #16181b;" (click)="onCreate(1)" type="submit" class="btn btn-primary " value="1">Thứ tự mặc định</button>
+    <button style="margin-right: 2%; background-color: #16181b;" (click)="onCreate(3)" type="submit" class="btn btn-primary" value="3">Tên A -> Z</button>
+    <button style="margin-right: 2%; background-color: #16181b;" (click)="onCreate(4)" type="submit" class="btn btn-primary" value="4">Tên Z -> A</button>
+    <button style="margin-right: 2%; background-color: #16181b;" (click)="onCreate(5)" type="submit" class="btn btn-primary" value="5">Giá Cao xuống thấp</button>
+    <button style="margin-right: 2%; background-color: #16181b;" (click)="onCreate(6)" type="submit" class="btn btn-primary" value="6">Giá Thấp đến cao</button>
+<!--  </select>-->
+  </form>
+</div>
+
+
+<!-- Product Section Begin STEAM-->
+<section class="product spad" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+        <div class="section-title">
+          <h4>WALLET</h4>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8">
+        <ul class="filter__controls">
+          <li class="active" data-filter="*">All</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row property__gallery"  >
+      <div class="col-lg-3 col-md-4 col-sm-6 mix women" *ngFor="let pro of products" >
+        <div class="product__item" *ngIf=" pro.id == 53 || pro.id == 54 ||
+          pro.id == 55 || pro.id == 56 || pro.id == 57 || pro.id == 58 || pro.id == 59  ">
+          <div class="product__item__pic set-bg"
+               [style.background-image]="'url(' + pro.image + ')'">
+            <div *ngIf="pro.id == 53 || pro.id == 55" class="label new">New</div>
+            <div *ngIf="pro.id == 56 || pro.id == 59" class="label sale">Sale</div>
+
+            <ul class="product__hover">
+
+              <!--              LINK DEN PRODUCT-DETAILS-->
+              <li> <a routerLink="../productDetail/{{pro.id}}"><span class="arrow_expand"></span></a></li>
+              <!--              LINK DEN PRODUCT-CART-->
+              <!--              <li><a [routerLink]="['/home']"><span class="icon_cart"></span></a></li>-->
+              <li>
+                <form action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
+                  <a type="submit" (click) ="onCreateOneQuantity(pro.id)"><span class="icon_cart"></span></a>
+                </form>
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="product__item__text">
+            <h6><a [routerLink]="['/home']">{{pro.name}}</a></h6>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <div *ngIf="pro.id != 53 && pro.id != 54"  class="product__price">$ {{pro.price}}</div>
+            <div *ngIf="pro.id == 55 || pro.id == 56" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product Section End -->
+
+<section class="discount">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 p-0">
+        <div class="discount__pic">
+          <img class="discount__pic_image" src="../../../assets/img/banner/img_2.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 p-0">
+        <div class="discount__pic">
+          <img class="discount__pic_image" src="../../../assets/img/banner/img_3.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Trend Section Begin -->
+<section class="trend spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-6" >
+        <div class="trend__content" *ngFor="let pro of products">
+          <div class="section-title"  *ngIf="pro.id == 9">
+            <h4>{{pro.category}}</h4>
+          </div>
+          <div class="trend__item" *ngIf="pro.id == 9 || pro.id == 10 || pro.id == 11 || pro.id == 12 || pro.id == 13" >
+            <div class="trend__item__pic">
+              <a routerLink="../productDetail/{{pro.id}}"><img src="{{pro.image}}" alt=""></a>
+            </div>
+            <div class="trend__item__text">
+              <h6>{{pro.name}}</h6>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div *ngIf="pro.id != 10 && pro.id != 12" class="product__price">$ {{pro.price}}</div>
+              <div *ngIf="pro.id == 10 || pro.id == 12" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
+            </div>
+
+            <form class="card-text" action="" method="POST" role="form" [formGroup]="cartFormOneQuantity">
+              <button type="submit" class="btn btn-primary btn-sm" (click) ="onCreateOneQuantity(pro.id)">Add to cart</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-6" >
+        <div class="trend__content" *ngFor="let pro of products">
+          <div class="section-title"  *ngIf="pro.id == 14">
+            <h4>{{pro.category}}</h4>
+          </div>
+          <div class="trend__item" *ngIf="pro.id == 14 || pro.id == 15 || pro.id == 16 || pro.id == 17 || pro.id == 18" >
+            <div class="trend__item__pic">
+              <a routerLink="../productDetail/{{pro.id}}"><img src="{{pro.image}}" alt=""></a>
+            </div>
+            <div class="trend__item__text">
+              <h6>{{pro.name}}</h6>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div *ngIf="pro.id != 14 && pro.id != 17" class="product__price">$ {{pro.price}}</div>
+              <div *ngIf="pro.id == 14 || pro.id == 17" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
+            </div>
+            <!--            <p class="card-text">-->
+            <!--              <a routerLink="../productDetail/{{pro.id}}" class="btn btn-primary btn-sm">Add to cart</a>-->
+            <!--            </p>-->
+            <form class="card-text" action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
+              <button type="submit" class="btn btn-primary btn-sm" (click) ="onCreateOneQuantity(pro.id)">Add to cart</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6" >
+        <div class="trend__content" *ngFor="let pro of products">
+          <div class="section-title"  *ngIf="pro.id == 19">
+            <h4>{{pro.category}}</h4>
+          </div>
+          <div class="trend__item" *ngIf="pro.id == 19 || pro.id == 20 || pro.id == 21 || pro.id == 22 || pro.id == 23" >
+            <div class="trend__item__pic">
+              <a routerLink="../productDetail/{{pro.id}}"><img src="{{pro.image}}" alt=""></a>
+            </div>
+            <div class="trend__item__text">
+              <h6>{{pro.name}}</h6>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div *ngIf="pro.id != 21 && pro.id != 23" class="product__price">$ {{pro.price}}</div>
+              <div *ngIf="pro.id == 21 || pro.id == 23" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
+            </div>
+            <!--            <p class="card-text">-->
+            <!--              <a routerLink="../productDetail/{{pro.id}}" class="btn btn-primary btn-sm">Add to cart</a>-->
+            <!--            </p>-->
+            <form class="card-text" action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
+              <button type="submit" class="btn btn-primary btn-sm" (click) ="onCreateOneQuantity(pro.id)">Add to cart</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Trend Section End -->
+
+<!-- Instagram Begin -->
+<div class="instagram">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_1.png)">
+          <div class="instagram__text">
+            <i class="fa fa-instagram"></i>
+            <a [routerLink]="['/home']">@ xoxo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_2.png)">
+          <div class="instagram__text">
+            <i class="fa fa-instagram"></i>
+            <a [routerLink]="['/home']">@ xoxo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_3.png)">
+          <div class="instagram__text">
+            <i class="fa fa-instagram"></i>
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_4.png)">
+          <div class="instagram__text">
+            <i class="fa fa-instagram"></i>
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_5.png)">
+          <div class="instagram__text">
+            <i class="fa fa-instagram"></i>
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_6.png)">
+          <div class="instagram__text">
+            <i class="fa fa-instagram"></i>
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Instagram End -->

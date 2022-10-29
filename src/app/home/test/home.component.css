@@ -1,0 +1,61 @@
+.spad .container .property__gallery .women .product__item .product__item__text .rating {
+  text-align: center;
+  margin-left: 36%;
+}
+
+.property__gallery .women .product__item .product__item__text .rating {
+  text-align: center;
+  margin-left: 25%;
+}
+
+.categories .container-fluid .row .col-lg-6 .categories__item .categories__text {
+  margin-top: 8%;
+}
+.categories .container-fluid .row .col-lg-6 .categories__item .categories__text .nameGame {
+  color: white;
+  font-size: 450%;
+}
+.categories .container-fluid .row .col-lg-6 .categories__item .categories__text .shopGame {
+  color: white;
+}
+.categories .container-fluid .row .col-lg-6 .row .col-lg-6 .categories__item .categories__text {
+  margin-top: -20%;
+}
+.categories .container-fluid .row .col-lg-6 .row .col-lg-6 .categories__item .categories__text .categories__text_name {
+  color: black;
+}
+.categories .container-fluid .row .col-lg-6 .row .col-lg-6 .categories__item .categories__text .categories__text_des {
+  color: black;
+}
+.categories .container-fluid .row .col-lg-6 .row .col-lg-6 .categories__item .categories__text .categories__text_shop {
+  color: black;
+}
+
+.product .container .property__gallery .women .product__item .product__item__text .product__price_sale {
+  color: red;
+}
+
+.discount .container .row .col-lg-6 .discount__pic .discount__pic_image {
+  width: 25%;
+  height: 50%;
+}
+
+.spad .container .row .col-lg-3 .services__item .services_image {
+  width: 20%;
+  height: 20%;
+}
+
+.services {
+  margin-top: -5%;
+  margin-bottom: -5%;
+}
+.services .container .row .col-lg-3 .services__item .services_image {
+  margin-left: 20%;
+}
+
+.trend {
+  margin-left: 7%;
+  margin-top: -5%;
+}
+
+/*# sourceMappingURL=home.component.css.map */

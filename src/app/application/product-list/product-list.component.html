@@ -1,0 +1,209 @@
+
+<!--<h2>Danh sách sản phẩm</h2>-->
+<!--<form action="" method="POST" class="form-inline" [formGroup]="searchForm" (ngSubmit)="onSearch()" >-->
+
+<!--  <div class="form-group mr-5">-->
+<!--    <label class="sr-only" >Name</label>-->
+<!--    <input type="email" class="form-control" formControlName="name" placeholder="Input field">-->
+<!--  </div>-->
+
+<!--  <div class="form-group mr-5">-->
+<!--    <label class="sr-only" >Price</label>-->
+<!--    <input type="email" class="form-control" formControlName="price" placeholder="Input field">-->
+<!--  </div>-->
+
+<!--  <div class="form-group mr-5">-->
+<!--    <label class="sr-only" >Sale Price</label>-->
+<!--    <input type="email" class="form-control" formControlName="sale_price" placeholder="Input field">-->
+<!--  </div>-->
+
+<!--  <button type="submit" class="btn btn-primary mr-2">Search</button>-->
+<!--  <a routerLink="../product-create" type="submit" class="btn btn-primary">Add</a>-->
+<!--</form>-->
+
+  <br>
+
+<!--<div *ngFor="let pro of productList">-->
+<!--  <h2>hhhhhhh</h2>-->
+<!--  <label>{{pro.id}} <span><img src="{{pro.image}}"></span>{{pro.name}} = {{pro.price}} = </label>-->
+<!--</div>-->
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <a [routerLink]="['/home']" ><i class="fa fa-home"></i> Home</a>
+          <a href="../product-list"><span>Shopping cart</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Shop Cart Section Begin -->
+<section class="shop-cart spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="shop__cart__table">
+          <table class="table table-hover mr-auto">
+            <thead>
+            <tr>
+<!--              <th>ID</th>-->
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  Total &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Edit</th>
+<!--              <th>Total</th>-->
+<!--              <th>Edit</th>-->
+              <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let pro of cartList">
+<!--              <td class="cart__id">{{pro.id}}</td>-->
+              <td class="cart__product__item">
+                <img class="image_product" src="{{pro.image}}" alt="">
+                <div class="cart__product__item__title">
+                  <h6>{{pro.name}}</h6>
+                  <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </td>
+              <td class="cart__price">&nbsp;&nbsp;  $ {{pro.price}}</td>
+
+<!--                     <td class="cart__quantity">-->
+
+<!--                        <div class="pro-qty">-->
+<!--                          <form action="" method="POST" role="form" [formGroup]="cartForm" (ngSubmit)="onEdit(pro.id)">-->
+<!--                               <input type="number" min="1"  class="form-control" id="quantity" formControlName="quantitySold" value="{{pro.quantitySold}}">-->
+<!--                               <button type="submit" class="btn btn-sm btn-primary mr-1">Edit</button>-->
+<!--                          </form>-->
+<!--                          <input type="number" min="1" value="{{pro.quantitySold}}">-->
+<!--                        </div>-->
+
+<!--                     </td>-->
+
+<!--                     <td class="cart__total">$ {{pro.quantitySold * pro.price}}</td>-->
+<!--              <td class="cart__total">$ {{pro.total}}</td>-->
+                     <td >
+
+<!--                 <a [routerLink]="['../product-edit', pro.id]" (click)="onDelete(pro.id)" class="btn btn-sm btn-primary mr-1">Edit</a>-->
+                       <form style="display: flex; height: 7%" class="containerflex" title="container" data-toggle="tooltip" data-placement="top" action="" method="POST" role="form" [formGroup]="cartForm" (ngSubmit)="onEdit(pro.id)">
+                         <input style="padding: 5px 10px; width: 40% ; height: 7%; text-align: center" type="number" min="1"  class="form-control flexitem" id="quantitySold" formControlName="quantitySold" value="{{pro.quantitySold}}" placeholder="{{pro.quantitySold}}">&nbsp;&nbsp;&nbsp;
+                         <span style="padding: 5px 10px;; width: 40%" class="cart__total flexitem">$ {{pro.quantitySold * pro.price}}</span>
+                         <button style="padding: 5px 10px;; width: 20% ; height: 100%" onclick="onQuantity()" type="submit" class="btn btn-sm btn-primary mr-1 flexitem">Edit</button>
+                       </form>
+
+                     </td>
+                     <td>
+                          &nbsp; &nbsp;&nbsp; <a href="../product-list" (click)="onDelete(pro.id)" class="btn btn-sm btn-danger">Delete</a>
+                     </td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="cart__btn">
+          <a [routerLink]="['/home']" >Continue Shopping</a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="cart__btn update__btn">
+          <a (click)="updateCart()"><span class="icon_loading"></span> Update cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="discount__content">
+          <h6>Discount codes</h6>
+          <form action="#">
+            <input type="text" placeholder="Enter your coupon code">
+            <button type="submit" class="site-btn">Apply</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-2">
+        <div class="cart__total__procced">
+          <h6>Cart total</h6>
+          <ul>
+            <li>Subtotal <span>$ {{totalMoney}}</span></li>
+            <li>Total <span>$ {{totalMoney}}</span></li>
+          </ul>
+          <a [routerLink]="['/checkout']" class="primary-btn">Proceed to checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Shop Cart Section End -->
+
+<!-- Instagram Begin -->
+<div class="instagram">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_1.png)">
+          <div class="instagram__text">
+            <a [routerLink]="['/home']">@ xoxo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_2.png)">
+          <div class="instagram__text">
+            <a [routerLink]="['/home']">@ xoxo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_3.png)">
+          <div class="instagram__text">
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_4.png)">
+          <div class="instagram__text">
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_5.png)">
+          <div class="instagram__text">
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+        <div class="instagram__item set-bg"
+             style="background-image: url(assets/img/instagram/insta_6.png)">
+          <div class="instagram__text">
+            <a [routerLink]="['/home']">@ XoXo_shop</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

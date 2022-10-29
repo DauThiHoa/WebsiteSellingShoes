@@ -1,0 +1,42 @@
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <a [routerLink]="['/home']"><i class="fa fa-home"></i> Home </a>
+          <span [routerLink]="['/blog']">Blog</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Blog Section Begin -->
+<section class="blog spad">
+  <div class="container">
+    <div class="row">
+<!--      large__item-->
+      <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let blog of blogList">
+
+        <div class="blog__item" routerLink="../blogDetails/{{blog.id}}" >
+          <div class="blog__item__pic set-bg"
+               [style.background-image]="'url(' + blog.image + ')'" ></div>
+          <div class="blog__item__text">
+            <h6><a href="#">{{blog.nameBlog}}</a></h6>
+            <ul>
+              <li>by <span>{{blog.name}}</span></li>
+              <li>{{blog.date}}</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-12 text-center">
+        <a [routerLink]="['/blog']" (click)="onLoadBlog()" class="primary-btn load-btn">Load more posts</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section End -->

@@ -1,0 +1,16 @@
+.load-btn:hover {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background: #00acc1;
+}
+
+.load-btn {
+  border: 2px solid black;
+}
+
+.blog__item:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=blog.component.css.map */

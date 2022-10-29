@@ -1,0 +1,44 @@
+import { TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ReactiveFormsModule ]
+    })
+      .compileComponents();
+  });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ FormsModule ]
+    })
+      .compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'mdb5-angular-ui-kit-pro-advanced'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('mdb5-angular-ui-kit-pro-advanced');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.content span').textContent).toContain('mdb5-angular-ui-kit-pro-advanced app is running!');
+  });
+});

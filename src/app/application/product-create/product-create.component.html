@@ -1,0 +1,51 @@
+
+<div class="row">
+  <div class="col-md-4">
+
+<form action="" method="POST" role="form" [formGroup]="productFormCreate" (ngSubmit)="onCreate()"  >
+
+  <legend> Form Add Product </legend>
+
+  <div class="form-group">
+    <label >Name</label>
+    <input type="text" class="form-control" name="name" formControlName="name" placeholder="Input field">
+  </div>
+  <div *ngIf="submited && f.name.errors">
+    <span *ngIf="f.name.errors.required">Product name cannot be blank</span>
+<!--    <br>-->
+    <span *ngIf="f.name.errors.minlength">Product name at least 6 kilos</span>
+  </div>
+
+  <div class="form-group">
+    <label >Price</label>
+    <input type="number" class="form-control" name="price" formControlName="price"  placeholder="Input field">
+  </div>
+  <div *ngIf="submited && f.price.errors">
+    <span *ngIf="f.price.errors.required">Product price cannot be blank</span>
+    <span *ngIf="f.price.errors.min">Product price >= 10000đ</span>
+  </div>
+
+  <div class="form-group">
+    <label >Sale Price</label>
+    <input type="number" class="form-control" name="sale_price" formControlName="sale_price" placeholder="Input field">
+  </div>
+  <div *ngIf="submited && f.sale_price.errors">
+    <span *ngIf="f.sale_price.errors.required">Product sale price cannot be blank</span>
+    <span *ngIf="f.sale_price.errors.min">Product sale price >= 0đ</span>
+  </div>
+
+  <div class="form-group">
+    <label >Image</label>
+    <input type="text" class="form-control" name="image"formControlName="image"  placeholder="Input field">
+  </div>
+  <div *ngIf="submited && f.image.errors">
+    <span *ngIf="f.image.errors.required">Product image cannot be blank</span>
+    <span *ngIf="f.image.errors.minlength">Product image at least 6 kilos</span>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  </div>
+</div>
+

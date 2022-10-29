@@ -1,0 +1,26 @@
+.shop-cart .container .row .col-lg-12 .shop__cart__table td.cart__id {
+  margin-left: 10%;
+}
+.shop-cart .container .row .col-lg-12 .shop__cart__table td.cart__product__item {
+  font-size: 5%;
+  margin-left: 50%;
+  width: 50%;
+}
+.shop-cart .container .row .col-lg-12 .shop__cart__table td.cart__product__item .image_product {
+  width: 15%;
+  height: 15%;
+  margin-left: 3%;
+}
+
+.update__btn:hover {
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background: white;
+  border: solid 1px red;
+  color: red;
+}
+
+/*# sourceMappingURL=product-list.component.css.map */

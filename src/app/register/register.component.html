@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="formWraper">
+
+    <!-- Left section of responsive registration form -->
+
+    <div class="formDiv">
+      <h2>Create Account</h2>
+      <p class="text"> Sign Up with Social Media</p>
+
+      <!-- Font Awesome Icons -->
+      <div class="socialBtn">
+        <div class="facebook icon"><i class="fab fa-facebook-f"></i></div>
+        <div class="twitter icon"><i class="fab fa-twitter"></i></div>
+        <div class="instagram icon"><i class="fab fa-instagram"></i></div>
+      </div>
+
+      <!--Horizontal Line-->
+      <hr>
+
+      <div class="orDiv">Or</div>
+
+      <form action="" method="POST" role="form" [formGroup]="FromRegister" (ngSubmit)="onRegister()" >
+
+        <p class="text">Sign Up with Email Address</p>
+        <div class="formGroup">
+          <i class="far fa-user"></i>
+          <input required class="form-control" formControlName="name" type="text" name="name" id="name" placeholder="Name" value="" >
+        </div>
+        <div class="formGroup">
+          <i class="far fa-envelope"></i>
+          <input required class="form-control" formControlName="email" type="email" name="email" id="email" value="" placeholder="Email"  >
+        </div>
+        <div class="formGroup">
+          <i class="fas fa-lock"></i>
+          <input required class="form-control" formControlName="password" type="password" name="password" id="password" value="" placeholder="Password"  >
+        </div>
+
+<!--        <a [routerLink]="['/register']">-->
+          <button type="submit" class="btn">SIGN UP</button>
+<!--        </a>-->
+      </form>
+
+    </div>
+
+    <!-- Right section of responsive registration form -->
+    <div class="welcomeDiv">
+      <h2 style="color: white; font-weight: bold">Welcome Back!</h2>
+      <p  style="color: white; font-weight: bold" class="text">Get in touch with us for our news letter and more updates.</p>
+      <a [routerLink]="['/login']">
+        <button class="btn2">SIGN IN</button>
+      </a>
+    </div>
+
+  </div>
+</div>

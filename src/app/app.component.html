@@ -1,0 +1,249 @@
+
+<!-- Page Preloder -->
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+  <div class="offcanvas__close">+</div>
+  <ul class="offcanvas__widget">
+    <li><span class="icon_search search-switch"></span></li>
+    <li><a [routerLink]="['/home']"><span class="icon_heart_alt"></span>
+      <div class="tip">2</div>
+    </a></li>
+    <li><a [routerLink]="['/home']"><span class="icon_bag_alt"></span>
+      <div class="tip">2</div>
+    </a></li>
+  </ul>
+  <div class="offcanvas__logo">
+    <a [routerLink]="['/home']" ><img src="../assets/img/logo.png" alt=""></a>
+  </div>
+  <div id="mobile-menu-wrap"></div>
+  <div class="offcanvas__auth">
+    <a [routerLink]="['/login']">Login</a>
+    <a [routerLink]="['/register']">Register</a>
+  </div>
+</div>
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-2 col-lg-2">
+        <div class="header__logo">
+          <a [routerLink]="['/home']" ><img src="../assets/img/logo.png" alt=""></a>
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-7">
+        <nav class="header__menu">
+          <ul>
+            <li class="active"><a [routerLink]="['/home']" >Home</a></li>
+            <li><a [routerLink]="['/home']" >Pages</a>
+              <ul class="dropdown">
+                <li><a [routerLink]="['/listproduct']" >List Product</a> </li>
+                <li><a routerLink="../productDetail/1">Product Details</a></li>
+                <li><a [routerLink]="['/product-list']">Shop Cart</a></li>
+                <li><a [routerLink]="['/checkout']">Checkout</a></li>
+              </ul>
+            </li>
+            <li><a [routerLink]="['/blog']" >Blog</a>
+              <ul class="dropdown">
+                <li><a routerLink="../blogDetail/1">Blog Details</a></li>
+              </ul>
+            </li>
+
+            <li><a [routerLink]="['/contact']">Contact</a></li>
+            <li>
+            <form action="" method="POST" class="form-inline" [formGroup]="searchForm" (ngSubmit)="onProductSearch()">
+              <ul>
+              <li>
+
+                <div class="form-group mr-6">
+
+                <input type="email" class="form-control" formControlName="name" placeholder="Search name...">
+                  <button type="submit" class="btn btn-primary mr-2">Search</button>
+
+                  <ul class="dropdown" style="width: 225% ; background: white ; height: 400px; margin-left: -30% ; margin-top: 7%; overflow-y: auto">
+                      <li class="header__menu">
+
+<!--                          <img style="width: 20% ; height: 10%" routerLink="../productDetail/{{pro.id}}" src="{{pro.image}}" >-->
+<!--                          <span><a routerLink="../productDetail/{{pro.id}}">{{pro.name}}</a></span>-->
+<!--                          <span>{{pro.price}}</span>-->
+
+                        <p style="color: #00bcd4; font-weight: bold; text-align: center; ">
+                          {{error}}
+                        </p>
+                        <p style="color: #00bcd4; font-weight: bold; text-align: center; ">
+                          {{erro}}
+                        </p>
+
+                        <table style="width: 100%" class="table table-hover mr-auto" *ngFor="let pro of productList">
+                          <thead>
+                              </thead>
+                                  <tbody>
+                          <tr style="overflow-y: auto; width: 100%;height: 50%"  (click)="onSearch(pro.id)">
+                            <!--              <td class="cart__id">{{pro.id}}</td>-->
+                            <td class="cart__product__item" style="height: 50%;width: 25%; ">
+                              <a routerLink="../productDetail/{{pro.id}}" ><img style="width: 100%; height: 100%"
+                                                                                class="image_product" src="{{pro.image}}" alt=""></a>
+                            </td>
+                            <td style="margin-left: -25%; ">
+                              <div class="cart__product__item__title">
+                                <a style="color: black ; font-weight: bold" routerLink="../productDetail/{{pro.id}}" >{{pro.name}}</a>
+                                <a style="color: black" routerLink="../productDetail/{{pro.id}}" >{{pro.category}}</a>
+                                <div style="color: yellow; margin-left: 5%" class="rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                </div>
+                              </div>
+                            </td>
+                            <td style="text-align: center; font-weight: bold; color: #00bcd4; width: 25%"  class="cart__price">
+                              ${{pro.price}}
+                              <p style="text-decoration: line-through;">${{pro.sale_price}}</p>
+                            </td>
+
+                          </tr>
+                          </tbody>
+                        </table>
+                      </li>
+                  </ul>
+
+              </div>
+              </li>
+<!--                <li>-->
+<!--                  <button type="submit" class="btn btn-primary mr-2">Search</button>-->
+<!--                </li>-->
+              </ul>
+            </form>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-3">
+        <div class="header__right">
+          <div class="header__right__auth">
+            <a [routerLink]="['/login']">Login</a>
+            <a [routerLink]="['/register']">Register</a>
+          </div>
+          <ul class="header__right__widget">
+<!--            <li><span class="icon_search search-switch"></span></li>-->
+
+<!--            <li><a [routerLink]="['/home']"><span class="icon_heart_alt"></span>-->
+<!--              <div class="tip">2</div>-->
+<!--            </a></li>-->
+
+            <li><a [routerLink]="['/product-list']" ><span class="icon_cart_alt"></span>
+              <div class="tip">{{totalCart}}</div>
+            </a></li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="canvas__open">
+      <i class="fa fa-bars"></i>
+    </div>
+  </div>
+</header>
+<!-- Header Section End -->
+<!--<div class="container">-->
+  <router-outlet>
+
+  </router-outlet>
+<!--</div>-->
+<!---->
+<!--<app-student-list > hello </app-student-list>-->
+<!--<app-table></app-table>-->
+<!--<br/>-->
+
+<!-- Footer Section Begin -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-7">
+        <div class="footer__about">
+          <div class="footer__logo">
+            <a [routerLink]="['/home']" ><img src="../assets/img/logo.png" alt=""></a>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            cilisis.</p>
+          <div class="footer__payment">
+            <a [routerLink]="['/home']"><img src="../assets/img/payment/payment-1.png" alt=""></a>
+            <a [routerLink]="['/home']"><img src="../assets/img/payment/payment-2.png" alt=""></a>
+            <a [routerLink]="['/home']"><img src="../assets/img/payment/payment-3.png" alt=""></a>
+            <a [routerLink]="['/home']"><img src="../assets/img/payment/payment-4.png" alt=""></a>
+            <a [routerLink]="['/home']"><img src="../assets/img/payment/payment-5.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-5">
+        <div class="footer__widget">
+          <h6>Quick links</h6>
+          <ul>
+            <li><a [routerLink]="['/home']">About</a></li>
+            <li><a [routerLink]="['/blog']">Blogs</a></li>
+            <li><a [routerLink]="['/contact']">Contact</a></li>
+            <li><a [routerLink]="['/home']">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="footer__widget">
+          <h6 style="margin-left: 15%">Account</h6>
+          <ul>
+            <li><a [routerLink]="['/login']">My Account</a></li>
+            <li><a [routerLink]="['/checkout']">Orders Tracking</a></li>
+            <li><a [routerLink]="['/checkout']">Checkout</a></li>
+            <li><a [routerLink]="['/product-list']">Wishlist</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-8 col-sm-8">
+        <div class="footer__newslatter">
+          <h6>CONTACT</h6>
+          <form action="#">
+            <input type="text" placeholder="Email">
+            <button type="submit" class="site-btn">To send</button>
+          </form>
+          <div class="footer__social">
+            <a [routerLink]="['/home']"> <i class="fab fa-facebook-f"></i></a>
+            <a [routerLink]="['/home']"> <i class="fab fa-twitter"></i></a>
+            <a [routerLink]="['/home']"> <i class="fab fa-youtube"></i></a>
+            <a [routerLink]="['/home']"> <i class="fab fa-instagram"></i></a>
+            <a [routerLink]="['/home']"> <i class="fab fa-pinterest"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="footer__copyright__text">
+          <a [routerLink]="['/home']">Copyright @2022-XOXO_SHOP</a>
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Search Begin -->
+<div class="search-model">
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="search-close-switch">+</div>
+    <form class="search-model-form">
+      <input type="text" id="search-input" placeholder="Search here.....">
+    </form>
+  </div>
+</div>
+<!-- Search End -->
