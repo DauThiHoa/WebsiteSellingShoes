@@ -184,6 +184,8 @@ import {ConProductModule} from "./home/productTLoi/conproduct.module";
   entryComponents: [DogComponent,CowComponent,CatComponent],
   bootstrap: [AppComponent],
 })
+
+
 export class AppModule {
 
 }
