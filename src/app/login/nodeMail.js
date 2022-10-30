@@ -3,14 +3,14 @@ const nodemailer = require('nodemailer');
 let mailTransporter = nodemailer.createTransport({
     service: "gmail",
     auth:{
-        user: "19130075@st.hcmuaf.edu.vn",
-        pass: "H0345389984$"
+        user: "daudiep2003@gmail.com",
+        pass: "kxiunzutpxcvbbhf"
     }
 })
 
 let details = {
-    from: "19130075@st.hcmuaf.edu.vn",
-    to : "19130075@st.hcmuaf.edu.vn",
+    from: "daudiep2003@gmail.com",
+    to : "daudiep2003@gmail.com",
     subject: "testing our nodemailer",
     text: "testing out first sender"
 }
