@@ -22,14 +22,14 @@
         <p class="text">Sign In with Email Address</p>
         <div class="formGroup">
           <i style="margin-top: 1%" class="far fa-envelope"></i>
-          <input [formControl]="emailFormControl" required class="form-control" formControlName="email" type="email" name="email" id="email" placeholder="Email" value="" >
+          <input required class="form-control" formControlName="email" type="email" name="email" id="email" placeholder="Email" value="" >
         </div>
         <div class="formGroup">
           <i style="margin-top: 1%" class="fas fa-lock"></i>
-          <input [formControl]="nameFormControl" required class="form-control" formControlName="password" type="password" name="password" id="password" value="" placeholder="Password" >
+          <input required class="form-control" formControlName="password" type="password" name="password" id="password" value="" placeholder="Password" >
         </div>
 
-          <button (click)="register()" type="submit" class="btn">SIGN IN</button>
+          <button type="submit" class="btn">SIGN IN</button>
 
       </form>
     </div>

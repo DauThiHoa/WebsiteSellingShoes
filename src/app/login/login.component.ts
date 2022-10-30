@@ -4,8 +4,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
 import { DogComponent } from "../dummy/dog/dog.component";
-import { CowComponent } from "../dummy/cow/cow.component";
-import { CatComponent } from "../dummy/cat/cat.component";
 import {HttpService} from "../Shared/http.service";
 
 @Component({
