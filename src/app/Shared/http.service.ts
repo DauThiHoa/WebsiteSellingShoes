@@ -17,6 +17,7 @@ export class HttpService {
   }
 
   sendEmail(url : string , data : any) {
+    alert("3 : " + url + " = " + data )
     return this.http.post(url, data);
   }
 }

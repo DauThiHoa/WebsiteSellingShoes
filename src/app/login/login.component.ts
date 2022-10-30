@@ -84,7 +84,6 @@ export class LoginComponent implements OnInit {
   }
 
   register() {
-    alert("hahaha" + this.FromLogin.controls.email.value + this.FromLogin.controls.password.value);
 
     this.loading = true;
     this.buttionText = "Submiting...";

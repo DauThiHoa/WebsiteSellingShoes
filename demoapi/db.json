@@ -27,6 +27,12 @@
       "email": "19130075@st.hcmuaf.edu.vn",
       "password": "12345",
       "id": 1
+    },
+    {
+      "name": "Đậu Điệp",
+      "email": "daudiep2003@gmail.com",
+      "password": "12345",
+      "id": 2
     }
   ],
   "product": [
