@@ -3,15 +3,17 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
-import { DogComponent } from "../dummy/dog/dog.component";
 import {HttpService} from "../Shared/http.service";
+
+////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
+// @ts-ignore
+import nodemailer from 'nodemailer';
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"]
 })
-
 
 export class LoginComponent implements OnInit {
   submited : boolean = false ;
@@ -38,7 +40,6 @@ export class LoginComponent implements OnInit {
     Validators.minLength(4)
   ]);
 
-  dummyComponent = DogComponent;
   constructor(private  prodSrv : LoginService ,
               private  route: Router,
               public http: HttpService ) {}
@@ -70,13 +71,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-// Bai SEND MAIL
-//   assignComponent(component) {
-//     if (component === "cow") this.dummyComponent = CowComponent;
-//     else if (component === "dog") this.dummyComponent = DogComponent;
-//     else this.dummyComponent = CatComponent;
-//   }
-
   changeImage() {
     this.http.test = "changed";
     this.image =
@@ -84,7 +78,6 @@ export class LoginComponent implements OnInit {
   }
 
   register() {
-    alert("hahaha" + this.FromLogin.controls.email.value + this.FromLogin.controls.password.value);
 
     this.loading = true;
     this.buttionText = "Submiting...";
@@ -94,21 +87,45 @@ export class LoginComponent implements OnInit {
       name: this.FromLogin.controls.password.value,
       email: this.FromLogin.controls.email.value
     }
-    this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
-      data => {
-        let res:any = data;
-        console.log(
-          `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
-        );
-      },
-      err => {
-        console.log(err);
-        this.loading = false;
-        this.buttionText = "Submit";
-      },() => {
-        this.loading = false;
-        this.buttionText = "Submit";
+    // this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+    //   data => {
+    //     let res:any = data;
+    //     console.log(
+    //       `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
+    //     );
+    //   },
+    //   err => {
+    //     console.log(err);
+    //     this.loading = false;
+    //     this.buttionText = "Submit";
+    //   },() => {
+    //     this.loading = false;
+    //     this.buttionText = "Submit";
+    //   }
+    // );
+    let mailTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth:{
+        user: "daudiep2003@gmail.com",
+        pass: "kxiunzutpxcvbbhf"
       }
-    );
+    })
+
+    let details = {
+      from: "daudiep2003@gmail.com",
+      to : "daudiep2003@gmail.com",
+      subject: "testing our nodemailer",
+      text: "testing out first sender"
+    }
+
+    mailTransporter.sendMail(details, (err : any) =>{
+      if (err){
+        console.log("it has an error" , err);
+      }else {
+        console.log("email has send !");
+      }
+    })
+
   }
+
 }

@@ -38,7 +38,7 @@ async function sendMail(user, callback) {
       // user: details.email,
       // pass: details.password
       user: '19130075@st.hcmuaf.edu.vn',
-      pass: 'H0345389984$'
+      pass: ''
     }
   });
 
