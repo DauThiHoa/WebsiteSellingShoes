@@ -60,8 +60,11 @@ export class LoginComponent implements OnInit {
       this.prodSrv.getlogin().subscribe(data =>{
         for (const datum of data) {
           if(datum.email == this.FromLogin.controls.email.value && datum.password == this.FromLogin.controls.password.value){
-            this.route.navigate(['/home']);
+            // this.route.navigate(['/home']);
+            this.prodSrv.update(0, datum).subscribe(data => { });
+            location.replace("/home");
             return;
+            // location.reload();
           }
         }
         if (confirm("Email or password error")) {

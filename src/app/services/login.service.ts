@@ -16,6 +16,7 @@ export class LoginService {
   getlogin(): Observable<Array<Login>>{
     return this.http.get<Array<Login>>(_api + 'login');
   }
+
   getList (_limit : number = 4, search_key:any = null): Observable<Array<Login>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
     let url = 'http://localhost:3000/login/?_limit='+ _limit + '&_sort=id&_order=desc';
     if ( search_key != null ){
@@ -35,12 +36,14 @@ export class LoginService {
     let url = 'http://localhost:3000/login/?_limit='+ _limit + '&category_like=' + like_key;
     return this.http.get<Array<Login>> (url);
   }
+
   getRelated  (like_key: string): Observable<Array<Login>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
     // http://localhost:3000/login?category_like=game
 
     let url = 'http://localhost:3000/login/?category_like='+ like_key;
     return this.http.get<Array<Login>> (url);
   }
+
   /*
   Them moi
   POST : http://localhost:3000/login

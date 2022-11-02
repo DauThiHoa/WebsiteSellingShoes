@@ -23,6 +23,12 @@
   ],
   "login": [
     {
+      "name": "Đậu Điệp",
+      "email": "daudiep2003@gmail.com",
+      "password": "12345",
+      "id": 0
+    },
+    {
       "name": "Đậu Hoa",
       "email": "19130075@st.hcmuaf.edu.vn",
       "password": "12345",
@@ -722,8 +728,8 @@
       "name": "Dark Angels: Masquequerade of Shadows",
       "image": "../../../assets/img/product/product-3.png",
       "price": 97000,
-      "quantitySold": 4,
-      "total": 388000
+      "quantitySold": 7,
+      "total": 679000
     }
   ],
   "billing": [
