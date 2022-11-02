@@ -69,10 +69,6 @@
                   <ul class="dropdown" style="width: 225% ; background: white ; height: 400px; margin-left: -30% ; margin-top: 7%; overflow-y: auto">
                       <li class="header__menu">
 
-<!--                          <img style="width: 20% ; height: 10%" routerLink="../productDetail/{{pro.id}}" src="{{pro.image}}" >-->
-<!--                          <span><a routerLink="../productDetail/{{pro.id}}">{{pro.name}}</a></span>-->
-<!--                          <span>{{pro.price}}</span>-->
-
                         <p style="color: #00bcd4; font-weight: bold; text-align: center; ">
                           {{error}}
                         </p>
@@ -129,8 +125,9 @@
       <div class="col-lg-3">
         <div class="header__right">
           <div class="header__right__auth">
+            <i style="margin-right: 5%; margin-left: -10%" class="far fa-user"></i>
             <a [routerLink]="['/login']">Login</a>
-            <a [routerLink]="['/register']">Register</a>
+            <a style="margin-left: 5%" [routerLink]="['/register']">Register</a>
           </div>
           <ul class="header__right__widget">
 <!--            <li><span class="icon_search search-switch"></span></li>-->
