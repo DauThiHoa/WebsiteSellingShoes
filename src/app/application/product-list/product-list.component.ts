@@ -97,7 +97,37 @@ export class ProductListComponent implements OnInit {
     })
 
   }
+  onEditQuantity (id : number){
+    this.submited = true;
+    this.cartSrv.getOne(id).subscribe(data1 => {
 
+      this.cartForm = new FormGroup({
+        id: new FormControl(id),
+        name: new FormControl(data1.name),
+        image: new FormControl(data1.image),
+        price: new FormControl(data1.price),
+        quantitySold: new FormControl(this.cartForm.controls.quantitySold.value),
+        total : new FormControl(data1.price * this.cartForm.controls.quantitySold.value)
+      });
+
+      this.cartSrv.update(id, this.cartForm.value).subscribe(data => {
+      });
+      if (confirm("You have successfully edited the product in your shopping cart !")) {
+
+        this.cartSrv.getList().subscribe(data =>  {
+          this.cartList = data;
+
+          for (const datum of this.cartList) {
+            this.totalMoney += ( datum.price * datum.quantitySold ) ;
+          }
+          // this.totalMoney = this.totalMoney - (data1.price * this.cartForm.controls.quantitySold.value);
+        })
+      }
+      // this.route.navigate(['/product-list']);
+      location.reload();
+    })
+
+  }
   onSearch(){
     alert(this.searchForm.value.name);
 
