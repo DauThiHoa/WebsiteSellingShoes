@@ -97,7 +97,6 @@ export class ProductListComponent implements OnInit {
     })
 
   }
-
   onEditQuantity (id : number){
     this.submited = true;
     this.cartSrv.getOne(id).subscribe(data1 => {
@@ -129,7 +128,6 @@ export class ProductListComponent implements OnInit {
     })
 
   }
-
   onSearch(){
     alert(this.searchForm.value.name);
 
