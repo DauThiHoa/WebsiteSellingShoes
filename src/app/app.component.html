@@ -125,16 +125,37 @@
       <div class="col-lg-3">
         <div class="header__right">
           <div class="header__right__auth">
-            <i style="margin-right: 5%; margin-left: -10%" class="far fa-user"></i>
-            <a [routerLink]="['/login']">Login</a>
-            <a style="margin-left: 5%" [routerLink]="['/register']">Register</a>
+
+<!--            <i style="margin-right: 5%; margin-left: -10%" class="far fa-user"></i>-->
+            <nav class="header__menu" >
+              <ul  >
+
+                <li ><i style="margin-right: 5%; margin-left: -10%" class="far fa-user login"></i>
+                  <ul class="dropdown" style=" background: #00bcd4 ; margin-left: -50%; width: 260px; color: black">
+                    <li style="color: black ; text-align: center"><a >Name : {{loginOne.name}}</a> </li>
+                    <li style="color: black ; text-align: center"><a >Email : {{loginOne.email}}</a></li>
+                    <li (click)="logOut()" style="color: black ; text-align: center; font-weight: bold"><button class="logOut" >Log Out</button></li>
+                  </ul>
+                </li>
+
+                <li> <a [routerLink]="['/login']">Login</a></li>
+                <li> <a style="margin-left: 3%" [routerLink]="['/register']">Register</a></li>
+<!--                <li>-->
+<!--                  <ul class="header__right__widget">-->
+<!--                  <a [routerLink]="['/product-list']" >-->
+<!--                    <span class="icon_cart_alt"></span>-->
+<!--                  <div class="tip">{{totalCart}}</div>-->
+<!--                  </a>-->
+<!--                  </ul>-->
+<!--                </li>-->
+
+              </ul>
+            </nav>
+
+<!--            <a [routerLink]="['/login']">Login</a>-->
+<!--            <a style="margin-left: 5%" [routerLink]="['/register']">Register</a>-->
           </div>
           <ul class="header__right__widget">
-<!--            <li><span class="icon_search search-switch"></span></li>-->
-
-<!--            <li><a [routerLink]="['/home']"><span class="icon_heart_alt"></span>-->
-<!--              <div class="tip">2</div>-->
-<!--            </a></li>-->
 
             <li><a [routerLink]="['/product-list']" ><span class="icon_cart_alt"></span>
               <div class="tip">{{totalCart}}</div>

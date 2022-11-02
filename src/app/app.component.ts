@@ -6,6 +6,8 @@ import {Router} from "@angular/router";
 import {Product} from "./models/product";
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpService} from "./Shared/http.service";
+import {LoginService} from "./services/login.service";
+import {Login} from "./models/login";
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,7 @@ export class AppComponent {
   title = 'mdb5-angular-ui-kit-pro-advanced';
   data: any[] =[];
   cartList: Array<Cart> = [];
+  loginOne: Login;
   totalCart : number = 0 ;
   productList: Array<Product> = [];
   error : string;
@@ -33,7 +36,8 @@ export class AppComponent {
   constructor(private proSrv : ProductService,
               private cartSrv : CartService,
               private route: Router,
-              public http: HttpService) { }
+              public http: HttpService,
+              public loginSrv : LoginService) { }
 
   ngOnInit(): void {
 
@@ -58,7 +62,17 @@ export class AppComponent {
         this.totalCart += datum.quantitySold;
       }
     })
+    this.loginSrv.getOne(0).subscribe(data =>  {
+
+      this.loginOne = data;
+    })
   }
+
+  public logOut (): void {
+    this.loginSrv.update(0, "").subscribe(data => { });
+    location.reload();
+  }
+
   onSearch(id : number){
     // alert(this.searchForm.value.name);
     location.replace('../productDetail/' + id);
@@ -71,7 +85,7 @@ export class AppComponent {
       this.productList = data;
       // alert(data)
       if( data == null ){
-        this.error = "There are no products matching your search ";
+        this.error = "There are no products matching your search";
         this.erro = "You can try with simpler keywords or contact support";
       }
       this.error = "";
