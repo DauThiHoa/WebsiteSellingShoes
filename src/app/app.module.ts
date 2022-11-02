@@ -88,6 +88,10 @@ import {PubgProductModule} from "./home/productPubg/pubgproduct.module";
 import {WalletProductModule} from "./home/productSteamWallet/walletproduct.module";
 import {ConProductModule} from "./home/productTLoi/conproduct.module";
 
+// tmdt
+import {ShopModule} from "./Admin/shop/shop.module";
+import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
+
 @NgModule({
   // declarations: [AppComponent, MyTableComponent, HomeComponents],
   declarations: [AppComponent, MyTableComponent],
@@ -179,6 +183,9 @@ import {ConProductModule} from "./home/productTLoi/conproduct.module";
     WalletProductModule,
     ConProductModule,
 
+
+    ShopModule,
+    ShopRoutingModule,
   ],
   providers: [MdbCookiesManagementService, MdbStorageManagementService,HttpService],
   entryComponents: [DogComponent,CowComponent,CatComponent],

@@ -43,6 +43,9 @@ const routers: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/cow'},
   {path: '', pathMatch: 'full', redirectTo: '/dog'},
   {path: '', pathMatch: 'full', redirectTo: '/cat'},
+
+  // tmdt
+  {path: '', pathMatch: 'full', redirectTo: '/shop'},
 ];
 
 const child: Routes = [

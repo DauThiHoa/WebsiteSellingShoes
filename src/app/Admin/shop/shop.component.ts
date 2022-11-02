@@ -11,10 +11,10 @@ import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-test',
-  templateUrl: './listproduct.component.html',
-  styleUrls: ['./listproduct.component.scss']
+  templateUrl: './shop.component.html',
+  styleUrls: ['./shop.component.scss']
 })
-export class ListProductComponents implements OnInit {
+export class ShopComponents implements OnInit {
   submited: boolean = false;
   data: any[];
 
@@ -29,9 +29,6 @@ export class ListProductComponents implements OnInit {
   products : Array<Product> = new Array<Product>();
   category : Array<Category> = new Array<Category>();
 
-  productsLow : Array<Product> = new Array<Product>();
-  productsHight : Array<Product> = new Array<Product>();
-
   productsList : Array<Product> = [];
 
   cartFormOneQuantity: FormGroup = new FormGroup({
@@ -42,16 +39,18 @@ export class ListProductComponents implements OnInit {
               private productService:ProductService,
               private categoryService:CategoryService,
               private prodSrv : ProductService,
-              private route: Router) {
-    console.log("vao list")
-  }
+              private route: Router) { }
 
 
   ngOnInit(): void {
-    // LAY DU LIEU VAO TRANG ListProduct
+    // LAY DU LIEU VAO TRANG HOME
     this.bannerService.getBanners()
       .subscribe(res => {
         this.banners = res;
+      });
+    this.productService.getProduct()
+      .subscribe(res => {
+        this.products = res;
       });
     this.categoryService.getCategory()
       .subscribe(res => {
@@ -62,55 +61,12 @@ export class ListProductComponents implements OnInit {
     this.prodSrv.getList().subscribe(data =>{
       this.productsList = data ;
     })
-
-    this.productService.getProduct()
-      .subscribe(res => {
-        this.products = res;
-      });
-    // PHU THUOC VAO TRANG SERVE
-    this.prodSrv.getListPriceLow().subscribe(data =>{
-      this.productsLow = data ;
-    })
-    // PHU THUOC VAO TRANG SERVE
-    this.prodSrv.getListPriceHight().subscribe(data =>{
-      this.productsHight = data ;
-    })
-
   }
 
   public onClickProduct (id :number): void {
     // if (confirm(id+ 'h')) {
     this.route.navigate(['/productDetail/' + id]);
     // }
-  }
-
-
-  public onCreate (id: number): void {
-    // if (confirm(id+ 'h')) {
-    // alert(id)
-    // }
-    if(id == 5 ){
-      this.prodSrv.getListPriceHight().subscribe(data =>{
-        this.products = data ;
-      })
-    }else if(id == 6 ){
-      this.prodSrv.getListPriceLow().subscribe(data =>{
-        this.products = data ;
-      })
-    }else if(id == 3 ){
-      this.prodSrv.getListNameLow().subscribe(data =>{
-        this.products = data ;
-      })
-    }else if(id == 4 ){
-      this.prodSrv.getListNameHight().subscribe(data =>{
-        this.products = data ;
-      })
-    }else if(id == 1 ){
-      this.prodSrv.getProduct().subscribe(data =>{
-        this.products = data ;
-      })
-    }
-
   }
 
   public onCreateOneQuantity (id :number): void {
@@ -159,5 +115,4 @@ export class ListProductComponents implements OnInit {
       }
     })
   }
-
 }
