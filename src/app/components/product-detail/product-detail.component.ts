@@ -5,6 +5,12 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Product} from "../../models/product";
 import {CartService} from "../../services/cart.service";
 import {Cart} from "../../models/cart";
+import {CommentService} from "../../services/comment.service";
+import {CommentProductService} from "../../services/commentProduct.service";
+import {Comment} from "../../models/comment";
+import {CommentProduct} from "../../models/commentProduct";
+import {LoginService} from "../../services/login.service";
+import {Login} from "../../models/login";
 
 @Component({
   selector: 'app-product-detail',
@@ -18,20 +24,35 @@ export class ProductDetailComponent implements OnInit {
 
   // Doi Tuong Product Duoc Bam Vao
   pro: Product = new Product(); // any ( Nhan Tat Ca Cac Du Lieu )
+  login: Login = new Login(); // any ( Nhan Tat Ca Cac Du Lieu )
   relatedProduct: Array<Product> = new Array<Product>();
   related: Array<Product> = new Array<Product>();
 
   quantity : number = 0 ;
   quantitySold : number = 0 ;
 
+  count : number = 0 ;
+  commentList: Array<CommentProduct> = [];
+
   constructor(private prodSrv: ProductService,
               private cartSrv: CartService,
               private _route: ActivatedRoute,
               private productService: ProductService,
-              private route: Router) {
+              private route: Router,
+              private comProSrv : CommentProductService,
+              private loginSrv : LoginService) {
   }
 
   today = new Date();
+
+  date = this.today.getDate()+ '/' + (this.today.getMonth() + 1 )+ '/' + this.today.getFullYear();
+
+  commentCreate = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    content: new FormControl(''),
+    date: new FormControl(this.date),
+  });
 
   cartForm = new FormGroup({
     id: new FormControl( ),
@@ -82,6 +103,43 @@ export class ProductDetailComponent implements OnInit {
         })
       });
 
+    this.loginSrv.getOne(0).subscribe(data =>{
+      this.login = data ;
+
+      this.commentCreate = new FormGroup({
+        name: new FormControl(data.name),
+        email: new FormControl(data.email),
+        content: new FormControl(),
+        date: new FormControl(this.date),
+      });
+
+    })
+
+    this.comProSrv.getcomment().subscribe(data =>  {
+      this.commentList = data;
+      // CART TOTAL
+      for (const datum of this.commentList) {
+        this.count += 1;
+      }
+    });
+
+  }
+
+  public onCommand(): void {
+    this.submited = true ;
+
+    if ( this.commentCreate.invalid){
+      alert("Please continue to travel with information")
+      return;
+
+    }else {
+      this.comProSrv.create(this.commentCreate.value).subscribe(data =>{
+        if (confirm("Add Comment Success")) {
+          location.reload();
+        }
+      });
+
+    }
   }
 
   public onCreate(id: number ): void {
