@@ -59,15 +59,23 @@ export class ProductService {
   }
   getPrice (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
     let price ;
-    let productsList : Observable<Array<Product>>;
-    // let url;
+    let url = '';
     if (count == 7) {
-      productsList = this.getProduct();
-      // if (price >= 0 || price <= 500) {
-      // url = 'http://localhost:3000/product/?price=' + price; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+      this.getProduct().subscribe(data =>{
+        for (const datum of data) {
+          if (datum.price >= 0 && datum.price <= 500) {
+            price = datum.price
+            // alert(price)
+            url = 'http://localhost:3000/product/?price=' + price; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+            // return this.http.get<Array<Product>> (url);
+           }
+         }
+      })
     }
-      let url = 'http://localhost:3000/product/?price=' + price  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
-  return this.http.get<Array<Product>> (url);
+    console.log("url = " + url)
+    console.log("price = " + price)
+    // let url = 'http://localhost:3000/product/?price=' + price  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+    return this.http.get<Array<Product>> (url);
 }
 getSearchName (search_key: string): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
   let url = 'http://localhost:3000/product/?name_like=' + search_key  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
