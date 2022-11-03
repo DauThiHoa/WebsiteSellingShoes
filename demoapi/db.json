@@ -89,7 +89,7 @@
     {
       "id": 5,
       "name": "Planet Coaster",
-      "price": 35000,
+      "price": 400,
       "sale_price": 350000,
       "image": "../../../assets/img/product/product-5.png",
       "category": "Featured game",

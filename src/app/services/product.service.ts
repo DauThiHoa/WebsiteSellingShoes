@@ -11,9 +11,13 @@ const _api = 'http://localhost:3000/';
 })
 export class ProductService {
   data: any[];
+  productList: any[];
+  price : any;
   // productsList : Array<Product> = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+  }
 
   getProduct(): Observable<Array<Product>>{
     return this.http.get<Array<Product>>(_api + 'product');
@@ -58,22 +62,24 @@ export class ProductService {
     return this.http.get<Array<Product>> (url);
   }
   getPrice (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
-    let price ;
+
     let url = '';
     if (count == 7) {
       this.getProduct().subscribe(data =>{
-        for (const datum of data) {
-          if (datum.price >= 0 && datum.price <= 500) {
-            price = datum.price
-            // alert(price)
-            url = 'http://localhost:3000/product/?price=' + price; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
-            // return this.http.get<Array<Product>> (url);
-           }
-         }
+        // let price;
+        this.productList = data ;
       })
     }
+    for (const datum of this.productList) {
+      if (datum.price >= 0 && datum.price <= 500) {
+        this.price = datum.price
+        alert(this.price)
+        url = 'http://localhost:3000/product/?price=' + this.price; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+        // return this.http.get<Array<Product>> (url);
+      }
+    }
     console.log("url = " + url)
-    console.log("price = " + price)
+    console.log("price = " + this.price)
     // let url = 'http://localhost:3000/product/?price=' + price  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     return this.http.get<Array<Product>> (url);
 }
