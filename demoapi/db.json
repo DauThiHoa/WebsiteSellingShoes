@@ -45,52 +45,56 @@
     {
       "id": 1,
       "name": "Plants vs zombies garden warfare 2",
-      "price": 300000,
+      "price": 500,
       "sale_price": 470000,
       "image": "../../../assets/img/product/product-1.png",
       "category": "Featured game",
       "description": "Dr. Zomboss conquered Suburbia and turned it into a plant-free paradise. Help the plants regain their turf in the new 24-player Herbal Assault, or choose your side in a 4-player co-op or solo game. With new modes, classes and loads of humour, Plants vs. Zombies Garden Warfare 2 lets you go to war with the serious (and your friends!) however you want.\n\nPlants vs Zombies Garden Warfare 2 also introduces the Backyard Battleground, your very own interactive hub where you and up to 3 friends can go on daily quests and challenges and interact with your favorite PvZ characters. your likes.",
-      "color" : "Hồng",
+      "color" : "Pink",
       "briefDescription": "Dr. Zomboss conquered Suburbia and turned it into a plant-free paradise.Help the plants regain their turf in the new 24-player Herbal Assault, or choose your side in a 4-player co-op or solo game."
     },
     {
       "id": 2,
       "name": "The Sim 4",
-      "price": 350000,
+      "price": 500,
       "sale_price": 470000,
       "image": "../../../assets/img/product/product-2.png",
       "category": "Featured game",
       "description": "Unleash your imagination and create a completely unique Sims world. Explore and customize everything from Sims to family homes and more. Choose how Sims look, act, and dress. Determine how they will live each day. Design and build incredible homes for every family, then decorate with your favorite furniture and decorations. Travel to different neighborhoods where you can meet other Sims and learn about their lives. Explore beautiful locations with distinctive environments and go on spontaneous adventures. Manage the ups and downs of your Sims' daily lives and see what happens when you play out in real or imaginary situations. Tell your story your way while developing relationships, pursuing careers and living aspirations, and immersing yourself in an extraordinary game where the possibilities are endless.",
+      "color" : "Green",
       "briefDescription": "Unleash your imagination and create a completely unique Sims world.Explore and customize everything from Sims to family homes and more."
     },
     {
       "id": 3,
       "name": "Dark Angels: Masquequerade of Shadows",
-      "price": 97000,
+      "price": 500,
       "sale_price": 148000,
       "image": "../../../assets/img/product/product-3.png",
       "category": "Featured game",
       "description": "Dark Angels: Masquerade of Shadows belongs to the Adventure genre, which is highly appreciated by players from many angles such as attractive game elements, realistic sound, and impeccable graphics. In addition, there are many very cool things waiting for you to experience.",
+      "color" : "Green",
       "briefDescription": "Dark Angels: Masquerade of Shadows belongs to the Adventure genre, which is highly appreciated by players from many angles such as attractive game elements, realistic sound, and impeccable graphics. In addition, there are many very cool things waiting for you to experience."
     },
     {
       "id": 4,
       "name": "Warlocks vs Shadows",
-      "price": 340000,
+      "price": 500,
       "sale_price": 440000,
       "image": "../../../assets/img/product/product-4.png",
       "category": "Featured game",
       "description": "Dark Angels: Masquerade of Shadows belongs to the Adventure genre, which is highly appreciated by players from many angles such as attractive game elements, realistic sound, and impeccable graphics. In addition, there are many very cool things waiting for you to experience.",
+      "color" : "Blue",
       "briefDescription": "Dark Angels: Masquerade of Shadows belongs to the Adventure genre, which is highly appreciated by players from many angles such as attractive game elements, realistic sound, and impeccable graphics. In addition, there are many very cool things waiting for you to experience."
     },
     {
       "id": 5,
       "name": "Planet Coaster",
-      "price": 1025000,
+      "price": 35000,
       "sale_price": 350000,
       "image": "../../../assets/img/product/product-5.png",
       "category": "Featured game",
       "description": "Planet Coaster is a simulation game in the construction and management of amusement parks. In the game, the player will take on the role of a strategic investor who wants to invest in the entertainment sector. Players will have to survey and research the market to be able to quickly find the right land and build their own park.In Planet Coaster, players will have to design and build extremely detailed parts, from laying roads, building landscapes to placing amusement parks to be able to create a monumental job and attract many customers. . With a wide range of flexible features, you can unleash your creativity and design stunning and modern landscapes, even beyond the imagination of technologies you can see in real life. There are also interesting game modes and missions that will help you feel more excited when participating in this game.",
+      "color" : "Blue",
       "briefDescription": "Planet Coaster is a simulation game in the construction and management of amusement parks. In the game, the player will take on the role of a strategic investor who wants to invest in the entertainment sector. Players will have to survey and research the market to be able to quickly find the right land and build their own park."
     },
     {
@@ -101,6 +105,7 @@
       "image": "../../../assets/img/product/product-6.png",
       "category": "Featured game",
       "description": "Cities Skylines is a construction and city management game, is a modern version of the construction game series that gives you a new and exciting feeling when experiencing the game with extremely high realism when starting. hands on construction from nothing to modern skyscrapers.When participating in the game, you have the task of performing the work as an architect and urban manager, you must plan, zoning, and building in the most reasonable way to be able to fully manage the systems from traffic, electricity and water to construction security. The construction and development plan must also go hand in hand with the opinions of the people, you will be connected with the people through a virtual social network and here you can listen and receive feedback and suggestions. , opinions of the people to be able to come up with reasonable plans and strategies to help build a more developed city.",
+      "color" : "White",
       "briefDescription": "Cities Skylines is a construction and city management game, is a modern version of the construction game series that gives you a new and exciting feeling when experiencing the game with extremely high realism when starting. hands on construction from nothing to modern skyscrapers."
     },
     {
@@ -111,6 +116,7 @@
       "image": "../../../assets/img/product/product-7.png",
       "category": "Featured game",
       "description": "Zombie Boom + Beast Blaster + Cyborg Detonator belongs to the offline genre that is highly appreciated by critics in many aspects such as attractive gameplay, realistic sound, very beautiful graphics. Not only that, but there are many cool things waiting for you to experience.",
+      "color" : "Green",
       "briefDescription": "Zombie Boom + Beast Blaster + Cyborg Detonator belongs to the offline genre that is highly appreciated by critics in many aspects such as attractive gameplay, realistic sound, very beautiful graphics. Not only that, but there are many cool things waiting for you to experience."
     },
     {
@@ -121,6 +127,7 @@
       "image": "../../../assets/img/product/product-8.png",
       "category": "Featured game",
       "description": "Iron Sea Defenders belongs to the Indie genre, which is highly appreciated by players from many angles such as attractive gameplay, realistic sound, and great visuals. Besides, there are many interesting things waiting for you to discover.",
+      "color" : "Green",
       "briefDescription": "Iron Sea Defenders belongs to the Indie genre, which is highly appreciated by players from many angles such as attractive gameplay, realistic sound, and great visuals. Besides, there are many interesting things waiting for you to discover."
     },
     {
@@ -131,6 +138,7 @@
       "image": "../../../assets/img/trend/action_1.png",
       "category": "Action games",
       "description": "No Man’s Sky is an action-adventure survival game developed by Hello Games and released by the same company in August 2016. The Next update turned the game into an incomparably more enjoyable experience, with new features, including the most anticipated ones, such as the multiplayer, reworked gathering and crafting, and improved base-building.No Man's Sky is a space exploration game, and the story is heavily focused on it. As the game progresses, you will learn more about the universe you are playing in, including the portals, and the true nature of a mysterious entity called Atlas.",
+      "color" : "Oranges",
       "briefDescription": "No Man’s Sky is an action-adventure survival game developed by Hello Games and released by the same company in August 2016. The Next update turned the game into an incomparably more enjoyable experience, with new features, including the most anticipated ones, such as the multiplayer, reworked gathering and crafting, and improved base-building."
     },
     {
@@ -148,6 +156,7 @@
       "image": "../../../assets/img/trend/action_3.png",
       "category": "Action games",
       "description": "Realistic simulator of the bloodiest conflict in the history! Hell Let Loose is a multiplayer-focused first-person shooter developed by an Australian studio – Black Matter. The game setting focuses on the times of World ...Fight in the most iconic battles of the Western Front, including Carentan, Omaha Beach and Foy and more. This is combat at a whole new scale....with lumbering tanks dominating the battlefield, crucial supply chains fuelling the frontlines, you are a cog in the machine of colossal combined arms warfare. Hell Let Loose puts you in the chaos of war, complete with deep player-controlled vehicles, a dynamically evolving front line, and crucial unit-focused gameplay that commands the tide of battle. ",
+      "color" : "Oranges",
       "briefDescription": "Realistic simulator of the bloodiest conflict in the history! Hell Let Loose is a multiplayer-focused first-person shooter developed by an Australian studio – Black Matter. The game setting focuses on the times of World ... "
     },
     {
@@ -157,6 +166,7 @@
       "sale_price": 320000,
       "image": "../../../assets/img/trend/action_4.png",
       "category": "Action games",
+      "color" : "Oranges",
       "description": " Risk of Rain 2 is a roguelike third-person shooter game for PC, developed by Hopoo Games and published by Gearbox. It’s a sequel to 2013’s Risk of Rain. In the game, the player takes control of one of four characters - s ...Risk of Rain 2 is a roguelike third-person shooter game for PC, developed by Hopoo Games and published by Gearbox. It’s a sequel to 2013’s Risk of Rain. In the game, the player takes control of one of four characters - survivors of a crashed spaceship, who have to endure the harsh conditions of a planet inhabited by hostile creatures. The game was released in Early Access in March 2019 and received positive reviews from fans and critics, many of whom praised the distinct classes and enjoyable gameplay with a co-op option.",
       "briefDescription": " Risk of Rain 2 is a roguelike third-person shooter game for PC, developed by Hopoo Games and published by Gearbox. It’s a sequel to 2013’s Risk of Rain. In the game, the player takes control of one of four characters - s ..."
     },
@@ -168,6 +178,7 @@
       "image": "../../../assets/img/trend/action_5.png",
       "category": "Action games",
       "description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. The world is your canvas and the ground itself is your paint. Grab your tools and go! Make weapons to fight off a variety of enemies ... Grab your tools and go! Make weapons to fight off a variety of enemies in numerous biomes. Dig deep underground to find accessories, money, and other useful things. Gather resources to create everything you need to make the world your own. Build a house, a fort, or even a castle. People will move in to live there and perhaps even sell you different wares to assist you on your journey. ",
+      "color" : "Oranges",
       "briefDescription": " Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. The world is your canvas and the ground itself is your paint. Grab your tools and go! Make weapons to fight off a variety of enemies ..."
     },
     {
@@ -178,6 +189,7 @@
       "image": "../../../assets/img/trend/outstan_1.png",
       "category": "New game",
       "description": "You’re broke, you’re hungry, and your only friends are a vintage hoverbike and a bowl of ramen noodles. In Desert Child, you are a young and talented hoverbike racer who needs to figure out how you can scrape enough cash ...In Desert Child, you are a young and talented hoverbike racer who needs to figure out how you can scrape enough cash together through racing and odd jobs to punch your one-way ticket to the Red Planet to enter the biggest race in the universe, the Grand Prix. ",
+      "color" : "Oranges",
       "briefDescription": "You’re broke, you’re hungry, and your only friends are a vintage hoverbike and a bowl of ramen noodles. In Desert Child, you are a young and talented hoverbike racer who needs to figure out how you can scrape enough cash ... "
     },
     {
@@ -188,6 +200,7 @@
       "image": "../../../assets/img/trend/outstan_2.png",
       "category": "New game",
       "description": "Experience Aloy's entire legendary quest to unravel the mysteries of a world ruled by deadly machines.\nOutcast from her tribe, the young hunter fights to uncover her past, uncover her fate... and stop a catastrophic threat to the future. Launch devastating, tactical attacks against unique machines and rival tribes as you explore an open world teeming with wildlife and danger.\nHorizon Zero Dawn™ is an award-winning action role-playing game – and this Complete Edition for PC includes the massive expansion The Frozen Wilds, featuring new lands, skills, weapons and Machine.",
+      "color" : "Oranges",
       "briefDescription": "Experience Aloy's entire legendary quest to unravel the mysteries of a world ruled by deadly machines.\nOutcast from her tribe, the young hunter fights to uncover her past, uncover her fate... and stop a catastrophic threat to the future. "
     },
     {
@@ -198,6 +211,7 @@
       "image": "../../../assets/img/trend/outstan_3.png",
       "category": "New game",
       "description": "The Escapists is a unique prisoner sandbox experience with lots of items to craft and combine in your daring quest for freedom. Life in prison will help you stay confident with strict rules that you will have to break.The guards are out to thwart any escape attempts, so you'll have to avoid suspicious behavior by attending roll call calls, doing prison work, and hiding your stolen crafts.\nRunning away is what you do best and you will have to prove your skills in many challenging prisons from around the world. ",
+      "color" : "Oranges",
       "briefDescription": " The Escapists is a unique prisoner sandbox experience with lots of items to craft and combine in your daring quest for freedom. Life in prison will help you stay confident with strict rules that you will have to break."
     },
     {
@@ -208,6 +222,7 @@
       "image": "../../../assets/img/trend/outstan_4.png",
       "category": "New game",
       "description": " Working alongside Aoi's childhood friend, Ageha Himegi, the protagonists of this visual novel set out to rebuild the Soaring Club, which was on the brink of disintegration at the hands of a council. school administration.These beginners embrace their passion, overcoming setbacks, obstacles and school interference to put everything they have into building their own functioning roller coaster.\nTheir ultimate goal: fly over the legendary “Morning Glory” ― a rare and beautiful weather phenomenon that produces a special kind of roll-shaped cloud that appears in the morning when conditions are right.",
+      "color" : "Oranges",
       "briefDescription": " Working alongside Aoi's childhood friend, Ageha Himegi, the protagonists of this visual novel set out to rebuild the Soaring Club, which was on the brink of disintegration at the hands of a council. school administration."
     },
     {
@@ -218,6 +233,7 @@
       "image": "../../../assets/img/trend/outstan_5.png",
       "category": "New game",
       "description": "Man the guns! The enemy fleet is on the horizon!Defend your fort from attacks – show your tactical skill.Build cannons, save money, destroy the enemy with the help of secret weaponry and keep your wits about you, because ...This unique historical setting will allow you to immerse yourself in an atmosphere of real and uncompromising battle. Varied enemies, powerful cannons and secret weaponry which will drive your enemy to despair – all of this in a new Tower Defense game! ",
+      "color" : "red",
       "briefDescription": " Man the guns! The enemy fleet is on the horizon!Defend your fort from attacks – show your tactical skill.Build cannons, save money, destroy the enemy with the help of secret weaponry and keep your wits about you, because ..."
     },
     {
@@ -228,6 +244,7 @@
       "image": "../../../assets/img/trend/steam_1.png",
       "category": "Steam game",
       "description": "Project Zomboid is an example of a survival-horror, role-playing game, developed by an independent studio known as The Indie Stone.The project was first released as a technological demo in 2011. Since then, PZ is being constantly developed and it regularly receives new content and updates improving the gameplay experience. Project Zomboid allows players to experience the life of one of few survivors, lost in a world full of flesh-eating monsters. The game features a vast, open-world map, a complex crafting system, and many mechanics, characteristic for survival games genre.",
+      "color" : "red",
       "briefDescription": " Project Zomboid is an example of a survival-horror, role-playing game, developed by an independent studio known as The Indie Stone."
     },
     {
@@ -238,6 +255,7 @@
       "image": "../../../assets/img/trend/steam_2.png",
       "category": "Steam game",
       "description": "Cities Skylines is a construction and city management game, is a modern version of the construction game series that gives you a new and exciting feeling when experiencing the game with extremely high realism when starting. hands on construction from nothing to modern skyscrapers.When participating in the game, you have the task of performing the work as an architect and urban manager, you must plan, zoning, and building in the most reasonable way to be able to fully manage the systems from traffic, electricity and water to construction security. ",
+      "color" : "red",
       "briefDescription": " Cities Skylines is a construction and city management game, is a modern version of the construction game series that gives you a new and exciting feeling when experiencing the game with extremely high realism when starting. hands on construction from nothing to modern skyscrapers."
     },
     {
@@ -248,6 +266,7 @@
       "image": "../../../assets/img/trend/steam_3.png",
       "category": "Steam game",
       "description": " Vampire: The Masquerade – Bloodlines 2 is a first-person perspective action-stealth game developed by Hardsuit Labs and published by Paradox Interactive. It is the sequel to 2004’s Vampire: The Masquerade – Bloodlines, a ..Vampire: The Masquerade – Bloodlines 2 is a first-person perspective action-stealth game developed by Hardsuit Labs and published by Paradox Interactive. It is the sequel to 2004’s Vampire: The Masquerade – Bloodlines, a game inspired by White Wolf Publishing’s tabletop RPG series Vampire: The Masquerade.",
+      "color" : "red",
       "briefDescription": " Vampire: The Masquerade – Bloodlines 2 is a first-person perspective action-stealth game developed by Hardsuit Labs and published by Paradox Interactive. It is the sequel to 2004’s Vampire: The Masquerade – Bloodlines, a .."
     },
     {
@@ -258,6 +277,7 @@
       "image": "../../../assets/img/trend/steam_4.png",
       "category": "Steam game",
       "description": " American football in a fantasy world? That's right! Play Blood Bowl 3 and experience all-new and improved content in this legendary series. Lead the most powerful team and grant no mercy!Sometimes the most serious conflicts are best transferred to the pitch. It is what Blood Bowl is all about - an exciting and fun fantasy football game! Choose your race, create a team, manage it, and use every, even the dirtiest, trick to win!",
+      "color" : "red",
       "briefDescription": " American football in a fantasy world? That's right! Play Blood Bowl 3 and experience all-new and improved content in this legendary series. Lead the most powerful team and grant no mercy!"
     },
     {
@@ -268,6 +288,7 @@
       "image": "../../../assets/img/trend/steam_5.png",
       "category": "Steam games",
       "description": " Cult of the Lamb casts players in the role of a possessed lamb saved from annihilation by an ominous stranger, and must repay their debt by building a loyal following in his name. Start your own cult in a land of false .Cult of the Lamb casts players in the role of a possessed lamb saved from annihilation by an ominous stranger, and must repay their debt by building a loyal following in his name. Start your own cult in a land of false prophets, venturing out into diverse and mysterious regions to build a loyal community of woodland worshippers and spread your Word to become the one true cult.",
+      "color" : "red",
       "briefDescription": " Cult of the Lamb casts players in the role of a possessed lamb saved from annihilation by an ominous stranger, and must repay their debt by building a loyal following in his name. Start your own cult in a land of false p ..."
     },
     {
@@ -278,6 +299,7 @@
       "image": "../../../assets/img/account/account.png",
       "category": "Game Account",
       "description": "Challenge the forces of nature and see your town prosper. Manage food and resources to maximise your village efficiency and make advancements. Defend your properties against the wildlife, raiders and plagues. Journey to the farthest frontier and lead your people to prosperity! Farthest Frontier is a city builder simulator set in the medieval era. The game offers a typical 4x experience where you build your power from scratch and expand to get access to new land and resources.",
+      "color" : "red",
       "briefDescription": "Challenge the forces of nature and see your town prosper. Manage food and resources to maximise your village efficiency and make advancements. Defend your properties against the wildlife, raiders and plagues. Journey to the farthest frontier and lead your people to prosperity! "
     },
     {
@@ -288,6 +310,7 @@
       "image": "../../../assets/img/account/account_1.png",
       "category": "Game Account",
       "description": "Jurassic World Evolution gameplay is developed in a familiar simulation style. Although released at the same time as the movie Dinosaur Park: Fallen Kingdom, the game content is based on the 2015 version of Dinosaur Park. In the game Jurassic World Evolution, the player's task is to build a complete dinosaur park. The dinosaurs born from biotechnology can think, feel and react extremely intelligently to the world around them. They even cope with the attacks of spies, harsh nature in a volatile world.",
+      "color" : "red",
       "briefDescription": "Jurassic World Evolution gameplay is developed in a familiar simulation style. Although released at the same time as the movie Dinosaur Park: Fallen Kingdom, the game content is based on the 2015 version of Dinosaur Park. "
     },
     {
@@ -298,6 +321,7 @@
       "image": "../../../assets/img/account/account_2.png",
       "category": "Game Account",
       "description": "The Sunless Sea account you receive after purchase is a 100% new and never used account\nProvide the original email you can change all information\nLifetime warranty ",
+      "color" : "Pink",
       "briefDescription": " The Sunless Sea account you receive after purchase is a 100% new and never used account\nProvide the original email you can change all information\nLifetime warranty"
     },
     {
@@ -308,6 +332,7 @@
       "image": "../../../assets/img/account/account_3.png",
       "category": "Game Account",
       "description": " The human race has finally mastered faster-than-light travel opening up the stars for exploration and colonization. As the leader of the newly formed Terran Alliance, you will guide humanity's expansion into becoming a space-based civilization. Soon, you will discover that we are not alone.Alien civilizations with their own histories and motivations are expanding as well. Research new technology, design starships, negotiate trade and treaties, wage wars, colonize new worlds, construct starbases in the largest 4X strategy game ever made. And when you've finished that, play again as one of the many included alien civilizations each with its own history, technology tree, ship components and more.",
+      "color" : "Pink",
       "briefDescription": " The human race has finally mastered faster-than-light travel opening up the stars for exploration and colonization. As the leader of the newly formed Terran Alliance, you will guide humanity's expansion into becoming a space-based civilization. Soon, you will discover that we are not alone."
     },
     {
@@ -318,6 +343,7 @@
       "image": "../../../assets/img/account/account_4.png",
       "category": "Game Account",
       "description": "Crying Suns is a unique strategy game themed in space war, in which you will play as the commander of a space fleet and tasked with uncovering a mysterious empire. This game is inspired by Dune and Foundation, each successful mission will help you uncover the truth about the Empire and your own origins. In the game Crying Suns, you will play as a clone of Ellys Idaho - the best Royal Admiral to ever conquer the universe. You have just been awakened on the planet Gehenna by Kaliban - the only OMNI that still exists. Your mission is to skillfully steer a battleship through the chaotic battles of the Empire, reactivate the OMNI and save the future of humanity. But you have to leave Gehenna now because time is running out…",
+      "color" : "Pink",
       "briefDescription": " Crying Suns is a unique strategy game themed in space war, in which you will play as the commander of a space fleet and tasked with uncovering a mysterious empire. This game is inspired by Dune and Foundation, each successful mission will help you uncover the truth about the Empire and your own origins."
     },
     {
@@ -328,6 +354,7 @@
       "image": "../../../assets/img/account/account_5.png",
       "category": "Game Account",
       "description": "The Trials of Fear Edition* adds 3 new areas to explore, a new big boss, new powers and mechanics, new music tracks, a new secret ending, as well as many quality of life updates and more! The Trials of Fear Edition adds a whole new focus on story, fleshing out the lore of the Salt and its inhabitants. Find new descriptions, dialogues and cutscenes for existing characters and environments!",
+      "color" : "Pink",
       "briefDescription": " The Trials of Fear Edition* adds 3 new areas to explore, a new big boss, new powers and mechanics, new music tracks, a new secret ending, as well as many quality of life updates and more!"
     },
     {
@@ -338,6 +365,7 @@
       "image": "../../../assets/img/account/account_6.png",
       "category": "Game Account",
       "description": " Wargame: Red Dragon account you get after purchase is 100% new and never used account\nProvide the original email you can change all information\nLifetime warranty",
+      "color" : "Pink",
       "briefDescription": " Wargame: Red Dragon account you get after purchase is 100% new and never used account\nProvide the original email you can change all information\nLifetime warranty"
     },
     {
@@ -348,6 +376,7 @@
       "image": "../../../assets/img/account/account_7.png",
       "category": "Game Account",
       "description": "The story of A Plague Tale: Innocence takes place in the year 1349 in a fictional France, where millions and millions of rats are sweeping the land day and night.",
+      "color" : "Pink",
       "briefDescription": "A PLAGUE TALE: INNOCENCE"
     },
     {
@@ -358,6 +387,7 @@
       "image": "../../../assets/img/account/account_8.png",
       "category": "Game Account",
       "description": "The Walking Dead Michonne is a zombie killing game built on the idea of ​​the famous movie of the same name,",
+      "color" : "Pink",
       "briefDescription": "THE WALKING DEAD: MICHONNE"
     },
     {
@@ -368,6 +398,7 @@
       "image": "../../../assets/img/account/steam1.png",
       "category": "Game Steam",
       "description": " LEGO STAR WARS:  THE COMPLETE SAGA STEAM CDKEY you get after purchase is 100% new and never used account\nProvide the original email you can change all information\nLifetime warranty",
+      "color" : "Pink",
       "briefDescription": " LEGO STAR WARS: THE COMPLETE SAGA STEAM CDKEY you get after purchase is 100% new and never used account\nProvide the original email you can change all information\nLifetime warranty"
     },
     {
@@ -378,6 +409,7 @@
       "image": "../../../assets/img/account/steam2.png",
       "category": "Game Steam",
       "description": " In Desert Child, you're a young and talented hoverbike racer who needs to figure out how you can make ends meet through races and odd jobs to win a one-way ticket to the Planet. Red to join the biggest race in the universe, Grand Opening.",
+      "color" : "Pink",
       "briefDescription": " In Desert Child, you're a young and talented hoverbike racer who needs to figure out how you can make ends meet through races and odd jobs to win a one-way ticket to the Planet"
     },
     {
@@ -388,6 +420,7 @@
       "image": "../../../assets/img/account/steam3.png",
       "category": "Game Steam",
       "description": " DESERT CHILD STEAM CDKEY: WARHAMMER III is the epilogue to the epic war game trilogy Total War: WARHAMMER. Gather your forces and enter chaotic skirmishes where the fate of the world will be decided by you!",
+      "color" : "Pink",
       "briefDescription": "DESERT CHILD STEAM CDKEY "
     },
     {
@@ -398,6 +431,7 @@
       "image": "../../../assets/img/account/steam4.png",
       "category": "Game Steam",
       "description": " The KOF fighting game series has taken the world to new heights of excitement with its engaging characters and unique game system.",
+      "color" : "Pink",
       "briefDescription": "THE KING OF FIGHTERS XV STANDARD EDITION "
     },
     {
@@ -408,6 +442,7 @@
       "image": "../../../assets/img/account/steam5.png",
       "category": "Game Steam",
       "description": " The KOF fighting game series has taken the world to new heights of excitement with its engaging characters and unique game system.",
+      "color" : "Pink",
       "briefDescription": "THE KING OF FIGHTERS XV STANDARD EDITION "
     },
     {
@@ -418,6 +453,7 @@
       "image": "../../../assets/img/account/steam6.png",
       "category": "Game Steam",
       "description": "Pillars of Eternity: Complete Edition is the most complete console version of the Pillars of Eternity role-playing game, reminiscent of classic names like Baldur's Gate or Neverwinter Nights.",
+      "color" : "Pink",
       "briefDescription": "PILLARS OF ETERNITY on PlayStation 4 and Xbox One "
     },
     {
@@ -428,6 +464,7 @@
       "image": "../../../assets/img/account/steam7.png",
       "category": "Game Steam",
       "description": "Mutant Year Zero: Road to Eden – Deluxe Edition là phiên bản hoàn chỉnh nhất của tựa game nhập vai chiến thuật theo lượt Mutant Year Zero:",
+      "color" : "Pink",
       "briefDescription": "MUTANT YEAR ZERO: ROAD TO EDEN - FAN EDITION "
     },
     {
@@ -438,6 +475,7 @@
       "image": "../../../assets/img/account/steam8.png",
       "category": "Game Steam",
       "description": "Farming Simulator 22 is the latest installment in Giants Software's popular farm game series of the same name, launching globally in November 2021.",
+      "color" : "Pink",
       "briefDescription": "MUTANT YEAR ZERO: ROAD TO EDEN - FAN EDITION "
     },
     {
@@ -448,6 +486,7 @@
       "image": "../../../assets/img/account/origin1.png",
       "category": "Game Origin",
       "description": "Except there's been a crazy, new, strategic conflict between the brainless and the plant warriors that has been going on! What will you do, call the trees, flowers,...?",
+      "color" : "Pink",
       "briefDescription": "PLANTS VS. ZOMBIES: BATTLE FOR NEIGHBORVILLE "
     },
     {
@@ -458,6 +497,7 @@
       "image": "../../../assets/img/account/origin3.png",
       "category": "Game Origin",
       "description": "Crysis 2 is set in modern New York City, which in an instant becomes a fierce battleground between hostile forces inside and outside the planet. In this part, the main character Prophet sacrificed himself by the Manhattan virus infected embryo.",
+      "color" : "Pink",
       "briefDescription": "CRYSIS 2 - MAXIMUM EDITION"
     },
     {
@@ -468,6 +508,7 @@
       "image": "../../../assets/img/account/origin2.png",
       "category": "Game Origin",
       "description": "Taking advantage of this opportunity, developer Visceral Games has released the first DLC of Dead Space 3 called Awakened with content that continues the unfinished story of the official version.",
+      "color" : "Pink",
       "briefDescription": "DEAD SPACE™ 3"
     },
     {
@@ -478,6 +519,7 @@
       "image": "../../../assets/img/account/origin4.png",
       "category": "Game Origin",
       "description": "Far Cry 6 is set to release on February 18, 2021. With just a few months between the release of the next Far Cry and the release of three other big upcoming games from Ubisoft, it's possible the studio is setting it up. for a true repetition of five.",
+      "color" : "Pink",
       "briefDescription": "FAR CRY 6 UBI CDKEY"
     },
     {
@@ -488,6 +530,7 @@
       "image": "../../../assets/img/account/origin5.png",
       "category": "Game Origin",
       "description": "The Battlefield series returns to its roots in a never-before-seen depiction of World War 2. Engage in physical, all-out multiplayer with your team in modes like the massive Grand Operations.",
+      "color" : "Pink",
       "briefDescription": "BATTLEFIELD V ORIGIN CDKEY"
     },
     {
@@ -498,6 +541,7 @@
       "image": "../../../assets/img/account/origin6.png",
       "category": "Game Origin",
       "description": "Battlefield 1 (also known as Battlefield 1 or Flaming Battlefield 1) is a first-person shooter video game developed by EA DICE and published by Electronic Arts. Battlefield 1 is the fifteenth installment in the Battlefield series.",
+      "color" : "Pink",
       "briefDescription": "BATTLEFIELD 1 REVOLUTION ORIGIN CDKEY"
     },
     {
@@ -508,6 +552,7 @@
       "image": "../../../assets/img/account/origin7.png",
       "category": "Game Origin",
       "description": "BATTLE PASS BUNDLE. Please leave your origin account including Email and Password so we can log in to buy Coins You will receive 3150 Apex Coins, then use 2800 Apex Coins to buy Battle Pass Bundle InGame Apex Legends.",
+      "color" : "Pink",
       "briefDescription": "BATTLE PASS BUNDLE APEX LEGENDS SS5"
     },
     {
@@ -518,6 +563,7 @@
       "image": "../../../assets/img/account/origin8.png",
       "category": "Game Origin",
       "description": "At the Battle Royale game event of E3 2021, developer 24 Entertainment has announced the official launch date of the game Naraka: Bladepoint is on August 12. Besides, the developer also revealed that before the official launch, the super product \"PUBG swordplay\" will open the beta test again early this summer.",
+      "color" : "Pink",
       "briefDescription": "BATTLEPASS TIDAL 1360 GOLD NARAKA"
     },
     {
@@ -528,6 +574,7 @@
       "image": "../../../assets/img/account/pubg1.png",
       "category": "PUBG CS",
       "description": "The Campaign quest system has been overhauled - complete your weekly missions and choose from a variety of rewards including new agents, weapon collections, stickers and patches.",
+      "color" : "Pink",
       "briefDescription": "CS:GO - OPERATION RIPTIDE"
     },
     {
@@ -538,6 +585,7 @@
       "image": "../../../assets/img/account/pubg2.png",
       "category": "PUBG CS",
       "description": " VŨ KHÍ & GÓI CẤP ĐỘ CỦA SURVIVOR PASS: CRAZY NIGHT (3.270 G-Coin)\nSurvivor Pass: Crazy Night, SKS, 30 cấp độ\n\n- GÓI VŨ KHÍ CỦA SURVIVOR PASS: CRAZY NIGHT (990 G-Coin)\nSurvivor Pass: Crazy Night, SKS",
+      "color" : "Pink",
       "briefDescription": "SURVIVOR PASS: CRAZY NIGHT"
     },
     {
@@ -548,6 +596,7 @@
       "image": "../../../assets/img/account/pubg3.png",
       "category": "PUBG CS",
       "description": "You go to Pubg.com -> Create a nick on this page -> Log in, link your steam account -> Login, link your Twitch account just sent to your mail -> You go to In Game Pubg -> Store ( Shop ) -> Inventory -> You will see 3 crates opened and used",
+      "color" : "Pink",
       "briefDescription": "PILOT + JUNGLE+ GUNSLINGER SET CRATE PUBG"
     },
     {
@@ -558,6 +607,7 @@
       "image": "../../../assets/img/account/pubg4.png",
       "category": "PUBG CS",
       "description": "CDKEY is only activated for Steam accounts in Vietnam region.\nCDKEY is valid until January 11, 2022, please enter the code before January 11, 2022 to receive the rewards below.\nThe rewards will be automatically credited to your account on the first login after 12/01/2022.",
+      "color" : "Pink",
       "briefDescription": "PUBG PLAYERUNKNOWN'S BATTLEGROUNDS "
     },
     {
@@ -568,6 +618,7 @@
       "image": "../../../assets/img/account/wallet1.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "STEAM WALLET CODE 50 HKD "
     },
     {
@@ -578,6 +629,7 @@
       "image": "../../../assets/img/account/wallet2.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "\nSTEAM WALLET CODE 200 HKD "
     },
     {
@@ -588,6 +640,7 @@
       "image": "../../../assets/img/account/wallet3.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "STEAM WALLET CODE 120 HKD "
     },
     {
@@ -598,6 +651,7 @@
       "image": "../../../assets/img/account/wallet4.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "STEAM WALLET CODE 20€ EURO "
     },
     {
@@ -608,6 +662,7 @@
       "image": "../../../assets/img/account/wallet5.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "STEAM WALLET CODE 44.000 VND "
     },
     {
@@ -618,26 +673,29 @@
       "image": "../../../assets/img/account/wallet5.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "STEAM WALLET CODE 22.000 VNĐ "
     },
     {
       "id": 59,
       "name": "STEAM WALLET CODE 50$ (BEST SELLER)",
       "price": 1030000,
-      "sale_price": 1030000,
+      "sale_price": 500,
       "image": "../../../assets/img/account/wallet6.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "Pink",
       "briefDescription": "STEAM WALLET CODE 50$ (BEST SELLER) "
     },
     {
       "id": 59,
       "name": "STEAM WALLET CODE 100$ (BEST SELLER)",
-      "price": 1030000,
+      "price": 500,
       "sale_price": 1030000,
       "image": "../../../assets/img/account/wallet7.png",
       "category": "STEAM WALLET",
       "description": "BẮT ĐẦU KÍCH HOẠT STEAM WALLET\nBước 1: Đăng nhập vào Steam Client, sau đó bấm vào \"Games\" trên thanh Menu trên cùng.Chọn tiếp Chọn Redeem a Steam Wallet Code...\nBước 3: Nhập Code Wallet mà Trùm Xi Store gửi cho các bạn vào ô và chọn Continue.",
+      "color" : "White",
       "briefDescription": "STEAM WALLET CODE 100$ (BEST SELLER) "
     }
   ],
