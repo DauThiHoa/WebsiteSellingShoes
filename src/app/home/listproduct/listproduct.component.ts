@@ -109,6 +109,10 @@ export class ListProductComponents implements OnInit {
       this.prodSrv.getProduct().subscribe(data =>{
         this.products = data ;
       })
+    }else if(id == 7 ){
+      this.prodSrv.getPrice(7).subscribe(data =>{
+        this.products = data ;
+      })
     }
 
   }
