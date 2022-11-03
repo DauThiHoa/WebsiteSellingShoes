@@ -22,6 +22,7 @@ export class ProductService {
   getProduct(): Observable<Array<Product>>{
     return this.http.get<Array<Product>>(_api + 'product');
   }
+  // Trả về các giá trị có chữ INTERNET => ?q = INTERNET
   /*
   Danh sach
   GET : http://localhost:3000/product
@@ -63,26 +64,72 @@ export class ProductService {
   }
   getPrice (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
 
+    let min;
+    let max;
     let url = '';
     if (count == 7) {
-      this.getProduct().subscribe(data =>{
-        // let price;
-        this.productList = data ;
-      })
+        min = 0 ;
+        max = 500 ;
+        // url = 'http://localhost:3000/product/?price_gte=' + this.price; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+    }else if (count == 8) {
+      min = 500 ;
+      max = 1000 ;
+    }else if (count == 9) {
+      min = 1000 ;
+      max = 2000 ;
+    }else if (count == 10) {
+      min = 2000 ;
+      max = 2500 ;
+    }else if (count == 11) {
+      min = 2500 ;
+      max = 3000 ;
+    }else if (count == 12) {
+      min = 3000 ;
+      max = 3500 ;
+    }else if (count == 13) {
+      min = 3500 ;
+      max = 4000 ;
+    }else if (count == 14) {
+      min = 4000 ;
+      max = 4500 ;
+    }else if (count == 15) {
+      min = 4500 ;
+      max = 5000 ;
+    }else if (count == 16) {
+      min = 5000 ;
+      // max = 5000 ;
     }
-    for (const datum of this.productList) {
-      if (datum.price >= 0 && datum.price <= 500) {
-        this.price = datum.price
-        alert(this.price)
-        url = 'http://localhost:3000/product/?price=' + this.price; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
-        // return this.http.get<Array<Product>> (url);
-      }
+    // console.log("url = " + url)
+    // console.log("price = " + this.price)
+    if (count == 16 ){
+       url = 'http://localhost:3000/product/?price_gte=' + min ;
+    }else {
+       url = 'http://localhost:3000/product/?price_gte=' + min + '&price_lte=' + max  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     }
-    console.log("url = " + url)
-    console.log("price = " + this.price)
-    // let url = 'http://localhost:3000/product/?price=' + price  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     return this.http.get<Array<Product>> (url);
 }
+
+ getColor (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
+
+    let color;
+    let url = '';
+
+       if (count == 17) {
+         color = 'Pink' ;
+       }else if (count == 18) {
+         color = 'Green' ;
+       }else if (count == 19) {
+         color = 'Blue' ;
+       }else if (count == 20) {
+         color = 'Oranges' ;
+       }else if (count == 21) {
+         color = 'White' ;
+       }else if (count == 22) {
+         color = 'Red' ;
+     }
+   url = 'http://localhost:3000/product/?color_like=' +color; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+   return this.http.get<Array<Product>> (url);
+  }
 getSearchName (search_key: string): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
   let url = 'http://localhost:3000/product/?name_like=' + search_key  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
   return this.http.get<Array<Product>> (url);

@@ -109,8 +109,13 @@ export class ListProductComponents implements OnInit {
       this.prodSrv.getProduct().subscribe(data =>{
         this.products = data ;
       })
-    }else if(id == 7 ){
-      this.prodSrv.getPrice(7).subscribe(data =>{
+    }else if(id == 7 || id == 8 || id == 9 || id == 10 || id == 11 || id == 12 || id == 13 || id == 14
+    || id == 15 || id == 16 ){
+      this.prodSrv.getPrice(id).subscribe(data =>{
+        this.products = data ;
+      })
+    }else if(id == 17 || id == 18 || id == 19 || id == 20 || id == 21 || id == 22 ){
+      this.prodSrv.getColor(id).subscribe(data =>{
         this.products = data ;
       })
     }
