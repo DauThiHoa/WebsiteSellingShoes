@@ -4,11 +4,22 @@
 <head>
   <meta charset="utf-8">
   <base href="/">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--  <link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+<!--  /////////////////////////////////////////////////////////         MAIL-->
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+<!--  /////////////////////////////////////////////////////////         MAIL-->
+  <script src="https://apis.google.com/js/api.js"></script>
+
   <link rel="icon" href="assets/img.png" type="image/png" class="icon">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap" rel="stylesheet">
 
+  <meta name="google-signin-client_id" content="YOUR-GOOGLE-APP-ID.apps.googleusercontent.com">
 
   <title>TMĐT - WEBSITE SELLING SHOES</title>
 
@@ -36,12 +47,27 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
+<!--  /////////////////////////////////////// MAIL ////////////////////////////////////////-->
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+  <script src="https://unpkg.com/zone.js@0.6.25?main=browser"></script>
+  <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
+  <script src="https://unpkg.com/systemjs@0.19.27/dist/system.src.js"></script>
+
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app').catch(function(err){ console.error(err); });
+  </script>
+
+  <!--  /////////////////////////////////////// MAIL ////////////////////////////////////////-->
 
 </head>
 <body>
 <div class="container">
   <app-root>
-
+    <my-app>Loading...</my-app>
   </app-root>
 </div>
 

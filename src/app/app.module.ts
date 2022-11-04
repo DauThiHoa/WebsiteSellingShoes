@@ -1,6 +1,9 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "../../code/ng4-social-login-master/src";
+
+// client id for the google login
 
 
 import {AppComponent} from './app.component';
