@@ -5,6 +5,8 @@ import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
 import {HttpService} from "../Shared/http.service";
 
+declare const gapi : any;
+
 ////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
 // // @ts-ignore
 // import nodemailer from 'nodemailer';
@@ -42,7 +44,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private  prodSrv : LoginService ,
               private  route: Router,
-              public http: HttpService ) {}
+              public http: HttpService ) {
+    gapi.load('auth2', function () {
+      gapi.auth2.init()
+    });
+  }
 
   ngOnInit() {
   //  SEND MAIL
