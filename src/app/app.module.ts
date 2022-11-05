@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "ng4-socia";
 // import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "../../code/ng4-social-login-master/src";
-
 // client id for the google login
 
 
@@ -102,6 +102,9 @@ import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    // SocialLoginModule,
+    // AuthServiceConfig,
+    // GoogleLoginProvider
   ],
   imports: [
     // THEM CAC MODULE VOI COMPONENT
@@ -150,8 +153,10 @@ import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
     MdbTransferModule,
     MdbMentionModule,
 
+
     FormsModule,
     ReactiveFormsModule,
+    // SocialLoginModule,
     RouterModule,
     AppRoutingModule,
     ProductModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Cart} from "./models/cart";
 import {ProductService} from "./services/product.service";
 import {CartService} from "./services/cart.service";
@@ -9,6 +9,7 @@ import {HttpService} from "./Shared/http.service";
 import {LoginService} from "./services/login.service";
 import {Login} from "./models/login";
 import { ElementRef, AfterViewInit} from '@angular/core';
+import {GoogleSigninService} from "./google-signin.service";
 declare const gapi: any;
 
 @Component({
@@ -20,7 +21,7 @@ declare const gapi: any;
   // selector: 'google-signin',
   // template: '<button id="googleBtn">Google Sign-In</button>'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   title = 'mdb5-angular-ui-kit-pro-advanced';
   data: any[] = [];
@@ -30,6 +31,9 @@ export class AppComponent {
   productList: Array<Product> = [];
   error: string;
   erro: string;
+
+  // @ts-ignore
+  user : gapi.auth2.GoogleUser;
 
   public searchForm = new FormGroup({
     name: new FormControl(''),
@@ -42,13 +46,19 @@ export class AppComponent {
               private route: Router,
               public http: HttpService,
               public loginSrv: LoginService,
-              private element: ElementRef) {
+              private element: ElementRef,
+              private signInService : GoogleSigninService,
+              private ref : ChangeDetectorRef) {
 
           console.log('ElementRef: ', this.element);
   }
 
   ngOnInit(): void {
 
+    this.signInService.observable().subscribe(user => {
+         this.user = user;
+         this.ref.detectChanges();
+    })
     this.title = 'Hello World';
     this.data = [
       [1, 'Nguyễn Văn A', '18130000', 'DH18DT', 10],
@@ -74,6 +84,13 @@ export class AppComponent {
 
       this.loginOne = data;
     })
+  }
+
+  signIn (){
+      this.signInService.signIn()
+  }
+  signOut (){
+    this.signInService.signOut()
   }
 
   public logOut(): void {

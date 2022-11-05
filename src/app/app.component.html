@@ -19,6 +19,33 @@
   <div class="loader"></div>
 </div>
 
+
+
+<button (click)="signIn()" *ngIf = "user == null">GOOGLE SIGNIN</button>
+<button (click)="signOut()" *ngIf="user != null">GOOGLE SIGNoUT</button>
+<div *ngIf="user != null">
+     <div>Your are signed in with Google! {{user.getBasicProfile()}}</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Offcanvas Menu Begin -->
 <div class="offcanvas-menu-overlay"></div>
 <div class="offcanvas-menu-wrapper">
