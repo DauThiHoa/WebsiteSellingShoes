@@ -99,6 +99,7 @@ export class AuthService {
         providerObject.signOut().then(() => {
           this._user = null;
           this._authState.next(null);
+          // @ts-ignore
           resolve();
         }).catch((err) => {
           this._authState.next(null);
