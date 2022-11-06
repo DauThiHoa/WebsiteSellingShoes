@@ -1,11 +1,13 @@
-import { Component, OnInit } from "@angular/core";
+import {ChangeDetectorRef, Component, OnInit} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
 import {HttpService} from "../Shared/http.service";
 
-declare const gapi : any;
+import {GoogleSigninService} from "../google-signin.service";
+import { ElementRef, AfterViewInit} from '@angular/core';
+declare const gapi: any;
 
 ////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
 // // @ts-ignore
@@ -19,6 +21,9 @@ declare const gapi : any;
 
 export class LoginComponent implements OnInit {
   submited : boolean = false ;
+
+  // @ts-ignore
+  user : gapi.auth2.GoogleUser;
 
   FromLogin = new FormGroup({
     email : new FormControl(""),
@@ -44,8 +49,13 @@ export class LoginComponent implements OnInit {
 
   constructor(private  prodSrv : LoginService ,
               private  route: Router,
-              public http: HttpService ) {
-    gapi.load('auth2', function () {
+              public http: HttpService,
+              private element: ElementRef,
+              private signInService : GoogleSigninService,
+              private ref : ChangeDetectorRef) {
+
+      console.log('ElementRef: ', this.element);
+      gapi.load('auth2', function () {
       gapi.auth2.init()
     });
   }
@@ -53,6 +63,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   //  SEND MAIL
     console.log(this.http.test);
+
+    this.signInService.observable().subscribe(user => {
+      this.user = user;
+      this.ref.detectChanges();
+    })
+
+  }
+
+  signIn (){
+    this.signInService.signIn()
+  }
+  signOut (){
+    this.signInService.signOut()
   }
 
   public onLogin(): void {

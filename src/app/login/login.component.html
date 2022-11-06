@@ -1,6 +1,16 @@
 
 <!--<div id="my-signin2">GOOGLE</div>-->
-<div id="my-signin2">GOOGLE</div>
+
+<button (click)="signIn()" *ngIf = "user == null">GOOGLE SIGNIN</button>
+<button (click)="signOut()" *ngIf="user != null">GOOGLE SIGNOUT</button>
+<div *ngIf="user == null">
+<!--  <div>Your are signed in with Google! {{user.getBasicProfile()}}</div>-->
+    <div>Your are signed out with Google!</div>
+</div>
+<div *ngIf="user != null">
+    <div>Your are signed in with Google! :)))){{user.getBasicProfile()}}</div>
+<!--  <div>Your are signed out with Google!</div>-->
+</div>
 
 <div class="container">
   <div class="formWraper">

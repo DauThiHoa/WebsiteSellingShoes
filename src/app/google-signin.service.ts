@@ -28,7 +28,8 @@ export class GoogleSigninService {
     }).then( user => {
        this.subject.next(user)
     }).catch(() => {
-       // this.subject.next(null)
+      // @ts-ignore
+       this.subject.next(user)
     })
   }
 
@@ -36,7 +37,8 @@ export class GoogleSigninService {
     // @ts-ignore
     this.auth2.signOut()
       .then( () => {
-       // this.subject.next(null)
+        // @ts-ignore
+       this.subject.next(user)
     })
   }
   // @ts-ignore
