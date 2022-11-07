@@ -7,10 +7,9 @@ import {HttpService} from "../Shared/http.service";
 
 import {GoogleSigninService} from "../google-signin.service";
 import { ElementRef, AfterViewInit} from '@angular/core';
-declare const gapi: any;
+// declare const gapi: any;
 
 ////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
-// // @ts-ignore
 // import nodemailer from 'nodemailer';
 
 @Component({
@@ -20,9 +19,10 @@ declare const gapi: any;
 })
 
 export class LoginComponent implements OnInit {
+  title: 'google-signin';
   submited : boolean = false ;
 
-  // @ts-ignore
+
   user : gapi.auth2.GoogleUser;
 
   FromLogin = new FormGroup({
@@ -54,15 +54,15 @@ export class LoginComponent implements OnInit {
               private signInService : GoogleSigninService,
               private ref : ChangeDetectorRef) {
 
-      console.log('ElementRef: ', this.element);
-      gapi.load('auth2', function () {
-      gapi.auth2.init()
-    });
+      // console.log('ElementRef: ', this.element);
+      // gapi.load('auth2', function () {
+      // gapi.auth2.init()
+    // });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   //  SEND MAIL
-    console.log(this.http.test);
+  //   console.log(this.http.test);
 
     this.signInService.observable().subscribe(user => {
       this.user = user;

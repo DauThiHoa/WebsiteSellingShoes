@@ -3,17 +3,16 @@
 
 <!--<p>-->
 <!--  {{title}}-->
-<!--</p>button (click)="signIn('Google')">Sign In With Google</button>-->
+<!--</p>-->
+<!--<button (click)="signIn2('Google')"> Sign In With Google</button>-->
 
-<!--<br></br>-->
-<!--<button (click)="signOut();">Sign Out</button>-->
-<!--<br>-->
-<!--</br>-->
+<!--<button (click)="signOut2();">Sign Out</button>-->
 <!--<div *ngIf="user">-->
-<!--  <img src="{{user.photoUrl}}">-->
-<!--  <h4>{{user.name}}</h4>-->
-<!--  <p>{{user.email}}</p>-->
+<!--  <img src="{{user.getBasicProfile().getImageUrl()}}">-->
+<!--  <h4>{{user.getBasicProfile().getName()}}</h4>-->
+<!--  <p>{{user.getBasicProfile().getEmail()}}</p>-->
 <!--</div>-->
+
 <!-- Page Preloder -->
 <div id="preloder">
   <div class="loader"></div>
@@ -24,7 +23,7 @@
 <button (click)="signIn()" *ngIf = "user == null">GOOGLE SIGNIN</button>
 <button (click)="signOut()" *ngIf="user != null">GOOGLE SIGNoUT</button>
 <div *ngIf="user != null">
-     <div>Your are signed in with Google! {{user.getBasicProfile()}}</div>
+     <div>Your are signed in with Google! {{user.getBasicProfile().getName()}}</div>
 </div>
 
 

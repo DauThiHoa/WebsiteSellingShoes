@@ -8,9 +8,25 @@
     <div>Your are signed out with Google!</div>
 </div>
 <div *ngIf="user != null">
-    <div>Your are signed in with Google! :)))){{user.getBasicProfile()}}</div>
+    <div>Your are signed in with Google! :)))){{user.getBasicProfile().getName()}}</div>
 <!--  <div>Your are signed out with Google!</div>-->
 </div>
+
+<!-- 2 - SendMail-->
+<!--<p>-->
+<!--  {{title}}-->
+<!--</p>-->
+<!--<button (click)="signIn('Google');">Sign In With Google </button>-->
+<!--<br><br>-->
+<!--<button (click)="signOut2()">Sign Out</button>-->
+<!--<br><br>-->
+
+<!--<div *ngIf="user">-->
+<!--&lt;!&ndash;  <img src="{{user.photo}}">&ndash;&gt;-->
+<!--  <h4>{{user.getBasicProfile().getName()}}</h4>-->
+<!--  <p>{{user.getBasicProfile().getEmail()}}</p>-->
+<!--</div>-->
+
 
 <div class="container">
   <div class="formWraper">

@@ -1,10 +1,9 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "ng4-socia";
-// import {SocialLoginModule,AuthServiceConfig,GoogleLoginProvider} from "../../code/ng4-social-login-master/src";
-// client id for the google login
 
+// import {SocialLoginModule,AuthServiceConfig,GoogleLoginProviderc} from "./ng4-social-login-master/src";
+// client id for the google login
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -95,6 +94,7 @@ import {ConProductModule} from "./home/productTLoi/conproduct.module";
 import {ShopModule} from "./Admin/shop/shop.module";
 import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
 
+// @ts-ignore
 @NgModule({
   // declarations: [AppComponent, MyTableComponent, HomeComponents],
   declarations: [AppComponent, MyTableComponent],
@@ -110,6 +110,8 @@ import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
     // THEM CAC MODULE VOI COMPONENT
     // HomeModule
     BrowserModule,
+    // @ts-ignore
+    // SocialLoginModule.initialize (config),
     BrowserAnimationsModule,
     MdbAccordionModule,
     MdbAutocompleteModule,
@@ -195,7 +197,10 @@ import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
     ShopModule,
     ShopRoutingModule,
   ],
-  providers: [MdbCookiesManagementService, MdbStorageManagementService,HttpService],
+  providers: [
+    MdbCookiesManagementService,
+    MdbStorageManagementService,
+    HttpService],
   entryComponents: [DogComponent,CowComponent,CatComponent],
   bootstrap: [AppComponent],
 })

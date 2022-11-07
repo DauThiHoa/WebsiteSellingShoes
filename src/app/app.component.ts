@@ -10,6 +10,10 @@ import {LoginService} from "./services/login.service";
 import {Login} from "./models/login";
 import { ElementRef, AfterViewInit} from '@angular/core';
 import {GoogleSigninService} from "./google-signin.service";
+
+
+// import signIn = gapi.auth.signIn;
+// import {response} from "express";
 declare const gapi: any;
 
 @Component({
@@ -32,7 +36,7 @@ export class AppComponent implements OnInit{
   error: string;
   erro: string;
 
-  // @ts-ignore
+
   user : gapi.auth2.GoogleUser;
 
   public searchForm = new FormGroup({
@@ -48,10 +52,31 @@ export class AppComponent implements OnInit{
               public loginSrv: LoginService,
               private element: ElementRef,
               private signInService : GoogleSigninService,
-              private ref : ChangeDetectorRef) {
+              private ref : ChangeDetectorRef ) {
 
-          console.log('ElementRef: ', this.element);
+          // console.log('ElementRef: ', this.element);
+
   }
+  // METHOD To Actually signin with google
+  // signIn2(platform: string):void
+  // {
+  //   platform = GoogleLoginProvider.PROVIDER_ID;
+  //
+  //   this.socioAuthServ.signIn(platform).then((response)=>{
+  //     console.log(platform + "logged in user data is = " , response);
+  //
+  //     this.user2 = response;
+  //   }
+  //   )
+  //  }
+
+   // SignOut method to let the user signout of their account
+
+  // signOut2 ():void {
+  //   this.socioAuthServ.signOut();
+  //
+  //   console.log("User Signed Out");
+  // }
 
   ngOnInit(): void {
 
