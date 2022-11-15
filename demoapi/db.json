@@ -23,8 +23,8 @@
   ],
   "login": [
     {
-      "name": "Đậu Điệp",
-      "email": "daudiep2003@gmail.com",
+      "name": "Đậu Hoa",
+      "email": "19130075@st.hcmuaf.edu.vn",
       "password": "12345",
       "id": 0
     },
@@ -39,6 +39,17 @@
       "email": "daudiep2003@gmail.com",
       "password": "12345",
       "id": 2
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "fullName": "ĐẬU HOA",
+      "email": "191300751@st.hcmuaf.edu.vn",
+      "passWord": "123456",
+      "phoneNo": "00222323232",
+      "message": "QƯERTYUIOPASDFGHJKL",
+      "selectCountry": "Vietnam"
     }
   ],
   "product": [

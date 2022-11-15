@@ -46,6 +46,7 @@ const routers: Routes = [
 
   // tmdt
   {path: '', pathMatch: 'full', redirectTo: '/shop'},
+  {path: '', pathMatch: 'full', redirectTo: '/profile'},
 ];
 
 const child: Routes = [

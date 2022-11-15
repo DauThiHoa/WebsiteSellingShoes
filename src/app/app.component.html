@@ -20,11 +20,11 @@
 
 
 
-<button (click)="signIn()" *ngIf = "user == null">GOOGLE SIGNIN</button>
-<button (click)="signOut()" *ngIf="user != null">GOOGLE SIGNoUT</button>
-<div *ngIf="user != null">
-     <div>Your are signed in with Google! {{user.getBasicProfile().getName()}}</div>
-</div>
+<!--<button (click)="signIn()" *ngIf = "user == null">GOOGLE SIGNIN</button>-->
+<!--<button (click)="signOut()" *ngIf="user != null">GOOGLE SIGNoUT</button>-->
+<!--<div *ngIf="user != null">-->
+<!--     <div>Your are signed in with Google! {{user.getBasicProfile().getName()}}</div>-->
+<!--</div>-->
 
 
 
@@ -75,7 +75,7 @@
     <div class="row">
       <div class="col-xl-2 col-lg-2">
         <div class="header__logo">
-          <a [routerLink]="['/home']" ><img src="../assets/img/logo.png" alt=""></a>
+          <a [routerLink]="['/home']" ><img style="width: 80% ; height: 80%" src="../assets/img/logo.png" alt=""></a>
         </div>
       </div>
       <div class="col-xl-7 col-lg-7">
@@ -171,7 +171,7 @@
             <nav class="header__menu" >
               <ul  >
 
-                <li ><i style="margin-right: 5%; margin-left: -10%" class="far fa-user login"></i>
+                <li ><i (click)="admin()" style="margin-right: 5%; margin-left: -10%" class="far fa-user login"><span style="text-transform:capitalize; ">{{loginOne.name}}</span></i>
                   <ul class="dropdown" style=" background: #00bcd4 ; margin-left: -50%; width: 260px; color: black">
                     <li style="color: black ; text-align: center"><a >Name : {{loginOne.name}}</a> </li>
                     <li style="color: black ; text-align: center"><a >Email : {{loginOne.email}}</a></li>
