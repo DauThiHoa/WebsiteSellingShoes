@@ -93,6 +93,8 @@ import {ConProductModule} from "./home/productTLoi/conproduct.module";
 // tmdt
 import {ShopModule} from "./Admin/shop/shop.module";
 import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
+import {ProfileModule} from "./Admin/profile/profile.module";
+import {ProfileRoutingModule} from "./Admin/profile/profile-routing.module";
 
 // @ts-ignore
 @NgModule({
@@ -196,6 +198,9 @@ import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
 
     ShopModule,
     ShopRoutingModule,
+    ProfileModule,
+    ProfileRoutingModule,
+
   ],
   providers: [
     MdbCookiesManagementService,

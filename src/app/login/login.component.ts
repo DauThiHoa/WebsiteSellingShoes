@@ -7,6 +7,7 @@ import {HttpService} from "../Shared/http.service";
 
 import {GoogleSigninService} from "../google-signin.service";
 import { ElementRef, AfterViewInit} from '@angular/core';
+import {ProfileService} from "../services/profile.service";
 // declare const gapi: any;
 
 ////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
@@ -21,7 +22,6 @@ import { ElementRef, AfterViewInit} from '@angular/core';
 export class LoginComponent implements OnInit {
   title: 'google-signin';
   submited : boolean = false ;
-
 
   user : gapi.auth2.GoogleUser;
 
@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
   ]);
 
   constructor(private  prodSrv : LoginService ,
+              private  profileSrv : ProfileService ,
               private  route: Router,
               public http: HttpService,
               private element: ElementRef,
@@ -91,6 +92,8 @@ export class LoginComponent implements OnInit {
           if(datum.email == this.FromLogin.controls.email.value && datum.password == this.FromLogin.controls.password.value){
             // this.route.navigate(['/home']);
             this.prodSrv.update(0, datum).subscribe(data => { });
+            this.profileSrv.update(1, datum).subscribe(data => { });
+
             location.replace("/home");
             return;
             // location.reload();

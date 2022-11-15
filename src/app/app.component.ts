@@ -35,7 +35,7 @@ export class AppComponent implements OnInit{
   productList: Array<Product> = [];
   error: string;
   erro: string;
-
+  loginAdmin : Login;
 
   user : gapi.auth2.GoogleUser;
 
@@ -123,6 +123,20 @@ export class AppComponent implements OnInit{
     });
     location.reload();
   }
+
+
+  public admin() {
+
+   this.loginSrv.getOne(0).subscribe(data =>{
+     this.loginAdmin = data ;
+     if (this.loginAdmin.email == undefined ){
+       location.replace('../login');
+     }else {
+       location.replace('../shop');
+     }
+   })
+  }
+
 
   onSearch(id: number) {
     // alert(this.searchForm.value.name);
