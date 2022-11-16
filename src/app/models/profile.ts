@@ -1,8 +1,8 @@
 export class Profile {
   id: number ;
-  fullName: string ;
+  name: string ;
   email: string ;
-  passWord: string ;
+  password: string ;
   phoneNo : string  ;
   message : string ;
   selectCountry: string ;
