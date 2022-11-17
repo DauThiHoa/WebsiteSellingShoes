@@ -1,0 +1,181 @@
+
+<div class="preloader">
+  <div class="lds-ripple">
+    <div class="lds-pos"></div>
+    <div class="lds-pos"></div>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+  <aside class="left-sidebar" data-sidebarbg="skin6" style="margin-top: 9%">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar" style="margin-top: -30%">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav">
+        <ul id="sidebarnav">
+          <!-- User Profile-->
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="index.html" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                                                                  aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="pages-profile.html" aria-expanded="false">
+            <i class="me-3 fa fa-user" aria-hidden="true"></i><span
+            class="hide-menu">Profile</span></a>
+          </li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="table-basic.html" aria-expanded="false"><i class="me-3 fa fa-table"
+                                                                                        aria-hidden="true"></i><span class="hide-menu">Table</span></a></li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="icon-fontawesome.html" aria-expanded="false"><i class="me-3 fa fa-font"
+                                                                                             aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="map-google.html" aria-expanded="false"><i class="me-3 fa fa-globe"
+                                                                                       aria-hidden="true"></i><span class="hide-menu">Google Map</span></a></li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="pages-blank.html" aria-expanded="false"><i class="me-3 fa fa-columns"
+                                                                                        aria-hidden="true"></i><span class="hide-menu">Blank</span></a></li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       href="pages-error-404.html" aria-expanded="false"><i class="me-3 fa fa-info-circle"
+                                                                                            aria-hidden="true"></i><span class="hide-menu">Error 404</span></a></li>
+          <li class="text-center p-20 upgrade-btn">
+            <a href="https://www.wrappixel.com/templates/monsteradmin/"
+               class="btn btn-danger text-white mt-4" target="_blank">Upgrade to
+              Pro</a>
+          </li>
+        </ul>
+
+      </nav>
+      <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+  </aside>
+  <!-- ============================================================== -->
+  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-8 align-self-center">
+          <h3 class="page-title mb-0 p-0">Table</h3>
+          <div class="d-flex align-items-center">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Table</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="col-md-6 col-4 align-self-center">
+          <div class="text-end upgrade-btn">
+            <a href="https://www.wrappixel.com/templates/monsteradmin/"
+               class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to
+              Pro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Purchase History</h4>
+<!--              <h6 class="card-subtitle">Add class <code>.table</code></h6>-->
+              <div class="table-responsive">
+                <table class="table user-table no-wrap">
+                  <thead>
+                  <tr>
+                    <th class="border-top-0">Code Orders</th>
+                    <th class="border-top-0">Status</th>
+                    <th class="border-top-0">First Name</th>
+                    <th class="border-top-0">Last Name</th>
+                    <th class="border-top-0">Address</th>
+
+                    <th class="border-top-0">Post Code</th>
+                    <th class="border-top-0">Phone</th>
+                    <th class="border-top-0">Email</th>
+                    <th class="border-top-0">Payment Methods</th>
+
+                    <th class="border-top-0">Account Number</th>
+                    <th class="border-top-0">Total Money</th>
+                    <th class="border-top-0">Order Date</th>
+                    <th class="border-top-0">Receipt Date</th>
+
+                    <th class="border-top-0">Delete</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let bill of billingList">
+
+                    <td>SO{{bill.id}}</td>
+                    <td>{{today}}</td>
+                    <td>{{bill.firstName}}</td>
+                    <td>{{bill.lastName}}</td>
+                    <td>{{bill.address}}</td>
+
+                    <td>{{bill.postcode}}</td>
+                    <td>{{bill.phone}}</td>
+                    <td>{{bill.email}}</td>
+                    <td>{{bill.paymentMethods}}</td>
+
+                    <td>{{bill.accountNumber}}</td>
+                    <td style="font-weight: bold; color: black">{{bill.totalMoney}}</td>
+                    <td style="font-weight: bold; color: #00bfa5">{{bill.orderDate}}</td>
+                    <td style="font-weight: bold; color: #00bfa5">{{bill.receiptDate}}</td>
+
+                    <td>
+                      &nbsp; &nbsp;&nbsp; <a  [routerLink]="['/history']" (click)="onDelete(bill.id)" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page wrapper  -->
+  <!-- ============================================================== -->
+</div>

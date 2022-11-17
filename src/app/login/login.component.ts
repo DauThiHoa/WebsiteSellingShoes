@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, OnInit} from "@angular/core";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
@@ -8,6 +8,7 @@ import {HttpService} from "../Shared/http.service";
 import {GoogleSigninService} from "../google-signin.service";
 import { ElementRef, AfterViewInit} from '@angular/core';
 import {ProfileService} from "../services/profile.service";
+import {HttpHeaders} from "@angular/common/http";
 // declare const gapi: any;
 
 ////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
@@ -77,6 +78,20 @@ export class LoginComponent implements OnInit {
   }
   signOut (){
     this.signInService.signOut()
+  }
+
+  onSubmit() {
+    if (this.FromLogin.valid) {
+      const email = this.FromLogin.value;
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      this.http.post('https://formspree.io/asdlf7asdf',
+        { name: email.name, replyto: email.email, message: email.messages },
+        { 'headers': headers }).subscribe(
+        (response: any) => {
+          console.log(response);
+        }
+      );
+    }
   }
 
   public onLogin(): void {

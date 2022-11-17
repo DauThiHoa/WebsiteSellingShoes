@@ -95,6 +95,10 @@ import {ShopModule} from "./Admin/shop/shop.module";
 import {ShopRoutingModule} from "./Admin/shop/shop-routing.module";
 import {ProfileModule} from "./Admin/profile/profile.module";
 import {ProfileRoutingModule} from "./Admin/profile/profile-routing.module";
+import {HistoryModule} from "./Admin/history/history.module";
+import {HistoryRoutingModule} from "./Admin/history/history-routing.module";
+import {EmailModule} from "./Admin/email/email.module";
+import {EmailRoutingModule} from "./Admin/email/email-routing.module";
 
 // @ts-ignore
 @NgModule({
@@ -200,6 +204,11 @@ import {ProfileRoutingModule} from "./Admin/profile/profile-routing.module";
     ShopRoutingModule,
     ProfileModule,
     ProfileRoutingModule,
+    HistoryModule,
+    HistoryRoutingModule,
+    EmailModule,
+    EmailRoutingModule,
+
 
   ],
   providers: [

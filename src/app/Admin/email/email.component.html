@@ -1,0 +1,50 @@
+
+
+<form >
+  <input type="text" >
+  <label>First Name</label>
+
+  <input type="text" >
+  <label>Last Name</label>
+
+  <button (click)="onMail()">SUBMIT</button>
+
+</form>
+
+<button onclick="k()" >gggggggg</button>
+
+<script>
+
+  function k() {
+    alert("kkkkkkkkkkkkk")
+  }
+
+  function onMail () {
+  const nodemailer = require('nodemailer');
+
+  let mailTransporter = nodemailer.createTransport({
+    service: "gmail",
+    auth:{
+      user: "daudiep2003@gmail.com",
+      pass: "kxiunzutpxcvbbhf"
+    }
+  })
+
+  let details = {
+    from: "daudiep2003@gmail.com",
+    to : "daudiep2003@gmail.com",
+    subject: "testing our nodemailer",
+    text: "testing out first sender"
+  }
+  mailTransporter.sendMail(details, (err) => {
+    if (err) {
+      console.log("it has an error", err);
+      alert("it has an error", err);
+    } else {
+      console.log("email has send !");
+      alert("email has send !");
+    }
+  })
+}
+
+</script>

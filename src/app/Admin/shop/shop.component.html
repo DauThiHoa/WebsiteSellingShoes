@@ -16,81 +16,7 @@
   <!-- ============================================================== -->
   <!-- Topbar header - style you can find in pages.scss -->
   <!-- ============================================================== -->
-<!--  <header class="topbar" data-navbarbg="skin6">-->
-<!--    <nav class="navbar top-navbar navbar-expand-md navbar-dark">-->
-<!--      <div class="navbar-header" data-logobg="skin6">-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; Logo &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <a class="navbar-brand" href="index.html">-->
-<!--          &lt;!&ndash; Logo icon &ndash;&gt;-->
-<!--          <b class="logo-icon">-->
-<!--            &lt;!&ndash;You can put here icon as well // <i class="wi wi-sunset"></i> //&ndash;&gt;-->
-<!--            &lt;!&ndash; Dark Logo icon &ndash;&gt;-->
-<!--            <img src="assets/5.png" alt="homepage" class="dark-logo" style="width: 30%; height: 30%; margin-left: 35%"/>-->
-
-<!--          </b>-->
-<!--          &lt;!&ndash;End Logo icon &ndash;&gt;-->
-<!--          &lt;!&ndash; Logo text &ndash;&gt;-->
-<!--&lt;!&ndash;          <span class="logo-text">&ndash;&gt;-->
-<!--&lt;!&ndash;                            &lt;!&ndash; dark Logo text &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                            <img src="../assets/img/logo.png" alt="homepage" class="dark-logo" />&ndash;&gt;-->
-
-<!--&lt;!&ndash;                        </span>&ndash;&gt;-->
-<!--        </a>-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; End Logo &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; toggle and nav items &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"-->
-<!--           href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>-->
-<!--      </div>-->
-<!--      &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--      &lt;!&ndash; End Logo &ndash;&gt;-->
-<!--      &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--      <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">-->
-
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; toggle and nav items &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <ul class="navbar-nav me-auto mt-md-0 ">-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--          &lt;!&ndash; Search &ndash;&gt;-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-
-<!--          <li class="nav-item hidden-sm-down">-->
-<!--            <form class="app-search ps-3">-->
-<!--              <input type="text" class="form-control" placeholder="Search for..."> <a-->
-<!--              class="srh-btn"><i class="ti-search"></i></a>-->
-<!--            </form>-->
-<!--          </li>-->
-<!--        </ul>-->
-
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; Right side toggle and nav items &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <ul class="navbar-nav">-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--          &lt;!&ndash; User profile and search &ndash;&gt;-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--          <li class="nav-item dropdown">-->
-<!--            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--              <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe-->
-<!--            </a>-->
-<!--            <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </nav>-->
-<!--  </header>-->
-  <!-- ============================================================== -->
-  <!-- End Topbar header -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
+   <!-- ============================================================== -->
   <aside class="left-sidebar" data-sidebarbg="skin6" style="margin-top: 9%">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar" style="margin-top: -30%">
@@ -99,12 +25,17 @@
         <ul id="sidebarnav">
           <!-- User Profile-->
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       [routerLink]="['/shop']" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                       [routerLink]="['/shop']" aria-expanded="false"><i style="color: #00bcd4; font-weight: bold" class="me-3 far fa-clock fa-fw"
                                                                                   aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                        [routerLink]="['/profile']"  aria-expanded="false">
-            <i class="me-3 fa fa-user" aria-hidden="true"></i><span
+            <i style="color: orangered; font-weight: bold"  class="me-3 fa fa-user" aria-hidden="true"></i><span
             class="hide-menu">Profile</span></a>
+          </li>
+          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                       [routerLink]="['/history']"  aria-expanded="false">
+            <i style="color: #00bfa5; font-weight: bold"  class="me-3 fas fa-list-alt" aria-hidden="true"></i><span
+            class="hide-menu">History</span></a>
           </li>
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                        href="table-basic.html" aria-expanded="false"><i class="me-3 fa fa-table"
