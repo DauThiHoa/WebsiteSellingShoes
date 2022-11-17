@@ -44,6 +44,7 @@ export class CheckOutComponent implements OnInit {
     accountNumber : new FormControl(''),
     orderDate: new FormControl(this.date),
     receiptDate : new FormControl(this.dateReceipt),
+    status : new FormControl(),
     totalMoney : new FormControl(this.totalMoney),
   });
 

@@ -5,6 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class HttpService {
+  [x: string]: any;
   test = "How r u?";
   constructor(private http: HttpClient) {}
 
