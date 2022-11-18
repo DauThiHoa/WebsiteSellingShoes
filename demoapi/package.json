@@ -2,11 +2,12 @@
   "name": "demoapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "sendmail.js",
   "scripts": {
     "db": "json-server --watch ./db.json"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "nodemailer" : "^5.1.1"
 }

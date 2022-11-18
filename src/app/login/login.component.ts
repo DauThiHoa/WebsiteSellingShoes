@@ -81,17 +81,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.FromLogin.valid) {
-      const email = this.FromLogin.value;
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      this.http.post('https://formspree.io/asdlf7asdf',
-        { name: email.name, replyto: email.email, message: email.messages },
-        { 'headers': headers }).subscribe(
-        (response: any) => {
-          console.log(response);
-        }
-      );
-    }
+
   }
 
   public onLogin(): void {

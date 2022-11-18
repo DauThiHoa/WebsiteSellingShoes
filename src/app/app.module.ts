@@ -99,6 +99,10 @@ import {HistoryModule} from "./Admin/history/history.module";
 import {HistoryRoutingModule} from "./Admin/history/history-routing.module";
 import {EmailModule} from "./Admin/email/email.module";
 import {EmailRoutingModule} from "./Admin/email/email-routing.module";
+import { EmailFormComponent } from './email-form/email-form.component';
+import {EmailFormModule} from "./email-form/email-form.module";
+import {EmailFormRoutingModule} from "./email-form/email-form-routing.module";
+import {EmailService} from "./email.service";
 
 // @ts-ignore
 @NgModule({
@@ -116,6 +120,7 @@ import {EmailRoutingModule} from "./Admin/email/email-routing.module";
     // THEM CAC MODULE VOI COMPONENT
     // HomeModule
     BrowserModule,
+    HttpClientModule,
     // @ts-ignore
     // SocialLoginModule.initialize (config),
     BrowserAnimationsModule,
@@ -208,17 +213,19 @@ import {EmailRoutingModule} from "./Admin/email/email-routing.module";
     HistoryRoutingModule,
     EmailModule,
     EmailRoutingModule,
+    EmailFormModule,
+    EmailFormRoutingModule,
 
 
   ],
   providers: [
     MdbCookiesManagementService,
     MdbStorageManagementService,
-    HttpService],
+    HttpService,
+    EmailService],
   entryComponents: [DogComponent,CowComponent,CatComponent],
   bootstrap: [AppComponent],
 })
-
 
 export class AppModule {
 

@@ -1,56 +1,57 @@
-
-require("dotenv").config();
 const express = require("express");
-const nodeMail = require("nodemailer");
-const path = require("path");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+
+const details = require("./details.json");
 
 const app = express();
+app.use(cors({ origin: "*" }));
+app.use(bodyParser.json());
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.listen(3000, () => {
+  console.log("The server started on port 3000 !!!!!!");
+});
 
-async function mainMail(name, email, subject, message) {
-  const transporter = await nodeMail.createTransport({
-    service: "gmail",
-    auth: {
-      user: "daudiep2003@gmail.com",
-      pass: "diepthanhcong",
-    },
+app.get("/", (req, res) => {
+  res.send(
+    "<h1 style='text-align: center'>Wellcome to FunOfHeuristic <br><br>😃👻😃👻😃👻😃👻😃</h1>"
+  );
+});
+
+app.post("/sendmail", (req, res) => {
+  console.log("request came");
+  let user = req.body;
+  sendMail(user, info => {
+    console.log(`The mail has beed send 😃 and the id is ${info.messageId}`);
+    res.send(info);
   });
-  const mailOption = {
-    from: "daudiep2003@gmail.com",
-    to: "daudiep2003@gmail.com",
-    subject: subject,
-    html: `You got a message from
-    Email : ${email}
-    Name: ${name}
-    Message: ${message}`,
+});
+
+async function sendMail(user, callback) {
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: details.email,
+      pass: details.password
+    }
+  });
+
+  let mailOptions = {
+    from: '"Fun Of Heuristic"<example.gimail.com>', // sender address
+    to: user.email, // list of receivers
+    subject: "Wellcome to Fun Of Heuristic 👻", // Subject line
+    html: `<h1>Hi ${user.name}</h1><br>
+    <h4>Thanks for joining us</h4>`
   };
-  try {
-    await transporter.sendMail(mailOption);
-    return Promise.resolve("Message Sent Successfully!");
-  } catch (error) {
-    return Promise.reject(error);
-  }
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail(mailOptions);
+
+  callback(info);
 }
 
-app.get("/email.component", (req, res) => {
-  res.render(email.component.html);
-});
-
-app.get("/email.component", (req, res) => {
-  res.render(email.component.html);
-});
-
-app.post("/email.component", async (req, res, next) => {
-  const { yourname, youremail, yoursubject, yourmessage } = req.body;
-  try {
-    await mainMail(yourname, youremail, yoursubject, yourmessage);
-
-    res.send("Message Successfully Sent!");
-  } catch (error) {
-    res.send("Message Could not be Sent");
-  }
-});
-
-app.listen(3000, () => console.log("Server is running!"));
+// main().catch(console.error);

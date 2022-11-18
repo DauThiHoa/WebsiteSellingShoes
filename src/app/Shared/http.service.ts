@@ -5,20 +5,21 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class HttpService {
-  [x: string]: any;
+  post(arg0: string, data: { to: string; subject: string; txt: string; }) {
+      throw new Error('Method not implemented.');
+  }
   test = "How r u?";
   constructor(private http: HttpClient) {}
 
-  httpGet(url : string) {
+  httpGet(url: any) {
     return this.http.get(url);
   }
 
-  httpPost(url : string , {}) {
+  httpPost(url: any, {}) {
     return this.http.post(url, { name: "Subrat" });
   }
 
-  sendEmail(url : string , data : any) {
-    alert("3 : " + url + " = " + data )
+  sendEmail(url : any, data : any) {
     return this.http.post(url, data);
   }
 }
