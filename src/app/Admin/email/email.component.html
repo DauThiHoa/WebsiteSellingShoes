@@ -1,50 +1,36 @@
+<form style="width: 50%; margin: auto">
 
+  <div>
+    <h1>Material Form</h1>
 
-<form >
-  <input type="text" >
-  <label>First Name</label>
+    <div style="width: 100%">
+      <input placeholder="Name" [formControl]="nameFormControl" />
+      <div *ngIf="nameFormControl.hasError('minlength')">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </div>
+    </div>
 
-  <input type="text" >
-  <label>Last Name</label>
+    <div style="width: 100%">
+      <input placeholder="Email" [formControl]="emailFormControl"/>
+      <div *ngIf="emailFormControl.hasError('email')">
+        Please enter a valid email address
+      </div>
+      <div *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </div>
+    </div>
 
-  <button (click)="onMail()">SUBMIT</button>
-
+    <button
+      [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading"
+      style="color: #00bcd4 "
+      class="primary"
+      (click)="register()"
+    >
+      {{buttionText}} submit
+    </button>
+  </div>
 </form>
-
-<button onclick="k()" >gggggggg</button>
-
-<script>
-
-  function k() {
-    alert("kkkkkkkkkkkkk")
-  }
-
-  function onMail () {
-  const nodemailer = require('nodemailer');
-
-  let mailTransporter = nodemailer.createTransport({
-    service: "gmail",
-    auth:{
-      user: "daudiep2003@gmail.com",
-      pass: "kxiunzutpxcvbbhf"
-    }
-  })
-
-  let details = {
-    from: "daudiep2003@gmail.com",
-    to : "daudiep2003@gmail.com",
-    subject: "testing our nodemailer",
-    text: "testing out first sender"
-  }
-  mailTransporter.sendMail(details, (err) => {
-    if (err) {
-      console.log("it has an error", err);
-      alert("it has an error", err);
-    } else {
-      console.log("email has send !");
-      alert("email has send !");
-    }
-  })
-}
-
-</script>
+<!-- <button [routerLink]="['/profile', 12367]">Go to Profile</button> -->

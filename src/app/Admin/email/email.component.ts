@@ -6,7 +6,7 @@ import {Product} from "../../models/product";
 import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
-import {FormControl, FormGroup, NgForm} from "@angular/forms";
+import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 import {LoginService} from "../../services/login.service";
 import {Login} from "../../models/login";
@@ -14,7 +14,7 @@ import {Profile} from "../../models/profile";
 import {ProfileService} from "../../services/profile.service";
 import {BillingService} from "../../services/billing.service";
 import {Billing} from "../../models/billing";
-
+import {HttpService} from "../../Shared/http.service";
 
 @Component({
   selector: 'app-test',
@@ -30,6 +30,23 @@ export class EmailComponents implements OnInit {
   billingList :Array<Billing> = [];
   status : string;
   today = new Date();
+
+  image =
+    "https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg";
+  // name1 = st;
+  // age = int ;
+  loading = false;
+  buttionText = "Submit";
+
+  emailFormControl = new FormControl("", [
+    Validators.required,
+    Validators.email
+  ]);
+
+  nameFormControl = new FormControl("", [
+    Validators.required,
+    Validators.minLength(4)
+  ]);
 
   FromProfile = new FormGroup({
     id: new FormControl(1),
@@ -73,11 +90,14 @@ export class EmailComponents implements OnInit {
               private route: Router,
               public loginSrv: LoginService ,
               public profileSrv: ProfileService ,
-              public billingSrv: BillingService , ) {
+              public billingSrv: BillingService ,
+              public http: HttpService) {
 
   }
 
   ngOnInit(): void {
+    console.log(this.http.test);
+
     // LAY DU LIEU VAO TRANG HOME
     this.bannerService.getBanners()
       .subscribe(res => {
@@ -229,19 +249,19 @@ export class EmailComponents implements OnInit {
     })
   }
 
-  sendMail() {
+  sendMail1() {
     const data = {
       to: 'daudiep2003@gmail.com',
       subject: 'Subject',
       txt: 'hello world'
     };
 
+    // @ts-ignore
     return this.http.post('/api/mail', data).map((response: Response) =>{
       console.log (response.json());
       alert("lllllllllll");
     })
   }
-
 
   onMail () {
 
@@ -273,5 +293,31 @@ export class EmailComponents implements OnInit {
 
   }
 
+  register() {
+    this.loading = true;
+    this.buttionText = "Submiting...";
+    alert("nameFormControl : " + this.nameFormControl.value + " emailFormControl : " + this.emailFormControl.value);
+
+    let user = {
+      name: this.nameFormControl.value,
+      email: this.emailFormControl.value
+    }
+    this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+      data => {
+        let res:any = data;
+        console.log(
+          `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
+        );
+      },
+      err => {
+        console.log(err);
+        this.loading = false;
+        this.buttionText = "Submit";
+      },() => {
+        this.loading = false;
+        this.buttionText = "Submit";
+      }
+    );
+  }
 
 }
