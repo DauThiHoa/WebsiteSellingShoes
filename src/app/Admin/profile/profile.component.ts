@@ -140,6 +140,7 @@ export class ProfileComponents implements OnInit {
         for (const datum of data) {
             if ( datum.email == this.FromProfile.value.email){
               this.loginSrv.update(datum.id, this.FromLogin.value).subscribe(data => {
+                location.reload();
               });
             }
         }

@@ -107,7 +107,7 @@
                   <thead>
                   <tr>
                     <th class="border-top-0">Code Orders</th>
-                    <th class="border-top-0">Status</th>
+
                     <th class="border-top-0">First Name</th>
                     <th class="border-top-0">Last Name</th>
                     <th class="border-top-0">Address</th>
@@ -122,15 +122,17 @@
                     <th class="border-top-0">Order Date</th>
                     <th class="border-top-0">Receipt Date</th>
 
-                    <th class="border-top-0">Delete</th>
+                    <th class="border-top-0">Status</th>
+<!--                    <th class="border-top-0">Edit</th>-->
+<!--                    <th class="border-top-0">Delete</th>-->
 
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let bill of billingList">
+                    <tr *ngFor="let bill of billingList">
+<!--                      <form action="" method="POST" role="form" [formGroup]="updateStatus" (ngSubmit)="onChangeStatus(bill.id)"  class="checkout__form">-->
 
                     <td>SO{{bill.id}}</td>
-                    <td>{{today}}</td>
                     <td>{{bill.firstName}}</td>
                     <td>{{bill.lastName}}</td>
                     <td>{{bill.address}}</td>
@@ -144,11 +146,16 @@
                     <td style="font-weight: bold; color: black">{{bill.totalMoney}}</td>
                     <td style="font-weight: bold; color: #00bfa5">{{bill.orderDate}}</td>
                     <td style="font-weight: bold; color: #00bfa5">{{bill.receiptDate}}</td>
-
+                      <td>
+                        <form action="" method="POST" role="form" [formGroup]="updateStatus" (ngSubmit) ="onChangeStatus(bill.id)"  class="checkout__form">
+                          <input style="float: left; clear: right; margin-right: 70%; width: 250%" required type="text" class="form-control" formControlName="status" placeholder="{{bill.status}}" value="{{bill.status}}">
+                          <button type="submit" class="btn btn-sm btn-primary">Edit</button>
+                        </form>
+                      </td>
                     <td>
-                      &nbsp; &nbsp;&nbsp; <a  [routerLink]="['/history']" (click)="onDelete(bill.id)" class="btn btn-sm btn-danger">Delete</a>
+                      &nbsp; &nbsp;&nbsp; <a style="margin-left: 150%"  [routerLink]="['/history']" (click)="onDelete(bill.id)" class="btn btn-sm btn-danger">Delete</a>
                     </td>
-
+<!--                      </form>-->
                   </tr>
 
                   </tbody>

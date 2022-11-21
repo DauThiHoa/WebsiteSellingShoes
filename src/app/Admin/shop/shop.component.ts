@@ -8,6 +8,8 @@ import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
+import {BillingService} from "../../services/billing.service";
+import {Billing} from "../../models/billing";
 
 @Component({
   selector: 'app-test',
@@ -17,6 +19,7 @@ import {CartService} from "../../services/cart.service";
 export class ShopComponents implements OnInit {
   submited: boolean = false;
   data: any[];
+  result : boolean;
 
   // constructor(private productService:ProductService) { }
   //
@@ -30,8 +33,12 @@ export class ShopComponents implements OnInit {
   category : Array<Category> = new Array<Category>();
 
   productsList : Array<Product> = [];
+  billingList : Array<Billing> = [];
 
   cartFormOneQuantity: FormGroup = new FormGroup({
+  });
+  FromDate = new FormGroup({
+    date: new FormControl(''),
   });
 
   constructor(private bannerService:BannerService ,
@@ -39,7 +46,8 @@ export class ShopComponents implements OnInit {
               private productService:ProductService,
               private categoryService:CategoryService,
               private prodSrv : ProductService,
-              private route: Router) { }
+              private route: Router,
+              private billingSrc : BillingService) { }
 
 
   ngOnInit(): void {
@@ -61,8 +69,31 @@ export class ShopComponents implements OnInit {
     this.prodSrv.getList().subscribe(data =>{
       this.productsList = data ;
     })
+    this.billingSrc.getBilling().subscribe(data =>{
+      this.billingList = data ;
+    })
   }
 
+  onSubmitDate(id: number , date : string): boolean{
+    // if (this.FromDate.controls.date.value < '2022-11-21'){
+    //     alert(" FromDate : "+ this.FromDate.controls.date.value);
+    // }else {
+    //   alert("no")
+    // }
+    this.billingSrc.getBilling().subscribe(data =>{
+      for (const datum of data) {
+        if (datum.id == id && this.FromDate.controls.date.value < datum.orderDate){
+          this.result  = true ;
+        }else {
+          this.result = false ;
+        }
+      }
+    })
+    return this.result;
+  }
+  onTurnover(totalMoney : number ):number{
+     return ( totalMoney / 20000 ) * 100 ;
+  }
   public onClickProduct (id :number): void {
     // if (confirm(id+ 'h')) {
     this.route.navigate(['/productDetail/' + id]);

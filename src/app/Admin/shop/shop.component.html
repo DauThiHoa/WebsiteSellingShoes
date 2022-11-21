@@ -1,4 +1,8 @@
 
+
+
+
+
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
@@ -102,8 +106,31 @@
     <!-- ============================================================== -->
     <!-- Container fluid  -->
     <!-- ============================================================== -->
-    <div class="container-fluid">
-      <!-- ============================================================== -->
+
+
+
+
+    <form style="margin-left: -100%" class="form-horizontal form-material mx-2" method="POST" role="form" [formGroup]="FromDate" (ngSubmit)="onSubmitDate(1,'2022-8-24')" >
+      <!--    <form action="">-->
+      Birthday (date and time):
+      <input type="date" formControlName="date" name="bdaytime">
+      <input type="submit" value="Send">
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin-top: 200%" class="container-fluid">
+<!--      <!============================================================== &ndash;&gt;-->
       <!-- Sales chart -->
       <!-- ============================================================== -->
       <div class="row">
@@ -146,6 +173,9 @@
         </div>
         <!-- Column -->
       </div>
+
+
+
       <!-- ============================================================== -->
       <!-- Sales chart -->
       <!-- ============================================================== -->
@@ -315,3 +345,87 @@
   <!-- End Page wrapper  -->
   <!-- ============================================================== -->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--      ADD CHAR -->
+
+
+  <div class="box">
+    <div class="skill" style="margin-right: -20%">
+            <div style="margin-top: -42% ; margin-bottom: 50%" class="money">
+              <div class="name1">Turnover ($)</div>
+              <div class="brick"></div>
+            </div>
+              <div class="money">
+                <div class="name1">20000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">18000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">16000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">14000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">12000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">10000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">8000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">6000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">4000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">2000</div>
+                <div class="brick">-----</div>
+              </div>
+              <div class="money">
+                <div class="name1">0</div>
+                <div class="brick">-----</div>
+              </div>
+    </div>
+
+    <div class="skill" *ngFor="let bill of billingList" >
+      <div class="graph" style="height:{{onTurnover(bill.totalMoney)}}%">
+        <div class="percent">{{bill.totalMoney}}</div>
+      </div>
+      <div class="name">{{bill.orderDate}}</div>
+    </div>
+
+    <div class="skill">
+      <div class="name">Date</div>
+    </div>
+
+  </div>

@@ -15,6 +15,8 @@ import {ProfileService} from "../../services/profile.service";
 import {BillingService} from "../../services/billing.service";
 import {Billing} from "../../models/billing";
 import {HttpService} from "../../Shared/http.service";
+// import nodemailer from "nodemailer";
+
 
 @Component({
   selector: 'app-test',
@@ -29,7 +31,10 @@ export class EmailComponents implements OnInit {
   loginOne : Login;
   billingList :Array<Billing> = [];
   status : string;
+  nodemailer : any;
+
   today = new Date();
+  receipt = new Date();
 
   image =
     "https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg";
@@ -93,6 +98,7 @@ export class EmailComponents implements OnInit {
               public billingSrv: BillingService ,
               public http: HttpService) {
 
+    this.receipt.setDate(this.today.getDate() + 20);
   }
 
   ngOnInit(): void {
@@ -265,32 +271,10 @@ export class EmailComponents implements OnInit {
 
   onMail () {
 
-    let mailTransporter = this.nodemailer.createTransport({
-      service: "gmail",
-      auth:{
-        user: "daudiep2003@gmail.com",
-        pass: "kxiunzutpxcvbbhf"
-      }
-    })
-
-    let details = {
-      from: "daudiep2003@gmail.com",
-      to : "daudiep2003@gmail.com",
-      subject: "testing our nodemailer",
-      text: "testing out first sender"
-    }
-
-    // @ts-ignore
-    mailTransporter.sendMail(details, (err) =>{
-      if (err){
-        console.log("it has an error" , err);
-        alert("it has an error");
-      }else {
-        console.log("email has send !");
-        alert("email has send !");
-      }
-    })
-
+    if (this.receipt.getDate() < this.today.getDate()) {
+      alert(" THIS TODAY : " + this.today.toLocaleDateString()
+        + " THIS REQUEST : " + this.receipt.toLocaleDateString() );
+     }
   }
 
   register() {
@@ -319,5 +303,6 @@ export class EmailComponents implements OnInit {
       }
     );
   }
+
 
 }

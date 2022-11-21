@@ -43,6 +43,9 @@ export class BillingService {
   update(id: number, data: any): Observable<any>{
     return this.http.put<any> ('http://localhost:3000/billing/' + id , data);
   }
+  updateStatus (id: number, status : string): Observable<any>{
+    return this.http.put<any> ('http://localhost:3000/billing/'+ id , "?status=" + status);
+  }
 
   // DELETE/:id: http://localhost:3000/product/1
   delete(id: number): Observable<any>{
