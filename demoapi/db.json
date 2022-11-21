@@ -838,21 +838,6 @@
       "status": "Ordered",
       "totalMoney": 7500,
       "id": 4
-    },
-    {
-      "firstName": "ff",
-      "lastName": "f",
-      "address": "f",
-      "postCode": null,
-      "phone": "2143134324",
-      "email": "daudiep2003@gmail.com",
-      "paymentMethods": "bidv",
-      "accountNumber": "123444444",
-      "orderDate": "2022-11-19",
-      "receiptDate": "2022-11-26",
-      "status": "Ordered",
-      "totalMoney": 5000,
-      "id": 5
     }
   ],
   "contact": [
