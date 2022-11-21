@@ -25,6 +25,7 @@
     "@angular/platform-browser": "~13.2.4",
     "@angular/platform-browser-dynamic": "~13.2.4",
     "@angular/router": "~13.2.4",
+    "@emailjs/browser": "^3.9.1",
     "@fortawesome/fontawesome-free": "^6.0.0",
     "@sendgrid/mail": "^7.7.0",
     "@types/gapi": "^0.0.43",
@@ -50,6 +51,7 @@
     "mdb-angular-wysiwyg": "file:mdb-angular-wysiwyg-2.0.0.tgz",
     "nodemailer": "^6.8.0",
     "rxjs": "~7.5.0",
+    "sendgrid": "^5.2.3",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.4"
   },

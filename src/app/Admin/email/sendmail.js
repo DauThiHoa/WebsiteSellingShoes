@@ -1,50 +1,46 @@
-const express = require('express');
-const router = express.Router();
-const request = require('request');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
+var functions = require('firebase-functions');
 
-router.options('/send', cors());
-router.get('/send', cors(), (req, res) => {
-  const outputData =
-    <p> You have a new contact request</p>
-  <h3> Contact Details </h3>
-  <ul>
-    <li> Name : ${req.body.name}</li>
-    <li> Email : ${req.body.email}</li>
-  </ul>
-  <h3>Message</h3>
-  <p>${req.body.message}</p>;
+const sendgrid = require('sendgrid');
+const {response} = require("express");
+const client = sendgrid("YOUR_API_KEY");
 
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: false,
-    port: 25,
-    auth: {
-         user: 'email',
-         pass: 'pass'
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  });
+function parseBody(body) {
+  var helper = sendgrid.mail;
+  var fromEmail = new helper.Email(body.from);
+  var toEmail = new helper.Email (body.to);
+  var subject = body.subject;
+  var content = new helper.Content('text/html', body.content);
+  var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+  return mail.toJSON();
 
-  let HelperOptions = {
-      form: 'daudiep2003@gmail.com',
-      to: 'daudiep2003@gmail.com',
-      subject: 'Majeni Contact Request',
-      text: 'Hello',
-      html: outputData
-  };
+}
 
-  transporter.sendMail(HelperOptions, (error, info) =>{
-    if(error){
-      return console.log(error);
-    }
-    console.log("The message was sent!");
-    console.log(info);
-  });
+exports.httpEmail = functions.https.onRequest((req, res) => {
+  return Promise.resolve()
+    .then(()=>{
+      if(req.method !== 'POST'){
+        const error = new Error('Only POST requests are accepted');
+        error.code = 405;
+        throw error;
+      }
 
-});
-module.exports = router();
+      const request = client.emptyRequest({
+        method: 'POST',
+        path: '/v3/mail/send',
+        body: parseBody(req.body)
+      });
+
+      return client.API(request)
+    })
+    .then((response) => {
+      if ( response.body){
+        res.send(response.body);
+      }else {
+        res.end();
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      return Promise.reject(err);
+    });
+})

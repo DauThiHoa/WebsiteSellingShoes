@@ -16,7 +16,7 @@ import {BillingService} from "../../services/billing.service";
 import {Billing} from "../../models/billing";
 import {HttpService} from "../../Shared/http.service";
 // import nodemailer from "nodemailer";
-
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-test',
@@ -99,6 +99,19 @@ export class EmailComponents implements OnInit {
               public http: HttpService) {
 
     this.receipt.setDate(this.today.getDate() + 20);
+  }
+
+  public sendEmail(e: Event) {
+    alert(e.target);
+    e.preventDefault();
+    //service_7l0ixxe
+    emailjs.sendForm('service_ql1in7p', 'template_2c74bs8', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
+    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_PUBLIC_KEY')
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
   }
 
   ngOnInit(): void {
