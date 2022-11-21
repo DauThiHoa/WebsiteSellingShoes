@@ -19,7 +19,8 @@ import {Billing} from "../../models/billing";
 export class ShopComponents implements OnInit {
   submited: boolean = false;
   data: any[];
-  result : boolean ;
+  result : boolean = false;
+  orderDate : string;
 
   // constructor(private productService:ProductService) { }
   //
@@ -74,22 +75,20 @@ export class ShopComponents implements OnInit {
     })
   }
 
-  onSubmitDate(id: number , date : string): boolean{
+  onSubmitDate(): void{
     alert("DATE : "+ this.FromDate.controls.date.value);
-    if (this.FromDate.controls.date.value < date ){
-      this.result  = true ;
-    }else {
-      this.result  = false ;
-    }
-    // this.billingSrc.getBilling().subscribe(data =>{
-    //   for (const datum of data) {
-    //     if (datum.id == id && this.FromDate.controls.date.value < datum.orderDate){
-    //       this.result  = true ;
-    //     }else {
-    //       this.result = false ;
-    //     }
-    //   }
-    // })
+    this.orderDate = this.FromDate.controls.date.value;
+  }
+  onSubmitOrderDate (id: number , date : string):boolean{
+    this.billingSrc.getBilling().subscribe(data =>{
+      for (const datum of data) {
+        if (datum.id == id && this.FromDate.controls.date.value < datum.orderDate){
+          this.result  = true ;
+        }else {
+          this.result = false ;
+        }
+      }
+    })
     return this.result;
   }
   onTurnover(totalMoney : number ):number{

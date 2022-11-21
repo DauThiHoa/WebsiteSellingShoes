@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
+import emailjs, {EmailJSResponseStatus} from "@emailjs/browser";
 
 @Component({
   selector: "app-register",
@@ -54,5 +55,18 @@ export class RegisterComponent implements OnInit {
       });
 
     }
+
+  public sendEmail(e: Event) {
+    alert(e.target);
+    e.preventDefault();
+    //service_7l0ixxe
+    emailjs.sendForm('service_ql1in7p', 'template_2c74bs8', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
+      // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_PUBLIC_KEY')
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
 
 }

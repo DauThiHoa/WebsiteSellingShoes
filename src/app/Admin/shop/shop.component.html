@@ -364,7 +364,7 @@
 
 <!--      ADD CHAR -->
 
-<form style="margin-left: -100%" class="form-horizontal form-material mx-2" method="POST" role="form" [formGroup]="FromDate" (ngSubmit)="onSubmitDate(1,'2022-12-24')" >
+<form style="margin-left: -100%" class="form-horizontal form-material mx-2" method="POST" role="form" [formGroup]="FromDate" (ngSubmit)="onSubmitDate()" >
   <!--    <form action="">-->
   Birthday (date and time):
   <input type="date" formControlName="date" name="bdaytime">
@@ -424,7 +424,7 @@
     </div>
 
     <div class="skill" *ngFor="let bill of billingList" >
-<!--      <div *ngIf="onSubmitDate(bill.id, bill.orderDate)" class="graph" style="height:{{onTurnover(bill.totalMoney)}}%">-->
+<!--      <div *ngIf="onSubmitOrderDate(bill.id, bill.orderDate)" class="graph" style="height:{{onTurnover(bill.totalMoney)}}%">-->
       <div class="graph" style="height:{{onTurnover(bill.totalMoney)}}%">
         <div class="percent">{{bill.totalMoney}}</div>
       </div>
