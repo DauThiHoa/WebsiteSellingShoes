@@ -2,7 +2,8 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": ["gapi", "gapi.auth2"]
+    "types": ["gapi", "gapi.auth2"],
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "src/test.ts",

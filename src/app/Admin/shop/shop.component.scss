@@ -1,4 +1,124 @@
 
+
+
+
+
+
+// ADD CHAR
+
+section{
+  width: 100%;
+  height: 100vh;
+  background:  linear-gradient(0deg, #0039fe, #000105);
+}
+.box{
+  position: absolute;
+  top: 50%;
+  // VI TRI SO DO
+  left: 35%;
+  transform: translateX(-50%, -50%);
+  width: 550px;
+  height: 300px;
+  background: transparent;
+  border-bottom: 5px solid black;
+  border-left: 5px solid #000;
+  display: flex;
+}
+.box .skill {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  //margin-left: -5%;
+}
+//.box .skill1 {
+//  margin-left: -50%;
+//}
+.box .skill .graph{
+  position: absolute;
+  width: 40px;
+  background: #00aff0;
+  bottom: 0;
+  left: 50%;
+  transform:  translateX(-50%);
+}
+.box .skill .graph:before{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 0;
+  background: linear-gradient(0deg, #003ba5, #009ffe);
+}
+.box .skill .graph:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #9fcdff;
+}
+.box .skill .graph .percent{
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #00b74a;
+  font-weight: bold;
+}
+.box .skill .name{
+   position: absolute;
+   bottom: -30ox;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   color: #00b74a;
+   //background: #001e8a ;
+   font-weight: bold;
+   padding: 2px 6px;
+   border-radius: 4px;
+   margin-top: 300%;
+}
+.box .money{
+  float: bottom;
+  clear: top;
+}
+.box .money .name1{
+  position: absolute;
+  bottom: -35ox;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #00acc1;
+  //background: #001e8a ;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: -1%;
+  //border-left: 1px solid #00b74a;
+  margin-left: -130%;
+}
+.box .money .brick{
+  margin-left: -140%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html,
 body {
   height: 100%;

@@ -9,6 +9,7 @@ export class Billing {
   paymentMethods: string ;
   accountNumber: string;
   orderDate: string;
-  receiptDate :string;
+  receiptDate : string;
+  status : string;
   totalMoney : number ;
 }

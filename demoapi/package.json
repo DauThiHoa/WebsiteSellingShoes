@@ -2,7 +2,7 @@
   "name": "demoapi",
   "version": "1.0.0",
   "description": "",
-  "main": "sendmail.js",
+  "main": "app.js",
   "scripts": {
     "db": "json-server --watch ./db.json"
   },

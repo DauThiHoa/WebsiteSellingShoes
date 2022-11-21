@@ -22,15 +22,20 @@ export class CheckOutComponent implements OnInit {
   id : number = 0 ;
   submited: boolean = false;
 
+  today = new Date();
+  receipt = new Date();
+  // date = this.today.getDate()+ '/' + this.today.getMonth() + '/' + this.today.getFullYear();
+  // receipt : number = this.today.getDate() + 7 ;
+  // dateReceipt = this.receipt + '/' + this.today.getMonth() + '/' + this.today.getFullYear();
+
   constructor(private proSrv : ProductService,
               private cartSrv : CartService,
               private billSrv : BillingService,
-              private route: Router) { }
+              private route: Router) {
 
-  today = new Date();
-  date = this.today.getDate()+ '/' + (this.today.getMonth() + 1 )+ '/' + this.today.getFullYear();
-  receipt : number = this.today.getDate() + 7 ;
-  dateReceipt = this.receipt + '/' + (this.today.getMonth() + 1 )+ '/' + this.today.getFullYear();
+    this.receipt.setDate(this.today.getDate() + 7 );
+
+  }
 
   billingCreate = new FormGroup({
 
@@ -42,9 +47,9 @@ export class CheckOutComponent implements OnInit {
     email : new FormControl("", [ Validators.required, Validators.email ]),
     paymentMethods: new FormControl(''),
     accountNumber : new FormControl(''),
-    orderDate: new FormControl(this.date),
-    receiptDate : new FormControl(this.dateReceipt),
-    status : new FormControl(),
+    orderDate: new FormControl(this.today.getFullYear()+ "-" +this.today.getMonth() + "-" + this.today.getDate()),
+    receiptDate : new FormControl(this.receipt.getFullYear()+ "-" +this.receipt.getMonth() + "-" + this.receipt.getDate()),
+    status : new FormControl("Ordered"),
     totalMoney : new FormControl(this.totalMoney),
   });
 
@@ -65,9 +70,9 @@ export class CheckOutComponent implements OnInit {
 
       this.cartList = data;
 
-      // CART TOTAL
       for (const datum of this.cartList) {
-        this.totalMoney += datum.price * datum.quantitySold
+        this.totalMoney += datum.price * datum.quantitySold      // CART TOTAL
+
       }
     })
   }
@@ -92,8 +97,9 @@ export class CheckOutComponent implements OnInit {
           email : new FormControl(this.billingCreate.controls.email.value),
           paymentMethods: new FormControl(this.billingCreate.controls.paymentMethods.value),
           accountNumber : new FormControl(this.billingCreate.controls.accountNumber.value),
-          orderDate: new FormControl(this.date),
-          receiptDate : new FormControl(this.dateReceipt),
+          orderDate: new FormControl(this.today.getFullYear()+ "-" +this.today.getMonth() + "-" + this.today.getDate()),
+          receiptDate : new FormControl(this.receipt.getFullYear()+ "-" +this.receipt.getMonth() + "-" + this.receipt.getDate()),
+          status : new FormControl("Ordered"),
           totalMoney : new FormControl(this.totalMoney),
 
         });

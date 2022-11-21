@@ -6,7 +6,7 @@ import {Product} from "../../models/product";
 import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 import {LoginService} from "../../services/login.service";
 import {Login} from "../../models/login";
@@ -44,6 +44,26 @@ export class HistoryComponents implements OnInit {
     name: new FormControl(""),
     email: new FormControl(""),
     password: new FormControl(""),
+  });
+
+  // updateStatus = new FormGroup({
+  //   status : new FormControl(''),
+  // });
+
+  updateStatus = new FormGroup({
+
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormControl(''),
+    postCode: new FormControl(''),
+    phone: new FormControl(''),
+    email : new FormControl("", [ Validators.required, Validators.email ]),
+    paymentMethods: new FormControl(''),
+    accountNumber : new FormControl(''),
+    orderDate: new FormControl(),
+    receiptDate : new FormControl(),
+    status : new FormControl(),
+    totalMoney : new FormControl(),
   });
 
   // constructor(private productService:ProductService) { }
@@ -95,6 +115,13 @@ export class HistoryComponents implements OnInit {
 
     this.billingSrv.getBilling().subscribe(data => {
       this.billingList = data;
+      for (const datum of data) {
+        // if(this.today.toLocaleDateString() <= datum.receiptDate.toLocaleDateString()){
+        //       this.status = "DELIVERY";
+        // }else {
+        //   this.status = "RECEIVED";
+        // }
+      }
     })
 
     this.loginSrv.getOne(0).subscribe(data => {
@@ -128,6 +155,42 @@ export class HistoryComponents implements OnInit {
           // location.reload();
         })
       })
+    }
+  }
+
+  onEdit (id:number){
+    alert(this.updateStatus.value)
+  }
+
+  onChangeStatus (id:number){
+    // alert( "STATUS : " + this.updateStatus.controls.status.value + " ID : " + id);
+    if (this.FromProfile.invalid) {
+      if (confirm("Please fill in all the information")) {
+        this.route.navigate(['/history']);
+      }
+      return;
+    }else {
+      this.billingSrv.getOne(id).subscribe(data => {
+        this.updateStatus = new FormGroup({
+
+          firstName: new FormControl(data.firstName),
+          lastName: new FormControl(data.lastName),
+          address: new FormControl(data.address),
+          postCode: new FormControl(data.postcode),
+          phone: new FormControl(data.phone),
+          email : new FormControl(data.email, [ Validators.required, Validators.email ]),
+          paymentMethods: new FormControl(data.paymentMethods),
+          accountNumber : new FormControl(data.accountNumber),
+          orderDate: new FormControl(data.orderDate),
+          receiptDate : new FormControl(data.receiptDate),
+          status : new FormControl(this.updateStatus.controls.status.value),
+          totalMoney : new FormControl(data.totalMoney),
+        });
+      this.billingSrv.update(id, this.updateStatus.value).subscribe(data => {
+        alert("Order status change successful")
+        location.reload();
+       });
+      });
     }
   }
 

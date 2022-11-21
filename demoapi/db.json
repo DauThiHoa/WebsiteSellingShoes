@@ -46,7 +46,10 @@
       "id": 1,
       "name": "Đậu Hoa",
       "email": "19130075@st.hcmuaf.edu.vn",
-      "password": "12345"
+      "password": "12345",
+      "phoneNo": "0345389984",
+      "message": "WebsiteSellingShoes",
+      "selectCountry": "London"
     }
   ],
   "product": [
@@ -789,44 +792,67 @@
       "date": "18/08/2022"
     }
   ],
-  "cart": [
-    {
-      "id": 3,
-      "name": "Dark Angels: Masquequerade of Shadows",
-      "image": "../../../assets/img/product/product-3.png",
-      "price": 97000,
-      "quantitySold": 3,
-      "total": 291000
-    }
-  ],
+  "cart": [],
   "billing": [
     {
-      "firstName": "j",
-      "lastName": "j",
-      "address": "j",
-      "postCode": "j",
+      "firstName": "Join",
+      "lastName": "Shoe",
+      "address": "Namhansanseong",
+      "postCode": "453",
       "phone": "0123124434",
       "email": "19130095@st.hcmuaf.edu.vn",
-      "paymentMethods": "j",
-      "accountNumber": "j",
-      "orderDate": "24/8/2022",
-      "receiptDate": "31/8/2022",
-      "totalMoney": 194000,
+      "paymentMethods": "bidv",
+      "accountNumber": "123444444",
+      "orderDate": "2022-8-24",
+      "receiptDate": "2022-8-31",
+      "status": "Delivered",
+      "totalMoney": 21000,
       "id": 2
     },
     {
-      "firstName": "j",
-      "lastName": "j",
-      "address": "j",
-      "postCode": "j",
+      "firstName": "Namhan",
+      "lastName": "sanseong",
+      "address": "Namhan sanseong",
+      "postCode": null,
       "phone": "0123124434",
       "email": "19130075@st.hcmuaf.edu.vn",
-      "paymentMethods": "j",
-      "accountNumber": "j",
-      "orderDate": "24/8/2022",
-      "receiptDate": "31/8/2022",
-      "totalMoney": 567887,
+      "paymentMethods": "bidv",
+      "accountNumber": "123444444",
+      "orderDate": "2022-8-24",
+      "receiptDate": "2022-8-31",
+      "status": "Delivered",
+      "totalMoney": 15000,
       "id": 3
+    },
+    {
+      "firstName": "ff",
+      "lastName": "f",
+      "address": "f",
+      "postCode": null,
+      "phone": "122331434134",
+      "email": "daudiep2003@gmail.com",
+      "paymentMethods": "bidv",
+      "accountNumber": "123444444",
+      "orderDate": "2022-11-19",
+      "receiptDate": "2022-11-26",
+      "status": "Ordered",
+      "totalMoney": 7500,
+      "id": 4
+    },
+    {
+      "firstName": "ff",
+      "lastName": "f",
+      "address": "f",
+      "postCode": null,
+      "phone": "2143134324",
+      "email": "daudiep2003@gmail.com",
+      "paymentMethods": "bidv",
+      "accountNumber": "123444444",
+      "orderDate": "2022-11-19",
+      "receiptDate": "2022-11-26",
+      "status": "Ordered",
+      "totalMoney": 5000,
+      "id": 5
     }
   ],
   "contact": [
