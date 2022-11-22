@@ -26,38 +26,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onRegister(): void {
-
-    if ( this.FromRegister.invalid){
-      if (confirm("Please fill in all the information")) {
-        this.route.navigate(['/register']);
-        this.submited = false ;
-      }
-    }
-      this.prodSrv.getlogin().subscribe(data => {
-        for (const datum of data) {
-          if (datum.email == this.FromRegister.controls.email.value) {
-            if (confirm("Email already registered with another account")) {
-              this.submited = false;
-              this.route.navigate(['/register']);
-            }
-          }
-        }
-        this.submited = true;
-        if(this.submited) {
-          this.prodSrv.create(this.FromRegister.value).subscribe(data =>{
-            if (confirm("Register Success")) {
-              this.route.navigate(['/login']);
-            }
-          });
-        }
-        return;
-      });
-
-    }
-
-  public sendEmail(e: Event) {
-    alert(e.target);
+  public static sendEmail(e: Event) {
     e.preventDefault();
     //service_7l0ixxe
     emailjs.sendForm('service_ql1in7p', 'template_2c74bs8', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
@@ -68,5 +37,46 @@ export class RegisterComponent implements OnInit {
         console.log(error.text);
       });
   }
+
+  public onRegister(e: Event): void {
+
+    if (this.FromRegister.invalid) {
+      if (confirm("Please fill in all the information")) {
+        this.route.navigate(['/register']);
+        this.submited = false;
+      }
+    } else {
+      this.prodSrv.getlogin().subscribe(data => {
+        for (const datum of data) {
+          if (datum.email == this.FromRegister.controls.email.value) {
+            if (confirm("Email already registered with another account")) {
+              this.submited = false;
+              this.route.navigate(['/register']);
+            }
+          }
+        }
+        this.submited = true;
+        if (this.submited) {
+          this.prodSrv.create(this.FromRegister.value).subscribe(data => {
+            if (confirm("Register Success")) {
+              e.preventDefault();
+              //service_7l0ixxe
+              emailjs.sendForm('service_ql1in7p', 'template_2c74bs8', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
+                // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_PUBLIC_KEY')
+                .then((result: EmailJSResponseStatus) => {
+                  console.log(result.text);
+                }, (error) => {
+                  console.log(error.text);
+                });
+              this.route.navigate(['/login']);
+            }
+          });
+        }
+        return;
+      });
+
+    }
+  }
+
 
 }

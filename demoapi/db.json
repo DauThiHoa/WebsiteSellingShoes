@@ -41,9 +41,9 @@
       "id": 2
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
+      "name": "19130075",
+      "email": "19130075@st.hcmuaf.edu.vn",
+      "password": "12345",
       "id": 3
     }
   ],
@@ -52,10 +52,7 @@
       "id": 1,
       "name": "Đậu Hoa",
       "email": "19130075@st.hcmuaf.edu.vn",
-      "password": "12345",
-      "phoneNo": "0345389984",
-      "message": "WebsiteSellingShoes",
-      "selectCountry": "London"
+      "password": "12345"
     }
   ],
   "product": [

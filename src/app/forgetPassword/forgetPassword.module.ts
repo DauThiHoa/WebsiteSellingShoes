@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ProductService} from "../services/product.service";
-import {EmailFormComponent} from "./email-form.component";
-import {EmailFormRoutingModule} from "./email-form-routing.module";
+import {ForgetPasswordComponent} from "./forgetPassword.component";
+import {ForgetPasswordRoutingModule} from "./forgetPassword-routing.module";
 
 
 @NgModule({
   declarations: [
-    EmailFormComponent
+    ForgetPasswordComponent
   ],
   imports: [
     CommonModule,
-    EmailFormRoutingModule,
+    ForgetPasswordRoutingModule,
     ReactiveFormsModule,
     FormsModule,
   ],
@@ -25,4 +25,4 @@ import {EmailFormRoutingModule} from "./email-form-routing.module";
   ],
 
 })
-export class EmailFormModule { }
+export class ForgetPasswordModule { }

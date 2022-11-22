@@ -99,10 +99,9 @@ import {HistoryModule} from "./Admin/history/history.module";
 import {HistoryRoutingModule} from "./Admin/history/history-routing.module";
 import {EmailModule} from "./Admin/email/email.module";
 import {EmailRoutingModule} from "./Admin/email/email-routing.module";
-import { EmailFormComponent } from './email-form/email-form.component';
-import {EmailFormModule} from "./email-form/email-form.module";
-import {EmailFormRoutingModule} from "./email-form/email-form-routing.module";
 import {EmailService} from "./email.service";
+import {ForgetPasswordModule} from "./forgetPassword/forgetPassword.module";
+import {ForgetPasswordRoutingModule} from "./forgetPassword/forgetPassword-routing.module";
 
 // @ts-ignore
 @NgModule({
@@ -213,8 +212,8 @@ import {EmailService} from "./email.service";
     HistoryRoutingModule,
     EmailModule,
     EmailRoutingModule,
-    EmailFormModule,
-    EmailFormRoutingModule,
+    ForgetPasswordModule,
+    ForgetPasswordRoutingModule,
 
 
   ],
