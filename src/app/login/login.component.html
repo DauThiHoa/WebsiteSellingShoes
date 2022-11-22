@@ -27,7 +27,6 @@
 <!--  <p>{{user.getBasicProfile().getEmail()}}</p>-->
 <!--</div>-->
 
-
 <div class="container">
   <div class="formWraper">
 
@@ -59,7 +58,9 @@
           <i style="margin-top: 1%" class="fas fa-lock"></i>
           <input required class="form-control" formControlName="password" type="password" name="password" id="password" value="" placeholder="Password" >
         </div>
-
+        <a class="forgetPassword" [routerLink]="['/forgetPassword']" style="margin-bottom: -1%;font-size: 85%; font-weight: normal">
+          Forgot Password
+        </a>
           <button (click)="register()" type="submit" class="btn">SIGN IN</button>
 
       </form>

@@ -9,10 +9,6 @@ import {GoogleSigninService} from "../google-signin.service";
 import { ElementRef, AfterViewInit} from '@angular/core';
 import {ProfileService} from "../services/profile.service";
 import {HttpHeaders} from "@angular/common/http";
-// declare const gapi: any;
-
-////////////////////////////////////////////////// LOI GUI MAIL ////////////////////////////////////////////////////////
-// import nodemailer from 'nodemailer';
 
 @Component({
   selector: "app-login",
