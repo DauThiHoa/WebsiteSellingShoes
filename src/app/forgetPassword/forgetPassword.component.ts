@@ -20,6 +20,7 @@ export class ForgetPasswordComponent implements OnInit {
   submited : boolean = false ;
 
   user : gapi.auth2.GoogleUser;
+  password_User : string;
 
   FromLogin = new FormGroup({
     email : new FormControl(""),
@@ -78,36 +79,49 @@ export class ForgetPasswordComponent implements OnInit {
 
   onSubmit() {
 
+    if ( this.FromLogin.invalid){
+      if (confirm("Please fill in all the information")) {
+        this.route.navigate(['/forgetPassword']);
+      }
+      return;
+    }else {
+      this.prodSrv.getlogin().subscribe(data =>{
+        for (const datum of data) {
+          if(datum.email == this.FromLogin.controls.email.value){
+            this.password_User = datum.password;
+            // alert("1 : " + datum.password);
+            // alert("password_User : " + this.FromLogin.controls.message.value);
+
+          }
+        }
+      });
+    }
   }
 
   public onForgetPassword(e: Event) {
 
-    // if ( this.FromLogin.invalid){
-    //   if (confirm("Please fill in all the information")) {
-    //     this.route.navigate(['/forgetPassword']);
-    //   }
-    //   return;
-    // }else {
-    //   this.prodSrv.getlogin().subscribe(data =>{
-    //     for (const datum of data) {
-    //       if(datum.email == this.FromLogin.controls.email.value){
+    // alert("HEHE : "+ this.FromLogin.controls.email.value);
 
+    if ( this.FromLogin.invalid){
+      if (confirm("Please fill in all the information")) {
+        this.route.navigate(['/forgetPassword']);
+      }
+      return;
+    }else {
             e.preventDefault();
             //service_7l0ixxe
             emailjs.sendForm('service_ql1in7p', 'template_ct39s0s', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
               // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_PUBLIC_KEY')
               .then((result: EmailJSResponseStatus) => {
                 console.log(result.text);
-                location.replace("/login");
+                if (confirm("Password has been sent to your email, please check your email")) {
+                  location.replace("/login");
+                }
               }, (error) => {
                 console.log(error.text);
                 location.replace("/forgetPassword");
               });
-
-          // }
-    //     }
-    //   });
-    // }
+    }
   }
 
   changeImage() {
