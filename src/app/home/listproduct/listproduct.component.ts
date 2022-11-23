@@ -17,6 +17,7 @@ import {CartService} from "../../services/cart.service";
 export class ListProductComponents implements OnInit {
   submited: boolean = false;
   data: any[];
+  p: number = 1;
 
   // constructor(private productService:ProductService) { }
   //
@@ -33,6 +34,7 @@ export class ListProductComponents implements OnInit {
   productsHight : Array<Product> = new Array<Product>();
 
   productsList : Array<Product> = [];
+  productsPage : Array<Product> = [];
 
   cartFormOneQuantity: FormGroup = new FormGroup({
   });
@@ -76,6 +78,21 @@ export class ListProductComponents implements OnInit {
       this.productsHight = data ;
     })
 
+    this.prodSrv.getProductPage(10).subscribe(data =>{
+      this.productsPage = data ;
+    })
+
+  }
+
+  getProductPage(){
+    this.prodSrv.getProductPage(this.p).subscribe(data =>{
+      this.productsPage = data ;
+    })
+  }
+  pageChangeEvent(){
+    this.prodSrv.getProductPage(7).subscribe(data =>{
+      this.productsPage = data ;
+    })
   }
 
   public onClickProduct (id :number): void {

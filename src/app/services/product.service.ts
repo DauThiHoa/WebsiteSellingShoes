@@ -18,6 +18,9 @@ export class ProductService {
   constructor(private http: HttpClient) {
 
   }
+  getProductPage (page: number){
+    return this.http.get<Array<Product>>(_api + '?page=' + page);
+  }
 
   getProduct(): Observable<Array<Product>>{
     return this.http.get<Array<Product>>(_api + 'product');

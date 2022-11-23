@@ -58,12 +58,11 @@
   <h6 style="text-align: center; font-weight: bold">Filter products</h6>
   <div class="list-group" style="margin-top: 10%">
     <a href="#" class="list-group-item active" style="text-align: center; font-weight: bold; color: white; background: #00bcd4; margin-top: 5%">Type</a>
-    <a href="#" class="list-group-item" style="text-align: center">Second item</a>
-    <a href="#" class="list-group-item" style="text-align: center">Third item</a>
-    <a href="#" class="list-group-item" style="text-align: center">Second item</a>
-    <a href="#" class="list-group-item" style="text-align: center">Third item</a>
-    <a href="#" class="list-group-item" style="text-align: center">Second item</a>
-    <a href="#" class="list-group-item" style="text-align: center">Third item</a>
+    <a href="#" class="list-group-item" style="text-align: center">Shoes Sandals</a>
+    <a href="#" class="list-group-item" style="text-align: center">High heels</a>
+    <a href="#" class="list-group-item" style="text-align: center">Sneakers</a>
+    <a href="#" class="list-group-item" style="text-align: center">Doll shoes</a>
+    <a href="#" class="list-group-item" style="text-align: center">Sandals</a>
   </div>
 
 
@@ -168,123 +167,6 @@
 </section>
 <!-- Product Section End -->
 
-
-<!-- Product Section Begin STEAM-->
-<section class="product spad" >
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4">
-        <div class="section-title">
-          <h4>STEAM</h4>
-        </div>
-      </div>
-      <div class="col-lg-8 col-md-8">
-        <ul class="filter__controls">
-          <li class="active" data-filter="*">All</li>
-           </ul>
-      </div>
-    </div>
-    <div class="row property__gallery"  >
-      <div class="col-lg-3 col-md-4 col-sm-6 mix women" *ngFor="let pro of products" >
-        <div class="product__item" *ngIf=" pro.id == 33 || pro.id == 34 ||
-                                          pro.id == 35 || pro.id == 36 || pro.id == 37 || pro.id == 38 || pro.id == 39 || pro.id == 40 ">
-          <div class="product__item__pic set-bg"
-               [style.background-image]="'url(' + pro.image + ')'">
-            <div *ngIf="pro.id == 33 || pro.id == 35" class="label new">New</div>
-            <div *ngIf="pro.id == 36 || pro.id == 40" class="label sale">Sale</div>
-
-            <ul class="product__hover">
-
-              <!--              LINK DEN PRODUCT-DETAILS-->
-              <li> <a routerLink="../productDetail/{{pro.id}}"><span class="arrow_expand"></span></a></li>
-              <!--              LINK DEN PRODUCT-CART-->
-              <!--              <li><a [routerLink]="['/home']"><span class="icon_cart"></span></a></li>-->
-              <li>
-                <form action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
-                  <a type="submit" (click) ="onCreateOneQuantity(pro.id)"><span class="icon_cart"></span></a>
-                </form>
-              </li>
-
-            </ul>
-
-          </div>
-          <div class="product__item__text">
-            <h6><a [routerLink]="['/home']">{{pro.name}}</a></h6>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-            <div *ngIf="pro.id != 33 && pro.id != 35"  class="product__price">$ {{pro.price}}</div>
-            <div *ngIf="pro.id == 36 || pro.id == 40" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Product Section End -->
-
-<!-- Product Section Begin ORIGIN-->
-<section class="product spad" >
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4">
-        <div class="section-title">
-          <h4>ORIGIN</h4>
-        </div>
-      </div>
-      <div class="col-lg-8 col-md-8">
-        <ul class="filter__controls">
-          <li class="active" data-filter="*">All</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row property__gallery"  >
-      <div class="col-lg-3 col-md-4 col-sm-6 mix women" *ngFor="let pro of products" >
-        <div class="product__item" *ngIf="pro.id == 41 || pro.id == 42 || pro.id == 43 ||
-                                          pro.id == 44 || pro.id == 45 || pro.id == 46 || pro.id == 47  || pro.id == 48   ">
-          <div class="product__item__pic set-bg"
-               [style.background-image]="'url(' + pro.image + ')'">
-            <div *ngIf="pro.id == 41 || pro.id == 45" class="label new">New</div>
-            <div *ngIf="pro.id == 46 || pro.id == 47" class="label sale">Sale</div>
-
-            <ul class="product__hover">
-
-              <!--              LINK DEN PRODUCT-DETAILS-->
-              <li> <a routerLink="../productDetail/{{pro.id}}"><span class="arrow_expand"></span></a></li>
-              <!--              LINK DEN PRODUCT-CART-->
-              <!--              <li><a [routerLink]="['/home']"><span class="icon_cart"></span></a></li>-->
-              <li>
-                <form action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
-                  <a type="submit" (click) ="onCreateOneQuantity(pro.id)"><span class="icon_cart"></span></a>
-                </form>
-              </li>
-
-            </ul>
-
-          </div>
-          <div class="product__item__text">
-            <h6><a [routerLink]="['/home']">{{pro.name}}</a></h6>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-            <div *ngIf="pro.id != 41 && pro.id != 43"  class="product__price">$ {{pro.price}}</div>
-            <div *ngIf="pro.id == 44 || pro.id == 48" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Product Section End -->
-
 <section class="discount">
   <div class="container">
     <div class="row">
@@ -301,108 +183,6 @@
     </div>
   </div>
 </section>
-
-<!-- Trend Section Begin -->
-<section class="trend spad">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-6" >
-        <div class="trend__content" *ngFor="let pro of products">
-          <div class="section-title"  *ngIf="pro.id == 9">
-            <h4>{{pro.category}}</h4>
-          </div>
-          <div class="trend__item" *ngIf="pro.id == 9 || pro.id == 10 || pro.id == 11 || pro.id == 12 || pro.id == 13" >
-            <div class="trend__item__pic">
-              <a routerLink="../productDetail/{{pro.id}}"><img src="{{pro.image}}" alt=""></a>
-            </div>
-            <div class="trend__item__text">
-              <h6>{{pro.name}}</h6>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div *ngIf="pro.id != 10 && pro.id != 12" class="product__price">$ {{pro.price}}</div>
-              <div *ngIf="pro.id == 10 || pro.id == 12" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
-            </div>
-
-            <form class="card-text" action="" method="POST" role="form" [formGroup]="cartFormOneQuantity">
-              <button type="submit" class="btn btn-primary btn-sm" (click) ="onCreateOneQuantity(pro.id)">Add to cart</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-6" >
-        <div class="trend__content" *ngFor="let pro of products">
-          <div class="section-title"  *ngIf="pro.id == 14">
-            <h4>{{pro.category}}</h4>
-          </div>
-          <div class="trend__item" *ngIf="pro.id == 14 || pro.id == 15 || pro.id == 16 || pro.id == 17 || pro.id == 18" >
-            <div class="trend__item__pic">
-              <a routerLink="../productDetail/{{pro.id}}"><img src="{{pro.image}}" alt=""></a>
-            </div>
-            <div class="trend__item__text">
-              <h6>{{pro.name}}</h6>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div *ngIf="pro.id != 14 && pro.id != 17" class="product__price">$ {{pro.price}}</div>
-              <div *ngIf="pro.id == 14 || pro.id == 17" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
-            </div>
-            <!--            <p class="card-text">-->
-            <!--              <a routerLink="../productDetail/{{pro.id}}" class="btn btn-primary btn-sm">Add to cart</a>-->
-            <!--            </p>-->
-            <form class="card-text" action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
-              <button type="submit" class="btn btn-primary btn-sm" (click) ="onCreateOneQuantity(pro.id)">Add to cart</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6" >
-        <div class="trend__content" *ngFor="let pro of products">
-          <div class="section-title"  *ngIf="pro.id == 19">
-            <h4>{{pro.category}}</h4>
-          </div>
-          <div class="trend__item" *ngIf="pro.id == 19 || pro.id == 20 || pro.id == 21 || pro.id == 22 || pro.id == 23" >
-            <div class="trend__item__pic">
-              <a routerLink="../productDetail/{{pro.id}}"><img src="{{pro.image}}" alt=""></a>
-            </div>
-            <div class="trend__item__text">
-              <h6>{{pro.name}}</h6>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div *ngIf="pro.id != 21 && pro.id != 23" class="product__price">$ {{pro.price}}</div>
-              <div *ngIf="pro.id == 21 || pro.id == 23" class="product__price product__price_sale ">$ {{pro.price}} <span>$ {{pro.sale_price}}</span></div>
-            </div>
-            <!--            <p class="card-text">-->
-            <!--              <a routerLink="../productDetail/{{pro.id}}" class="btn btn-primary btn-sm">Add to cart</a>-->
-            <!--            </p>-->
-            <form class="card-text" action="" method="POST" role="form" [formGroup]="cartFormOneQuantity" >
-              <button type="submit" class="btn btn-primary btn-sm" (click) ="onCreateOneQuantity(pro.id)">Add to cart</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Trend Section End -->
 
 
 
