@@ -57,14 +57,13 @@
 
   <h6 style="text-align: center; font-weight: bold">Filter products</h6>
   <div class="list-group" style="margin-top: 10%">
-    <a href="#" class="list-group-item active" style="text-align: center; font-weight: bold; color: white; background: #00bcd4; margin-top: 5%">Type</a>
-    <a href="#" class="list-group-item" style="text-align: center">Shoes Sandals</a>
-    <a href="#" class="list-group-item" style="text-align: center">High Heels</a>
-    <a href="#" class="list-group-item" style="text-align: center">Sneakers</a>
-    <a href="#" class="list-group-item" style="text-align: center">Sport Shoes</a>
-    <a href="#" class="list-group-item" style="text-align: center">Doll Shoes</a>
+    <a class="list-group-item active" style="text-align: center; font-weight: bold; color: white; background: #00acc1; margin-top: 5%; border: 2px solid #00acc1">Type</a>
+    <a (click)="onType(1)" class="list-group-item" style="text-align: center">Shoes Sandals</a>
+    <a (click)="onType(2)" class="list-group-item" style="text-align: center">High Heels</a>
+    <a (click)="onType(3)" class="list-group-item" style="text-align: center">Sneakers</a>
+    <a (click)="onType(4)" class="list-group-item" style="text-align: center">Sport Shoes</a>
+    <a (click)="onType(5)" class="list-group-item" style="text-align: center">Doll Shoes</a>
   </div>
-
 
   <form style="margin-top: 30%;">
     <label style="text-align: center; font-weight: bold; color: black; margin-left: 35%">Price</label><br>
@@ -94,12 +93,18 @@
 
   <div class="btn-group-vertical" style="margin-top: 30%; width: 150px">
   <p style="text-align: center; font-weight: bold; margin-left: 35%; color: black; font-weight: bold">Color</p>
-  <button (click)="onCreate(17)" type="button" style="background: pink" class="btn btn-primary">Pink</button>
-  <button (click)="onCreate(18)" type="button" class="btn btn-success">Green</button>
-  <button (click)="onCreate(19)" type="button" class="btn btn-info">Blue</button>
-  <button (click)="onCreate(20)" type="button" class="btn btn-warning">Oranges</button>
-  <button (click)="onCreate(21)" type="button" class="btn btn">White</button>
-  <button (click)="onCreate(22)" type="button" class="btn btn-danger">Red</button>
+  <button (click)="onCreate(17)" type="button" style="background: black" class="btn btn-primary">Black</button>
+  <button (click)="onCreate(18)" type="button" style="background: #fed49f; color: black" class="btn btn-success">Creamy white</button>
+  <button (click)="onCreate(19)" type="button" style="background: green" class="btn btn-info">Green</button>
+  <button (click)="onCreate(20)" type="button" style="background: darkviolet" class="btn btn-warning">Violet</button>
+  <button (click)="onCreate(21)" type="button" style="background: orange; color: white" class="btn btn">Oranges</button>
+  <button (click)="onCreate(22)" type="button" style="background: #00aff0" class="btn btn-danger">Blue</button>
+
+    <button (click)="onCreate(23)" type="button" style="background: yellow; color: black" class="btn btn-info">Yellow</button>
+    <button (click)="onCreate(24)" type="button" style="background: white; color: black" class="btn btn-warning">White</button>
+    <button (click)="onCreate(25)" type="button" style="background: pink; color: black" class="btn btn">Pink</button>
+    <button (click)="onCreate(26)" type="button" style="background: red" class="btn btn-danger">Red</button>
+
 <!--  <i class="fa-solid fa-circle"></i>-->
 </div>
 

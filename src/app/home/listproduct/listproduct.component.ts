@@ -101,7 +101,11 @@ export class ListProductComponents implements OnInit {
     // }
   }
 
-
+  public onType (id: number): void {
+    this.prodSrv.getType(id).subscribe(data =>{
+      this.products = data ;
+    })
+  }
   public onCreate (id: number): void {
     // if (confirm(id+ 'h')) {
     // alert(id)
@@ -131,7 +135,7 @@ export class ListProductComponents implements OnInit {
       this.prodSrv.getPrice(id).subscribe(data =>{
         this.products = data ;
       })
-    }else if(id == 17 || id == 18 || id == 19 || id == 20 || id == 21 || id == 22 ){
+    }else if(id == 17 || id == 18 || id == 19 || id == 20 || id == 21 || id == 22 || id == 23 || id == 24 || id == 25 || id == 26 ){
       this.prodSrv.getColor(id).subscribe(data =>{
         this.products = data ;
       })

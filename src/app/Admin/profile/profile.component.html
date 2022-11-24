@@ -11,122 +11,33 @@
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
-<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
      data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
   <!-- ============================================================== -->
   <!-- Topbar header - style you can find in pages.scss -->
   <!-- ============================================================== -->
-<!--  <header class="topbar" data-navbarbg="skin6">-->
-<!--    <nav class="navbar top-navbar navbar-expand-md navbar-dark">-->
-<!--      <div class="navbar-header" data-logobg="skin6">-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; Logo &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <a class="navbar-brand" href="index.html">-->
-<!--          &lt;!&ndash; Logo icon &ndash;&gt;-->
-<!--          <b class="logo-icon">-->
-<!--            &lt;!&ndash;You can put here icon as well // <i class="wi wi-sunset"></i> //&ndash;&gt;-->
-<!--            &lt;!&ndash; Dark Logo icon &ndash;&gt;-->
-<!--            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
-
-<!--          </b>-->
-<!--          &lt;!&ndash;End Logo icon &ndash;&gt;-->
-<!--          &lt;!&ndash; Logo text &ndash;&gt;-->
-<!--          <span class="logo-text">-->
-<!--                            &lt;!&ndash; dark Logo text &ndash;&gt;-->
-<!--                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
-
-<!--                        </span>-->
-<!--        </a>-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; End Logo &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; toggle and nav items &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"-->
-<!--           href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>-->
-<!--      </div>-->
-<!--      &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--      &lt;!&ndash; End Logo &ndash;&gt;-->
-<!--      &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--      <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">-->
-
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; toggle and nav items &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <ul class="navbar-nav me-auto mt-md-0 ">-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--          &lt;!&ndash; Search &ndash;&gt;-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-
-<!--          <li class="nav-item hidden-sm-down">-->
-<!--            <form class="app-search ps-3">-->
-<!--              <input type="text" class="form-control" placeholder="Search for..."> <a-->
-<!--              class="srh-btn"><i class="ti-search"></i></a>-->
-<!--            </form>-->
-<!--          </li>-->
-<!--        </ul>-->
-
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        &lt;!&ndash; Right side toggle and nav items &ndash;&gt;-->
-<!--        &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--        <ul class="navbar-nav">-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--          &lt;!&ndash; User profile and search &ndash;&gt;-->
-<!--          &lt;!&ndash; ============================================================== &ndash;&gt;-->
-<!--          <li class="nav-item dropdown">-->
-<!--            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--              <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe-->
-<!--            </a>-->
-<!--            <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </nav>-->
-<!--  </header>-->
-  <!-- ============================================================== -->
-  <!-- End Topbar header -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Left Sidebar - style you can find in sidebar.scss  -->
   <!-- ============================================================== -->
   <aside class="left-sidebar" data-sidebarbg="skin6" style="margin-top: 9%">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar" style="margin-top: -30%">
-
       <!-- Sidebar navigation-->
       <nav class="sidebar-nav">
         <ul id="sidebarnav">
           <!-- User Profile-->
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="index.html" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
-                                                                                  aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
+                                       [routerLink]="['/shop']" aria-expanded="false"><i style="color: #00bcd4; font-weight: bold" class="me-3 far fa-clock fa-fw"
+                                                                                         aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="pages-profile.html" aria-expanded="false">
-            <i class="me-3 fa fa-user" aria-hidden="true"></i><span
+                                       [routerLink]="['/profile']"  aria-expanded="false">
+            <i style="color: orangered; font-weight: bold"  class="me-3 fa fa-user" aria-hidden="true"></i><span
             class="hide-menu">Profile</span></a>
           </li>
           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="table-basic.html" aria-expanded="false"><i class="me-3 fa fa-table"
-                                                                                        aria-hidden="true"></i><span class="hide-menu">Table</span></a></li>
-          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="icon-fontawesome.html" aria-expanded="false"><i class="me-3 fa fa-font"
-                                                                                             aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
-          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="map-google.html" aria-expanded="false"><i class="me-3 fa fa-globe"
-                                                                                       aria-hidden="true"></i><span class="hide-menu">Google Map</span></a></li>
-          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="pages-blank.html" aria-expanded="false"><i class="me-3 fa fa-columns"
-                                                                                        aria-hidden="true"></i><span class="hide-menu">Blank</span></a></li>
-          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                       href="pages-error-404.html" aria-expanded="false"><i class="me-3 fa fa-info-circle"
-                                                                                            aria-hidden="true"></i><span class="hide-menu">Error 404</span></a></li>
-          <li class="text-center p-20 upgrade-btn">
-            <a href="https://www.wrappixel.com/templates/monsteradmin/"
-               class="btn btn-danger text-white mt-4" target="_blank">Upgrade to
-              Pro</a>
+                                       [routerLink]="['/history']"  aria-expanded="false">
+            <i style="color: #00bfa5; font-weight: bold"  class="me-3 fas fa-list-alt" aria-hidden="true"></i><span
+            class="hide-menu">History</span></a>
           </li>
+
         </ul>
 
       </nav>
@@ -159,8 +70,7 @@
         </div>
         <div class="col-md-6 col-4 align-self-center">
           <div class="text-end upgrade-btn">
-            <a href="https://www.wrappixel.com/templates/monsteradmin/"
-               class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to Pro</a>
+            <img style="width: 10%; height: 10%" src="../../../assets/img.png">
           </div>
         </div>
       </div>
@@ -273,26 +183,6 @@
         </div>
         <!-- Column -->
       </div>
-      <!-- Row -->
-      <!-- ============================================================== -->
-      <!-- End PAge Content -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Right sidebar -->
-      <!-- ============================================================== -->
-      <!-- .right-sidebar -->
-      <!-- ============================================================== -->
-      <!-- End Right sidebar -->
-      <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
   </div>
-  <!-- ============================================================== -->
-  <!-- End Page wrapper  -->
-  <!-- ============================================================== -->
 </div>

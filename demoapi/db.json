@@ -39,12 +39,6 @@
       "email": "daudiep2003@gmail.com",
       "password": "12345",
       "id": 2
-    },
-    {
-      "name": "19130075",
-      "email": "19130075@st.hcmuaf.edu.vn",
-      "password": "12345",
-      "id": 3
     }
   ],
   "profile": [
@@ -52,7 +46,10 @@
       "id": 1,
       "name": "Đậu Hoa",
       "email": "19130075@st.hcmuaf.edu.vn",
-      "password": "12345"
+      "password": "12345",
+      "phoneNo": "0345389984",
+      "message": "Update Profile",
+      "selectCountry": "Vietnam"
     }
   ],
   "product": [
