@@ -458,12 +458,13 @@
   ],
   "cart": [
     {
-      "id": 28,
-      "name": "Sneaker Blooming",
-      "image": "../../../assets/img/account/account_4.png",
-      "price": 119000,
+      "id": 2,
+      "name": "Cross Strap Sandal Shoes With Patterns",
+      "image": "../../../assets/img/product/product-2.png",
+      "statistical": "../../../assets/img/product/product-2.png",
+      "price": 600,
       "quantitySold": 1,
-      "total": 119000
+      "total": 600
     }
   ],
   "billing": [
@@ -611,11 +612,12 @@
   ],
   "statistical": [
     {
-      "ShoesSandals" : 0,
-      "High Heels" : 0,
-      "Sneakers" : 0,
-      "SportShoes" : 0,
-      "Doll Shoes" : 0
+      "id": 1,
+      "ShoesSandals": 0,
+      "HighHeels": 0,
+      "Sneakers": 0,
+      "SportShoes": 0,
+      "DollShoes": 0
     }
   ]
 }

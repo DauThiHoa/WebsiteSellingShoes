@@ -77,6 +77,7 @@ export class HomeComponents implements OnInit {
         id: new FormControl(id),
         name: new FormControl(data.name),
         image: new FormControl(data.image),
+        statistical : new FormControl(data.image),
         price: new FormControl(data.price),
         quantitySold: new FormControl(1),
         total : new FormControl(data.price * 1)
@@ -101,6 +102,7 @@ export class HomeComponents implements OnInit {
           id: new FormControl(id),
           name: new FormControl(data1.name),
           image: new FormControl(data1.image),
+          statistical : new FormControl(data1.image),
           price: new FormControl(data1.price),
           quantitySold: new FormControl(data1.quantitySold + 1),
           total : new FormControl(data1.price * ( data1.quantitySold + 1 ))

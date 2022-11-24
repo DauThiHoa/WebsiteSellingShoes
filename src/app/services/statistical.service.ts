@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Product} from "../models/product";
+import {Statistical} from "../models/statistical";
 
 const _api = 'http://localhost:3000/';
 
@@ -19,53 +19,38 @@ export class StatisticalService {
 
   }
   getProductPage (page: number){
-    return this.http.get<Array<Product>>(_api + '?page=' + page);
+    return this.http.get<Array<Statistical>>(_api + '?page=' + page);
   }
 
-  getProduct(): Observable<Array<Product>>{
-    return this.http.get<Array<Product>>(_api + 'product');
+  getProduct(): Observable<Array<Statistical>>{
+    return this.http.get<Array<Statistical>>(_api + 'statistical');
   }
-  // Trả về các giá trị có chữ INTERNET => ?q = INTERNET
-  /*
-  Danh sach
-  GET : http://localhost:3000/product
-   */
-  // getList(_limit : number = 4): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm
-  //   return this.http.get<Array<Product>> ('http://localhost:3000/product/?_limit='+ _limit + '&_sort=id&_order=desc');
-  // => Hiển thị 2 sản phẩm trong danh sách sản phẩm ( ?_limit=2 )
-  // => Sắp xếp theo id ( _sort=id )
-  // => Theo thứ tự giảm dần của id ( _order=desc )
-  // return this.http.get<Array<Product>> ('http://localhost:3000/product');
-  // }
-  /*
-     http://localhost:3000/product/?_limit=3&_page=1 => 1 2 3 ( Hiển thị 3 sản phẩm đầu tiên ) => PHÂN TRANG TÌM KIẾM ( CHUYỂN XEM CÁC KHUNG SẢN PHẨM KHÁC )
-     http://localhost:3000/product/?_limit=3&_page=2 => 4 5 6 ( Hiển thị 3 sản phẩm tiếp theo )
-   */
-  getList (_limit : number = 4, search_key:any = null): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
-    let url = 'http://localhost:3000/product/?_limit='+ _limit + '&_sort=id&_order=desc';
+
+  getList (_limit : number = 4, search_key:any = null): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+    let url = 'http://localhost:3000/statistical/?_limit='+ _limit + '&_sort=id&_order=desc';
     if ( search_key != null ){
       url += '&name_like=' + search_key; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     }
-    return this.http.get<Array<Product>> (url);
+    return this.http.get<Array<Statistical>> (url);
   }
 
-  getListPriceLow (): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
-    let url = 'http://localhost:3000/product/?_sort=price&_order=asc';
-    return this.http.get<Array<Product>> (url);
+  getListPriceLow (): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+    let url = 'http://localhost:3000/statistical/?_sort=price&_order=asc';
+    return this.http.get<Array<Statistical>> (url);
   }
-  getListPriceHight (): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
-    let url = 'http://localhost:3000/product/?_sort=price&_order=desc';
-    return this.http.get<Array<Product>> (url);
+  getListPriceHight (): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+    let url = 'http://localhost:3000/statistical/?_sort=price&_order=desc';
+    return this.http.get<Array<Statistical>> (url);
   }
-  getListNameLow (): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
-    let url = 'http://localhost:3000/product/?_sort=name&_start=1&_order=asc';
-    return this.http.get<Array<Product>> (url);
+  getListNameLow (): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+    let url = 'http://localhost:3000/statistical/?_sort=name&_start=1&_order=asc';
+    return this.http.get<Array<Statistical>> (url);
   }
-  getListNameHight (): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
-    let url = 'http://localhost:3000/product/?_sort=name&_start=1&_order=desc';
-    return this.http.get<Array<Product>> (url);
+  getListNameHight (): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+    let url = 'http://localhost:3000/statistical/?_sort=name&_start=1&_order=desc';
+    return this.http.get<Array<Statistical>> (url);
   }
-  getPrice (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
+  getPrice (count : number): Observable<Array<Statistical>>{ // ( _limit = 4 , search_key có hoặc không )
 
     let min;
     let max;
@@ -106,12 +91,12 @@ export class StatisticalService {
     // console.log("price = " + this.price)
     if (count == 16 ){
     }else {
-       url = 'http://localhost:3000/product/?price_gte=' + min + '&price_lte=' + max  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+       url = 'http://localhost:3000/statistical/?price_gte=' + min + '&price_lte=' + max  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     }
-    return this.http.get<Array<Product>> (url);
+    return this.http.get<Array<Statistical>> (url);
 }
 
-  getColor (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
+  getColor (count : number): Observable<Array<Statistical>>{ // ( _limit = 4 , search_key có hoặc không )
 
     let color;
     let url = '';
@@ -137,11 +122,11 @@ export class StatisticalService {
        }else if (count == 26) {
          color = 'Red' ;
        }
-   url = 'http://localhost:3000/product/?color_like=' +color; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
-   return this.http.get<Array<Product>> (url);
+   url = 'http://localhost:3000/statistical/?color_like=' +color; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+   return this.http.get<Array<Statistical>> (url);
   }
 
-  getType (count : number): Observable<Array<Product>>{
+  getType (count : number): Observable<Array<Statistical>>{
 
     let type;
     let url = '';
@@ -157,47 +142,47 @@ export class StatisticalService {
     }else if (count == 5) {
       type = 'Doll Shoes' ;
     }
-    url = 'http://localhost:3000/product/?category=' + type; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
-    return this.http.get<Array<Product>> (url);
+    url = 'http://localhost:3000/statistical/?category=' + type; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+    return this.http.get<Array<Statistical>> (url);
   }
-getSearchName (search_key: string): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
-  let url = 'http://localhost:3000/product/?name_like=' + search_key  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
-  return this.http.get<Array<Product>> (url);
+getSearchName (search_key: string): Observable<Array<Statistical>>{ // ( _limit = 4 , search_key có hoặc không )
+  let url = 'http://localhost:3000/statistical/?name_like=' + search_key  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+  return this.http.get<Array<Statistical>> (url);
 }
 
-getRelatedProduct  (_limit : number = 4 , like_key: string): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+getRelatedProduct  (_limit : number = 4 , like_key: string): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
   // http://localhost:3000/product?category_like=game
 
-  let url = 'http://localhost:3000/product/?_limit='+ _limit + '&category_like=' + like_key;
-  return this.http.get<Array<Product>> (url);
+  let url = 'http://localhost:3000/statistical/?_limit='+ _limit + '&category_like=' + like_key;
+  return this.http.get<Array<Statistical>> (url);
 }
-getRelated  (like_key: string): Observable<Array<Product>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
+getRelated  (like_key: string): Observable<Array<Statistical>>{ // Mặc định hiển thị 4 sản phẩm ( _limit = 4 , search_key có hoặc không )
   // http://localhost:3000/product?category_like=game
 
-  let url = 'http://localhost:3000/product/?category_like='+ like_key;
-  return this.http.get<Array<Product>> (url);
+  let url = 'http://localhost:3000/statistical/?category_like='+ like_key;
+  return this.http.get<Array<Statistical>> (url);
 }
 /*
 Them moi
 POST : http://localhost:3000/product
  */
 create(data: any): Observable<any>{
-  return this.http.post<any> ('http://localhost:3000/product/' , data);
+  return this.http.post<any> ('http://localhost:3000/statistical/' , data);
 }
 
 // GET/:id: http://localhost:3000/product/1
-getOne(id: number): Observable<Product>{
-  return this.http.get<Product> ('http://localhost:3000/product/' + id);
+getOne(id: number): Observable<Statistical>{
+  return this.http.get<Statistical> ('http://localhost:3000/statistical/' + id);
 }
 
 // PUT/:id: http://localhost:3000/product/1
 update(id: number, data: any): Observable<any>{
-  return this.http.put<any> ('http://localhost:3000/product/' + id , data);
+  return this.http.put<any> ('http://localhost:3000/statistical/' + id , data);
 }
 
 // DELETE/:id: http://localhost:3000/product/1
 delete(id: number): Observable<any>{
-  return this.http.delete<any> ('http://localhost:3000/product/' + id);
+  return this.http.delete<any> ('http://localhost:3000/statistical/' + id);
 }
 
 private getData(url: string, header: object = {}): Observable<any> {
@@ -205,24 +190,7 @@ private getData(url: string, header: object = {}): Observable<any> {
 }
 
 getProducts(): Observable<any[]> {
-  // this.data =[
-  //   [
-  //   "43836", "East", "Jones", "Pencil", 95, 1.99, 189.05],
-  //   ["43853", "Central", "Kivell", "Binder", 50, 19.99, 999.5],
-  //   ["43870", "Central", "Jardine", "Pencil", 36, 4.99, 179.64],
-  //   ["43887", "Central", "Gill", "Pen", 27, 19.99, 539.73],
-  //   ["43905", "West", "Sorvino", "Pencil", 56, 2.99, 167.44],
-  //   ["43922", "East", "Jones", "Binder", 60, 4.99, 299.4],
-  //   ["43939", "Central", "Andrews", "Pencil", 75, 1.99, 149.25],
-  //   ["43956", "Central", "Jardine", "Pencil", 90, 4.99, 449.1]
-  // ];
   return this.getData('http://localhost:4200/assets/data.json');
-  // .subscribe(value => {
-  //   for (const [k, v] of Object.entries(value)) {
-  //     this.data.push(v);
-  //   }
-  // });
-  // return of(this.data);
 }
 
 }

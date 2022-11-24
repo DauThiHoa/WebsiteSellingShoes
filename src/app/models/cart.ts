@@ -1,7 +1,10 @@
+import {Statistical} from "./statistical";
+
 export class Cart {
   private _id: number ;
   private _name: string ;
   private _image: string ;
+  private _statistical: string  ;
   private _price: number ;
   private _quantitySold: number  ;
   private _total : number;
