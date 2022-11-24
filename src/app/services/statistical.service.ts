@@ -9,7 +9,7 @@ const _api = 'http://localhost:3000/';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class StatisticalService {
   data: any[];
   productList: any[];
   price : any;
@@ -100,12 +100,11 @@ export class ProductService {
       max = 5000 ;
     }else if (count == 16) {
       min = 5000 ;
-      // max = 5000 ;
+      // max = 5000 ;       url = 'http://localhost:3000/product/?price_gte=' + min ;
     }
     // console.log("url = " + url)
     // console.log("price = " + this.price)
     if (count == 16 ){
-       url = 'http://localhost:3000/product/?price_gte=' + min ;
     }else {
        url = 'http://localhost:3000/product/?price_gte=' + min + '&price_lte=' + max  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     }
@@ -148,15 +147,15 @@ export class ProductService {
     let url = '';
 
     if (count == 1) {
-      type = 'ShoesSandals' ;
+      type = 'Shoes Sandals' ;
     }else if (count == 2) {
-      type = 'HighHeels' ;
+      type = 'High Heels' ;
     }else if (count == 3) {
       type = 'Sneakers' ;
     }else if (count == 4) {
-      type = 'SportShoes' ;
+      type = 'Sport Shoes' ;
     }else if (count == 5) {
-      type = 'DollShoes' ;
+      type = 'Doll Shoes' ;
     }
     url = 'http://localhost:3000/product/?category=' + type; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     return this.http.get<Array<Product>> (url);
