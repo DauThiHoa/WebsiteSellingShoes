@@ -1,4 +1,18 @@
+ul.page {
+  cursor: pointer;
+  background: white;
+  border: 1px solid #2b9683;
+  color: #2b9683;
+  font-weight: bold;
+}
 
+.page1:hover {
+  cursor: pointer;
+  //background: #2b9683;
+  color: white;
+  font-weight: bold;
+  border: 5px solid #2b9683;
+}
 
 html,
 body {
