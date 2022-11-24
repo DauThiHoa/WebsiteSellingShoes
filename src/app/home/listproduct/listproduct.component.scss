@@ -3726,3 +3726,10 @@ ol {
   margin-left: 7%;
   margin-top: -5%;
 }
+
+.list-group-item:hover {
+  cursor: pointer;
+  background: #00acc1;
+  color: white;
+  font-weight: bold;
+}

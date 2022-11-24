@@ -83,16 +83,16 @@
           <ul>
             <li class="active"><a [routerLink]="['/home']" >Home</a></li>
             <li><a [routerLink]="['/home']" >Pages</a>
-              <ul class="dropdown">
-                <li><a [routerLink]="['/listproduct']" >List Product</a> </li>
-                <li><a routerLink="../productDetail/1">Product Details</a></li>
-                <li><a [routerLink]="['/product-list']">Shop Cart</a></li>
-                <li><a [routerLink]="['/checkout']">Checkout</a></li>
+              <ul class="dropdown page" style="background: white; color: #2b9683; border: 2px solid #2b9683" >
+                <li class="page1" style="color: #2b9683"> <a class="pageA" [routerLink]="['/listproduct']"  style="color: #2b9683 ; font-weight: bold">List Product</a> </li>
+                <li class="page1"><a routerLink="../productDetail/1" style="color: #2b9683 ; font-weight: bold">Product Details</a></li>
+                <li class="page1"><a [routerLink]="['/product-list']" style="color: #2b9683 ; font-weight: bold">Shop Cart</a></li>
+                <li class="page1"><a [routerLink]="['/checkout']" style="color: #2b9683 ; font-weight: bold">Checkout</a></li>
               </ul>
             </li>
-            <li><a [routerLink]="['/blog']" >Blog</a>
-              <ul class="dropdown">
-                <li><a routerLink="../blogDetail/1">Blog Details</a></li>
+            <li><a [routerLink]="['/blog']"  >Blog</a>
+              <ul class="dropdown" style="background: white; color: #2b9683; border: 2px solid #2b9683" >
+                <li class="page1"><a style="color: #2b9683 ; font-weight: bold" routerLink="../blogDetail/1">Blog Details</a></li>
               </ul>
             </li>
 
@@ -169,12 +169,12 @@
 
 <!--            <i style="margin-right: 5%; margin-left: -10%" class="far fa-user"></i>-->
             <nav class="header__menu" >
-              <ul  >
+              <ul >
 
                 <li ><i (click)="admin()" style="margin-right: 5%; margin-left: -10%" class="far fa-user login"><span style="text-transform:capitalize">{{loginOne.name}}</span></i>
-                  <ul class="dropdown" style=" background: #00bcd4 ; margin-left: -50%; width: 260px; color: black">
-                    <li style="color: black ; text-align: center"><a >Name : {{loginOne.name}}</a> </li>
-                    <li style="color: black ; text-align: center"><a >Email : {{loginOne.email}}</a></li>
+                  <ul class="dropdown" style=" background: white; color: #2b9683; border: 2px solid #2b9683 ; margin-left: -50%; width: 260px">
+                    <li ><a style="color: #2b9683 ; font-weight: bold; text-align: center">Name : {{loginOne.name}}</a> </li>
+                    <li ><a style="color: #2b9683 ; font-weight: bold; text-align: center">Email : {{loginOne.email}}</a></li>
                     <li (click)="logOut()" style="color: black ; text-align: center; font-weight: bold"><button class="logOut" >Log Out</button></li>
                   </ul>
                 </li>

@@ -112,26 +112,54 @@ export class ProductService {
     return this.http.get<Array<Product>> (url);
 }
 
- getColor (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
+  getColor (count : number): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
 
     let color;
     let url = '';
 
        if (count == 17) {
-         color = 'Pink' ;
+         color = 'Black' ;
        }else if (count == 18) {
-         color = 'Green' ;
+         color = 'Creamy white' ;
        }else if (count == 19) {
-         color = 'Blue' ;
+         color = 'Green' ;
        }else if (count == 20) {
-         color = 'Oranges' ;
+         color = 'Violet' ;
        }else if (count == 21) {
-         color = 'White' ;
+         color = 'Oranges' ;
        }else if (count == 22) {
+         color = 'Blue' ;
+       }else if (count == 23) {
+         color = 'Yellow' ;
+       }else if (count == 24) {
+         color = 'White' ;
+       }else if (count == 25) {
+         color = 'Pink' ;
+       }else if (count == 26) {
          color = 'Red' ;
-     }
+       }
    url = 'http://localhost:3000/product/?color_like=' +color; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
    return this.http.get<Array<Product>> (url);
+  }
+
+  getType (count : number): Observable<Array<Product>>{
+
+    let type;
+    let url = '';
+
+    if (count == 1) {
+      type = 'Shoes Sandals' ;
+    }else if (count == 2) {
+      type = 'High Heels' ;
+    }else if (count == 3) {
+      type = 'Sneakers' ;
+    }else if (count == 4) {
+      type = 'Sport Shoes' ;
+    }else if (count == 5) {
+      type = 'Doll Shoes' ;
+    }
+    url = 'http://localhost:3000/product/?category=' + type; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
+    return this.http.get<Array<Product>> (url);
   }
 getSearchName (search_key: string): Observable<Array<Product>>{ // ( _limit = 4 , search_key có hoặc không )
   let url = 'http://localhost:3000/product/?name_like=' + search_key  ; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
