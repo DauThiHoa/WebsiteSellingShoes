@@ -11,6 +11,7 @@ import {Comment} from "../../models/comment";
 import {CommentProduct} from "../../models/commentProduct";
 import {LoginService} from "../../services/login.service";
 import {Login} from "../../models/login";
+import {StatisticalService} from "../../services/statistical.service";
 
 @Component({
   selector: 'app-product-detail',
@@ -34,13 +35,17 @@ export class ProductDetailComponent implements OnInit {
   count : number = 0 ;
   commentList: Array<CommentProduct> = [];
 
+  staticForm : FormGroup = new FormGroup({
+  });
+
   constructor(private prodSrv: ProductService,
               private cartSrv: CartService,
               private _route: ActivatedRoute,
               private productService: ProductService,
               private route: Router,
               private comProSrv : CommentProductService,
-              private loginSrv : LoginService) {
+              private loginSrv : LoginService,
+              private StaticSrc: StatisticalService) {
   }
 
   today = new Date();
@@ -80,6 +85,7 @@ export class ProductDetailComponent implements OnInit {
         id: new FormControl(data.id ),
         name : new FormControl(data.name),
         image : new FormControl(data.image),
+        category : new FormControl(data.category),
         price : new FormControl(data.price),
         quantitySold : new FormControl(),
         total : new FormControl(data.price * this.quantity)
@@ -125,6 +131,7 @@ export class ProductDetailComponent implements OnInit {
 
   }
 
+
   public onCommand(): void {
     this.submited = true ;
 
@@ -142,8 +149,16 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
+  public countCategory (categoryData : string , category : string , count : number): number {
+    if (category == categoryData){
+      return count;
+    }
+    return 0;
+  }
+
   public onCreate(id: number ): void {
-      this.submited = true;
+
+    this.submited = true;
 
     this.prodSrv.getOne(this.id).subscribe(data =>{
       this.pro = data ;
@@ -155,22 +170,36 @@ export class ProductDetailComponent implements OnInit {
         id: new FormControl(data.id ),
         name : new FormControl(data.name),
         image : new FormControl(data.image),
+        category : new FormControl(data.category),
         price : new FormControl(data.price),
-        quantitySold : new FormControl(),
+        quantitySold : new FormControl(this.quantity),
         total : new FormControl(data.price * this.quantity)
       });
-
-    })
 
       if (this.cartForm.invalid) {
         return;
       } else {
         this.cartSrv.create(this.cartForm.value).subscribe(data => {
-          if (confirm("Add To Cart Success")) {
+          if (confirm("Add To Cart Success 1")) {
+
+            this.StaticSrc.getOne(2).subscribe(data => {
+              this.staticForm = new FormGroup({
+                id : new FormControl(2),
+                ShoesSandals : new FormControl(data.ShoesSandals + this.countCategory ("ShoesSandals" , this.cartForm.controls.category.value, this.quantity)),
+                HighHeels : new FormControl(data.HighHeels + this.countCategory ("HighHeels" , this.cartForm.controls.category.value , this.quantity)),
+                Sneakers : new FormControl(data.Sneakers + this.countCategory ("Sneakers" , this.cartForm.controls.category.value, this.quantity)),
+                SportShoes : new FormControl(data.SportShoes + this.countCategory ("SportShoes" , this.cartForm.controls.category.value, this.quantity)),
+                DollShoes : new FormControl(data.DollShoes + this.countCategory ("DollShoes" , this.cartForm.controls.category.value, this.quantity)),
+              });
+              this.StaticSrc.setCategory(2, this.staticForm.value).subscribe(data =>{});
+            });
+
             this.route.navigate(['/product-list']);
           }
         });
       }
+
+    })
 
       this.cartSrv.getOne(id).subscribe(data1 => {
         if (data1.id != null) {
@@ -180,12 +209,29 @@ export class ProductDetailComponent implements OnInit {
             id: new FormControl(id),
             name: new FormControl(data1.name),
             image: new FormControl(data1.image),
+            category : new FormControl(data1.category),
             price: new FormControl(data1.price),
-            quantitySold: new FormControl(data1.quantitySold + this.quantitySold),
-            total : new FormControl(data1.price * ( data1.quantitySold + this.quantitySold))
+            quantitySold: new FormControl(data1.quantitySold + this.quantity),
+            total : new FormControl(data1.price * ( data1.quantitySold + this.quantity))
           });
           this.cartSrv.update(id, this.cartForm.value).subscribe(data => {
-            if (confirm("Add To Cart Success")) {
+            if (confirm("Add To Cart Success 2")) {
+
+              this.StaticSrc.getOne(2).subscribe(data => {
+                alert("quantity 2 : " + this.quantity);
+
+                this.staticForm = new FormGroup({
+                  id : new FormControl(2),
+                  ShoesSandals : new FormControl(data.ShoesSandals + this.countCategory ("ShoesSandals" , this.cartForm.controls.category.value, this.quantity )),
+                  HighHeels : new FormControl(data.HighHeels + this.countCategory ("HighHeels" , this.cartForm.controls.category.value , this.quantity )),
+                  Sneakers : new FormControl(data.Sneakers + this.countCategory ("Sneakers" , this.cartForm.controls.category.value, this.quantity )),
+                  SportShoes : new FormControl(data.SportShoes + this.countCategory ("SportShoes" , this.cartForm.controls.category.value, this.quantity )),
+                  DollShoes : new FormControl(data.DollShoes + this.countCategory ("DollShoes" , this.cartForm.controls.category.value, this.quantity )),
+                });
+
+                this.StaticSrc.setCategory(2, this.staticForm.value).subscribe(data =>{});
+              });
+
               this.route.navigate(['/product-list']);
             }
           });
@@ -204,52 +250,6 @@ export class ProductDetailComponent implements OnInit {
      alert(1);
   }
 
-  // public onCreateOneQuantity (id :number): void {
-  //   this.prodSrv.getOne(id).subscribe(data => {
-  //
-  //     // alert(id)
-  //     this.cartFormOneQuantity = new FormGroup({
-  //       id: new FormControl(id),
-  //       name: new FormControl(data.name),
-  //       image: new FormControl(data.image),
-  //       price: new FormControl(data.price),
-  //       quantitySold: new FormControl(1),
-  //       total : new FormControl(data.price * 1 )
-  //     });
-  //
-  //     this.cartSrv.getOne(id).subscribe(data1 => {
-  //       if (data1.id != null) {
-  //         this.cartFormOneQuantity = new FormGroup({
-  //           id: new FormControl(id),
-  //           name: new FormControl(data.name),
-  //           image: new FormControl(data.image),
-  //           price: new FormControl(data.price),
-  //           quantitySold: new FormControl(data1.quantitySold + 1),
-  //           total : new FormControl(data1.price * ( data1.quantitySold + 1 ))
-  //         });
-  //         this.cartSrv.update(id , this.cartFormOneQuantity.value).subscribe(data => {
-  //           if (confirm("Add To Cart Success")) {
-  //             this.route.navigate(['/product-list']);
-  //           }
-  //         });
-  //       }else {
-  //         return;
-  //       }
-  //     })
-  //     this.submited = true;
-  //
-  //     if (this.cartFormOneQuantity.invalid) {
-  //       return;
-  //     } else {
-  //       this.cartSrv.create(this.cartFormOneQuantity.value).subscribe(data => {
-  //         if (confirm("Add To Cart Success")) {
-  //           this.route.navigate(['/product-list']);
-  //         }
-  //       });
-  //     }
-  //   })
-  // }
-
   public onCreateOneQuantity (id :number): void {
     this.prodSrv.getOne(id).subscribe(data => {
 
@@ -258,6 +258,7 @@ export class ProductDetailComponent implements OnInit {
         id: new FormControl(id),
         name: new FormControl(data.name),
         image: new FormControl(data.image),
+        category : new FormControl(data.category),
         price: new FormControl(data.price),
         quantitySold: new FormControl(1),
         total : new FormControl(data.price * 1)
@@ -269,7 +270,20 @@ export class ProductDetailComponent implements OnInit {
         return;
       } else {
         this.cartSrv.create(this.cartFormOneQuantity.value).subscribe(data => {
-          if (confirm("Add To Cart Success")) {
+          if (confirm("Add To Cart Success 3")) {
+
+            this.StaticSrc.getOne(2).subscribe(data => {
+              this.staticForm = new FormGroup({
+                id : new FormControl(2),
+                ShoesSandals : new FormControl(data.ShoesSandals + this.countCategory ("ShoesSandals" , this.cartFormOneQuantity.controls.category.value, 1)),
+                HighHeels : new FormControl(data.HighHeels + this.countCategory ("HighHeels" , this.cartFormOneQuantity.controls.category.value , 1)),
+                Sneakers : new FormControl(data.Sneakers + this.countCategory ("Sneakers" , this.cartFormOneQuantity.controls.category.value, 1)),
+                SportShoes : new FormControl(data.SportShoes + this.countCategory ("SportShoes" , this.cartFormOneQuantity.controls.category.value, 1)),
+                DollShoes : new FormControl(data.DollShoes + this.countCategory ("DollShoes" , this.cartFormOneQuantity.controls.category.value, 1)),
+              });
+               this.StaticSrc.setCategory(2, this.staticForm.value).subscribe(data =>{});
+            });
+
             this.route.navigate(['/product-list']);
           }
         });
@@ -282,12 +296,26 @@ export class ProductDetailComponent implements OnInit {
           id: new FormControl(id),
           name: new FormControl(data1.name),
           image: new FormControl(data1.image),
+          category : new FormControl(data1.category),
           price: new FormControl(data1.price),
           quantitySold: new FormControl(data1.quantitySold + 1),
           total : new FormControl(data1.price * ( data1.quantitySold + 1 ))
         });
         this.cartSrv.update(id , this.cartFormOneQuantity.value).subscribe(data => {
-          if (confirm("Add To Cart Success")) {
+          if (confirm("Add To Cart Success 4")) {
+
+            this.StaticSrc.getOne(2).subscribe(data => {
+              this.staticForm = new FormGroup({
+                id : new FormControl(2),
+                ShoesSandals : new FormControl(data.ShoesSandals + this.countCategory ("ShoesSandals" , this.cartFormOneQuantity.controls.category.value, data1.quantitySold+ 1)),
+                HighHeels : new FormControl(data.HighHeels + this.countCategory ("HighHeels" , this.cartFormOneQuantity.controls.category.value , data1.quantitySold + 1)),
+                Sneakers : new FormControl(data.Sneakers + this.countCategory ("Sneakers" , this.cartFormOneQuantity.controls.category.value, data1.quantitySold + 1)),
+                SportShoes : new FormControl(data.SportShoes + this.countCategory ("SportShoes" , this.cartFormOneQuantity.controls.category.value, data1.quantitySold + 1)),
+                DollShoes : new FormControl(data.DollShoes + this.countCategory ("DollShoes" , this.cartFormOneQuantity.controls.category.value, data1.quantitySold + 1)),
+              });
+               this.StaticSrc.setCategory(2, this.staticForm.value).subscribe(data =>{});
+            });
+
             this.route.navigate(['/product-list']);
           }
         });

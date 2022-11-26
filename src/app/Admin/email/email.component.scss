@@ -4194,3 +4194,26 @@ ol {
     height: auto;
   }
 }
+
+.sector {
+  width: 100px; height: 200px;    // bán kính 100px
+  overflow: visible;
+  border: 1px dotted #d0d0d0;
+  overflow: hidden;
+
+}
+.sector .wrapper {
+  position: relative;
+  z-index:999;
+}
+.sector .wrapper .inner {
+  width: 100px; height: 200px;
+  border-radius:  0 100% 100% 0 / 0 50% 50% 0;
+  background: #67c2ff;
+  position: absolute;  top: 0; right: -100px;
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  top: -25px;
+  right: -93.3px;
+
+}

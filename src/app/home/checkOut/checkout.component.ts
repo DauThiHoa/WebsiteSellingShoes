@@ -7,6 +7,7 @@ import {CartService} from "../../services/cart.service";
 import {Router} from "@angular/router";
 import {BillingService} from "../../services/billing.service";
 import {createFakeEvent} from "@angular/cdk/testing/testbed/fake-events";
+import {StatisticalService} from "../../services/statistical.service";
 
 @Component({
   selector: 'app-checkout',
@@ -28,10 +29,22 @@ export class CheckOutComponent implements OnInit {
   // receipt : number = this.today.getDate() + 7 ;
   // dateReceipt = this.receipt + '/' + this.today.getMonth() + '/' + this.today.getFullYear();
 
+  staticForm : FormGroup = new FormGroup({
+  });
+  staticForm2 : FormGroup = new FormGroup({
+  });
+
+  ShoesSandals: number;
+  HighHeels: number;
+  Sneakers: number;
+  SportShoes: number;
+  DollShoes: number;
+
   constructor(private proSrv : ProductService,
               private cartSrv : CartService,
               private billSrv : BillingService,
-              private route: Router) {
+              private route: Router,
+              private StaticSrc: StatisticalService) {
 
     this.receipt.setDate(this.today.getDate() + 7 );
 
@@ -107,12 +120,49 @@ export class CheckOutComponent implements OnInit {
         this.billSrv.create(this.billingCreate.value).subscribe(data =>{
           if (confirm("Add Order Success")) {
 
+            this.StaticSrc.getOne(2).subscribe(data => {
+
+                this.ShoesSandals = data.ShoesSandals;
+                this.HighHeels = data.HighHeels;
+                this.Sneakers = data.Sneakers;
+                this.SportShoes = data.SportShoes;
+                this.DollShoes = data.DollShoes;
+
+            });
+
+              this.StaticSrc.getOne(1).subscribe(data => {
+
+                this.staticForm = new FormGroup({
+                  id: new FormControl(1),
+                  ShoesSandals: new FormControl(data.ShoesSandals + this.ShoesSandals),
+                  HighHeels: new FormControl(data.HighHeels + this.HighHeels),
+                  Sneakers: new FormControl(data.Sneakers + this.Sneakers),
+                  SportShoes: new FormControl(data.SportShoes + this.SportShoes),
+                  DollShoes: new FormControl(data.DollShoes + this.DollShoes),
+                });
+                alert("Sneakers : + " + this.staticForm.controls.ShoesSandals.value);
+                this.StaticSrc.setCategory(1, this.staticForm.value).subscribe(data =>{});
+              });
+
+
+            this.staticForm2 = new FormGroup({
+              id : new FormControl(2),
+              ShoesSandals : new FormControl(0),
+              HighHeels : new FormControl(0),
+              Sneakers : new FormControl(0),
+              SportShoes : new FormControl(0),
+              DollShoes : new FormControl(0),
+            });
+            this.StaticSrc.setCategory(2, this.staticForm2.value).subscribe(data =>{});
+
+
             this.cartSrv.getCart().subscribe(data1 =>  {
               for (const datum of data1) {
                 this.cartSrv.delete(datum.id).subscribe(data2 =>  {
                 })
               }
             })
+
             this.route.navigate(['/home']);
           }
         });

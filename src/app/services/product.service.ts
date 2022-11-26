@@ -148,15 +148,15 @@ export class ProductService {
     let url = '';
 
     if (count == 1) {
-      type = 'Shoes Sandals' ;
+      type = 'ShoesSandals' ;
     }else if (count == 2) {
-      type = 'High Heels' ;
+      type = 'HighHeels' ;
     }else if (count == 3) {
       type = 'Sneakers' ;
     }else if (count == 4) {
-      type = 'Sport Shoes' ;
+      type = 'SportShoes' ;
     }else if (count == 5) {
-      type = 'Doll Shoes' ;
+      type = 'DollShoes' ;
     }
     url = 'http://localhost:3000/product/?category=' + type; // Tìm kiếm theo tên có xuất hiện trong tên sản phẩm
     return this.http.get<Array<Product>> (url);

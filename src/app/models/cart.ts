@@ -1,7 +1,9 @@
+
 export class Cart {
   private _id: number ;
   private _name: string ;
   private _image: string ;
+  private _category: string  ;
   private _price: number ;
   private _quantitySold: number  ;
   private _total : number;
@@ -50,7 +52,9 @@ export class Cart {
   get total(): number {
     return this._total;
   }
-
+  get category(): string {
+    return this._category;
+  }
   set total(value: number) {
     this._total = value;
   }

@@ -59,7 +59,7 @@
       "price": 5000,
       "sale_price": 6000,
       "image": "../../../assets/img/product/product-1.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "New square toe sandals with decorative buckles\\n\\nSmall shoe straps with metal buckles create accents, making legs slimmer\\n\\nHigh quality synthetic leather material. Shoes suitable for all occasions, such as work, walking",
       "color": "Black",
       "briefDescription": "Product code: SD05075\nStyle: Sandals\nMaterial: Smooth matte\nHeight: 5cm\nColor: Cream-Pink-Black\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -70,7 +70,7 @@
       "price": 600,
       "sale_price": 7000,
       "image": "../../../assets/img/product/product-2.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Elegant and feminine textured cross-strap sandals\n\nSmall 7cm high heel bar with slide rails for easy movement.\n\nHigh quality synthetic leather material, suitable for all occasions: going to work, walking around, going to a party",
       "color": "Creamy white",
       "briefDescription": "Product code: SD05076\nStyle: Sandals\nMaterial: Smooth matte\nHeight: 5cm\nColor: Purple-Black-creamy white\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -81,7 +81,7 @@
       "price": 1000,
       "sale_price": 15000,
       "image": "../../../assets/img/product/product-3.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Cut out flat sandals decorated with chains of the same color\n\nThe part to the height of 03 cm combined with many outstanding tones for her to choose freely\n\nHigh quality synthetic leather material, durable, easy to clean",
       "color": "Blue",
       "briefDescription": "Product code: SD01116\nStyle: Sandals\nMaterial: Smooth matte\nHeight: 1cm\nColor: Orange-Black-Blue-Pink\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -92,7 +92,7 @@
       "price": 5500,
       "sale_price": 60000,
       "image": "../../../assets/img/product/product-4.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Fashionable and elegant Pointed Heel Sandal Shoes\n\n5cm high heel gives you a comfortable and confident feeling\n\nHigh quality synthetic leather material, suitable for all occasions: work, street, party",
       "color": "Violet",
       "briefDescription": "Product code: SD05089\nStyle: Sandals\nSynthetic leather material\nHeight: 5cm\nColor: Purple-Blue-Black\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -103,7 +103,7 @@
       "price": 2300,
       "sale_price": 3000,
       "image": "../../../assets/img/product/product-5.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Transparent square toe sandals with trendy and attractive colors\n\nThe 7cm high, transparent heel offers a graceful step. There are 3 personality tones for her to choose\n\nHigh quality synthetic leather material, suitable for all occasions: work, street, party",
       "color": "Violet",
       "briefDescription": "Product code: SD07088\nStyle: Sandals\nSynthetic leather material\nHeight: 7cm\nColor: Black-Green-Purple\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -114,7 +114,7 @@
       "price": 45000,
       "sale_price": 720000,
       "image": "../../../assets/img/product/product-6.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Square heel sandals with minimalist, elegant design\n\nShoes have a height of 5cm for you to move easily. Can be used for many occasions: going out, walking around, going to work, ...\n\nHigh quality synthetic leather material, easy to maintain, durable",
       "color": "Oranges",
       "briefDescription": "Product code: SD05087\nStyle: Sandals\nSynthetic leather material\nHeight: 5cm\nColor: Orange-Blue-gray-creamy white\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -125,7 +125,7 @@
       "price": 32000,
       "sale_price": 64000,
       "image": "../../../assets/img/product/product-7.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Feminine and striking double chain decorated heel sandals\n\nThin horizontal straps, eye-catching textures\n\nHigh quality synthetic leather material, durable, easy to clean",
       "color": "Blue",
       "briefDescription": "Product code: SD09104\nStyle: Sandals\nMaterial: Smooth matte\nHeight: 9cm\nColor: Black-Pink-Blue Purple\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -136,7 +136,7 @@
       "price": 2500,
       "sale_price": 219000,
       "image": "../../../assets/img/product/product-8.png",
-      "category": "Shoes Sandals",
+      "category": "ShoesSandals",
       "description": "Young and dynamic stylized back strap sandals\n\nSynthetic leather material is durable, easy to clean\n\nSoft, lightweight soles with anti-slip grooves below make it easier to move",
       "color": "Yellow",
       "briefDescription": "Product code: SD01081\nStyle: Sandals\nSynthetic leather material\nHeight: 1cm\nColor: Black-Cream-Blue-Gray-Brown-Matte Black-Yellow\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -147,7 +147,7 @@
       "price": 21500,
       "sale_price": 219000,
       "image": "../../../assets/img/trend/action_1.png",
-      "category": "High Heels",
+      "category": "HighHeels",
       "description": "Fashionable, feminine, pointed toe high heels with cut out shoes\n\n7cm high heel with fancy design, creating outstanding accents\n\nSuitable for many occasions such as walking, going to work, going to a party, ...",
       "color": "Oranges",
       "briefDescription": "Product code: CG07129\nStyle: High heels\nMaterial: Smooth matte\nHeight: 7cm\nColor: Creamy White-Black-Orange\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -158,7 +158,7 @@
       "price": 12500,
       "sale_price": 219000,
       "image": "../../../assets/img/trend/action_2.png",
-      "category": "High Heels",
+      "category": "HighHeels",
       "description": "Fashion knotted strap slingback heels\n\nFancy cube heel, 7cm high with slide rails for easy movement\n\nHigh quality synthetic leather material, suitable for all occasions: going to work, walking around, going to a party",
       "color": "Pink",
       "briefDescription": "Product code: CG07131\nStyle: High heels\nMaterial: Other Si\nHeight: 7cm\nColor: Cream-Pink-Black\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -169,7 +169,7 @@
       "price": 3000,
       "sale_price": 219000,
       "image": "../../../assets/img/trend/action_3.png",
-      "category": "High Heels",
+      "category": "HighHeels",
       "description": "Feminine and elegant double chain decorated doll heels\n\nThe closed-toe design and slim anklet bring a slim look to the legs\n\nHigh quality synthetic leather. Shoes suitable for all occasions, such as work, walking",
       "color": "Blue",
       "briefDescription": "Product code: CG05124\nStyle: High heels\nSynthetic leather material\nHeight: 5cm\nColor: Black-Pink-Blue Purple\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -180,7 +180,7 @@
       "price": 3500,
       "sale_price": 320000,
       "image": "../../../assets/img/trend/action_4.png",
-      "category": "High Heels",
+      "category": "HighHeels",
       "color": "Pink",
       "description": "Metal heel pump shoes with eye-catching bow decoration\n\nThe product has 3 colors for girls to freely choose: Pink, Black, Blue. Pointed toe shoes are still a very hot trend. The pointed heel is 5cm high, the bar shape increases the flexibility of the legs.\n\nThe highlight is the small, elegant decorative buckle. Shoes with non-slip soles for women to feel secure when moving.\n\nHigh quality synthetic leather",
       "briefDescription": "Product code: CG05105\nStyle: High heels\nSynthetic leather material\nHeight: 5cm\nColor: Black-Pink-Blue\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -191,7 +191,7 @@
       "price": 3500,
       "sale_price": 545000,
       "image": "../../../assets/img/trend/action_5.png",
-      "category": "High Heels",
+      "category": "HighHeels",
       "description": "Modern design with a combination of shiny and fancy materials\n\nThe square heel is 5cm high, steady, for confident and comfortable steps\n\nSynthetic leather is soft and easy to clean",
       "color": "Blue",
       "briefDescription": "Product code: CG05075\nStyle: High heels\nSynthetic leather material\nHeight: 5cm\nColor: Black-White-Brown-Pink-Blue\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -202,7 +202,7 @@
       "price": 4000,
       "sale_price": 199000,
       "image": "../../../assets/img/trend/outstan_1.png",
-      "category": "Sport Shoes",
+      "category": "SportShoes",
       "description": "Shoe type: Women's bata shoes\n\nSole height 3cm (white meow), 4.5cm (plain white)\n\nSporty design, strong, suitable for you in the age of 12-40\n\nDurable, high-grip rubber sole\n\nDesign: Youthful, gentle\n\nSuitable for going out, going to work, going to a picnic, party\n\nColor: White meow",
       "color": "Blue",
       "briefDescription": "You’re broke, you’re hungry, and your only friends are a vintage hoverbike and a bowl of ramen noodles. In Desert Child, you are a young and talented hoverbike racer who needs to figure out how you can scrape enough cash ... "
@@ -213,7 +213,7 @@
       "price": 4000,
       "sale_price": 234000,
       "image": "../../../assets/img/trend/outstan_2.png",
-      "category": "Sport Shoes",
+      "category": "SportShoes",
       "description": "Women's sports shoes, women's shoes, women's sneakers, white women's sports shoes, sneakers, women's sneakers, sneakers, women's padded sports shoes, white women's sports shoes, white women's shoes, women's white shoes, padded soles female .",
       "color": "Red",
       "briefDescription": "Product prices on Tiki include tax according to applicable law. In addition, depending on the type of product, form and delivery address, there may be additional costs such as shipping fees, surcharges for bulky goods, import taxes (for orders delivered from abroad, value over 1 million VND).\n\nThis product is a personal property sold by an Individual Seller and is not subject to VAT. Therefore a VAT invoice is not provided in this case."
@@ -224,7 +224,7 @@
       "price": 4500,
       "sale_price": 500000,
       "image": "../../../assets/img/trend/outstan_3.png",
-      "category": "Sport Shoes",
+      "category": "SportShoes",
       "description": "Women's bata shoes are an indispensable item in our women's wardrobe, right, now on the market there are many shoe lines for women to choose from sneakers, sports shoes, old men. , high-heeled shoes, women's shoes with soles, women's fabrics, boots, but women's sports shoes are favored by many women and used for many uses for many different purposes.",
       "color": "Green",
       "briefDescription": "Shop Commitment Shoes 100% same as the picture, all women's sports shoes are taken by the shop at the store, no refund if the actual delivery is different from the photo posted for sale.\nThe seam is strong, only used in the shoe industry\nRubber sole 4cm high, monolithic molded rubber prevents slippery and wear. The height is quite optimal, suitable for honoring the body\nUpper ( Upper ) is made of PU leather\nThe insole is made of soft cushion, for high elasticity, very comfortable to wear\nWarranty 12 months"
@@ -235,7 +235,7 @@
       "price": 4500,
       "sale_price": 450000,
       "image": "../../../assets/img/trend/outstan_4.png",
-      "category": "Sport Shoes",
+      "category": "SportShoes",
       "description": "Women's sports shoes with soft soles of ZAVAS brand are appreciated by customers as a comfortable shoe model when moving a lot, the sole has high elasticity, the upper part has a mesh, so the shoe form is not distorted, well kept.",
       "color": "Pink",
       "briefDescription": "Shop Committed Shoes 100% same as the picture, all these sneakers are taken naturally by the shop\nThe seam is strong, only used in the shoe industry\n3cm high rubber sole, monolithic molded rubber prevents slippery and wear\nThe upper (Upper) is made of specialized mesh in the USA standard shoe industry"
@@ -246,7 +246,7 @@
       "price": 5000,
       "sale_price": 500000,
       "image": "../../../assets/img/trend/outstan_5.png",
-      "category": "Sport Shoes",
+      "category": "SportShoes",
       "description": "Product prices on Tiki include tax according to applicable law. In addition, depending on the type of product, form and delivery address, there may be additional costs such as shipping fees, surcharges for bulky goods, import taxes (for orders delivered from abroad, value over 1 million VND).",
       "color": "Blue",
       "briefDescription": "- Design youthful, eye-catching, mischievous\n- Soft leather material, breathable mesh\n- The sole is ~4cm high, the rubber will grip very well, the sole is a bit light, good elasticity\n- Suitable for going out, going to school, going to the gym, exercising\n- 100% self-taken pictures of the shop\n- Size 35 to 39"
@@ -257,7 +257,7 @@
       "price": 5000,
       "sale_price": 350000,
       "image": "../../../assets/img/trend/steam_1.png",
-      "category": "Doll Shoes",
+      "category": "DollShoes",
       "description": "Doll shoes with ankle straps highlight her legs\n\nThe square nose with cut out brings a new look when combined with many different outfits\n\nHigh quality synthetic leather material, suitable for all occasions: work, street, party",
       "color": "Violet",
       "briefDescription": "Product code: BB033089\nStyle: Doll shoes\nSynthetic leather material\nHeight: 3cm\nColor: Black-Purple-Yellow\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -268,7 +268,7 @@
       "price": 2345,
       "sale_price": 720000,
       "image": "../../../assets/img/trend/steam_2.png",
-      "category": "Doll Shoes",
+      "category": "DollShoes",
       "description": "Feminine cross-strap doll shoes, respecting the feet\n\nSynthetic leather material is durable, easy to clean\n\nSoft insoles, with anti-slip grooves on the bottom for comfortable and confident steps",
       "color": "Yellow",
       "briefDescription": "Product code: BB03088\nStyle: Doll shoes\nSynthetic leather material\nHeight: 3cm\nColor: Black-Green-Yellow\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -279,7 +279,7 @@
       "price": 1234,
       "sale_price": 64000,
       "image": "../../../assets/img/trend/steam_3.png",
-      "category": "Doll Shoes",
+      "category": "DollShoes",
       "description": "Pointed toe ballerina doll shoes create extremely feminine beauty\n\nStriking two-piece cross-strap shoes, there are 03 colors for her to choose freely\n\nHigh quality synthetic leather material, suitable for all occasions: work, street, party",
       "color": "Green",
       "briefDescription": "Product code: BB03090\nStyle: Doll shoes\nSynthetic leather material\nHeight: 3cm\nColor: Black-Yellow-Green\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -290,7 +290,7 @@
       "price": 3456,
       "sale_price": 219000,
       "image": "../../../assets/img/trend/steam_4.png",
-      "category": "Doll Shoes",
+      "category": "DollShoes",
       "description": "Pointed toe doll shoes combined with stylized, feminine strap details, stand out\n\nSynthetic leather material is durable, easy to clean\n\nSoft insoles, with anti-slip grooves on the bottom for comfortable and confident steps",
       "color": "Pink",
       "briefDescription": "Product code: BB03082\nStyle: Doll shoes\nSynthetic leather material\nHeight: 3cm\nColor: Black-Pink-Light brown\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -301,7 +301,7 @@
       "price": 2345,
       "sale_price": 250000,
       "image": "../../../assets/img/trend/steam_5.png",
-      "category": "Doll Shoes",
+      "category": "DollShoes",
       "description": "Doll's shoes with cross straps with feminine and prominent decorative flower buckles\n\nSynthetic leather material is durable, easy to clean\n\nSoft insoles, with anti-slip grooves on the bottom for comfortable and confident steps",
       "color": "Green",
       "briefDescription": "Product code: BB033086\nStyle: Doll shoes\nSynthetic leather material\nHeight: 3cm\nColor: Black-Yellow-Green\nSize: 35-36-37-38-39\nMade in Viet Nam\nPrices include VAT"
@@ -456,16 +456,7 @@
       "date": "18/11/2022"
     }
   ],
-  "cart": [
-    {
-      "id": 28,
-      "name": "Sneaker Blooming",
-      "image": "../../../assets/img/account/account_4.png",
-      "price": 119000,
-      "quantitySold": 1,
-      "total": 119000
-    }
-  ],
+  "cart": [],
   "billing": [
     {
       "firstName": "Join",
@@ -498,18 +489,18 @@
       "id": 3
     },
     {
-      "firstName": "ff",
-      "lastName": "f",
-      "address": "f",
-      "postCode": null,
-      "phone": "122331434134",
-      "email": "daudiep2003@gmail.com",
+      "firstName": "Namhan",
+      "lastName": "sanseong",
+      "address": "Namhan sanseong",
+      "postCode": 3456,
+      "phone": "0123124434",
+      "email": "19130075@st.hcmuaf.edu.vn",
       "paymentMethods": "bidv",
-      "accountNumber": "123444444",
-      "orderDate": "2022-11-19",
-      "receiptDate": "2022-11-26",
-      "status": "Ordered",
-      "totalMoney": 7500,
+      "accountNumber": "123456789",
+      "orderDate": "2022-11-24",
+      "receiptDate": "2022-11-31",
+      "status": "Delivered",
+      "totalMoney": 25000,
       "id": 4
     }
   ],
@@ -607,6 +598,40 @@
       "name": "GAME XOXO 3",
       "price": 5000,
       "image": "../../../assets/img_home/imgCategory/img_2.png"
+    }
+  ],
+  "statistical": [
+    {
+      "id": 1,
+      "ShoesSandals": 7,
+      "HighHeels": 50,
+      "Sneakers": 13,
+      "SportShoes": 45,
+      "DollShoes": 23
+    },
+    {
+      "id": 2,
+      "ShoesSandals": 0,
+      "HighHeels": 0,
+      "Sneakers": 0,
+      "SportShoes": 0,
+      "DollShoes": 0
+    },
+    {
+      "id": 3,
+      "ShoesSandals": 5,
+      "HighHeels": 36,
+      "Sneakers": 9,
+      "SportShoes": 33,
+      "DollShoes": 17
+    },
+    {
+      "id": 4,
+      "ShoesSandals": 0,
+      "HighHeels": 0,
+      "Sneakers": 0,
+      "SportShoes": 0,
+      "DollShoes": 0
     }
   ]
 }
