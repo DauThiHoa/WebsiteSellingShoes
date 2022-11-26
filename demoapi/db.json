@@ -456,7 +456,17 @@
       "date": "18/11/2022"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": 3,
+      "name": "Slippers Cut Out Chain Decoration Same Color",
+      "image": "../../../assets/img/product/product-3.png",
+      "category": "ShoesSandals",
+      "price": 1000,
+      "quantitySold": null,
+      "total": 0
+    }
+  ],
   "billing": [
     {
       "firstName": "Join",
@@ -627,11 +637,11 @@
     },
     {
       "id": 4,
-      "ShoesSandals": 0,
-      "HighHeels": 0,
-      "Sneakers": 0,
-      "SportShoes": 0,
-      "DollShoes": 0
+      "ShoesSandals": 18,
+      "HighHeels": 130,
+      "Sneakers": 32,
+      "SportShoes": 119,
+      "DollShoes": 61
     }
   ]
 }
