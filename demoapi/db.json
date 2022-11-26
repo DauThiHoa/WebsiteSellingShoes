@@ -456,17 +456,7 @@
       "date": "18/11/2022"
     }
   ],
-  "cart": [
-    {
-      "id": 2,
-      "name": "Cross Strap Sandal Shoes With Patterns",
-      "image": "../../../assets/img/product/product-2.png",
-      "statistical": "../../../assets/img/product/product-2.png",
-      "price": 600,
-      "quantitySold": 1,
-      "total": 600
-    }
-  ],
+  "cart": [],
   "billing": [
     {
       "firstName": "Join",
@@ -499,18 +489,18 @@
       "id": 3
     },
     {
-      "firstName": "ff",
-      "lastName": "f",
-      "address": "f",
-      "postCode": null,
-      "phone": "122331434134",
-      "email": "daudiep2003@gmail.com",
+      "firstName": "Namhan",
+      "lastName": "sanseong",
+      "address": "Namhan sanseong",
+      "postCode": 3456,
+      "phone": "0123124434",
+      "email": "19130075@st.hcmuaf.edu.vn",
       "paymentMethods": "bidv",
-      "accountNumber": "123444444",
-      "orderDate": "2022-11-19",
-      "receiptDate": "2022-11-26",
-      "status": "Ordered",
-      "totalMoney": 7500,
+      "accountNumber": "123456789",
+      "orderDate": "2022-11-24",
+      "receiptDate": "2022-11-31",
+      "status": "Delivered",
+      "totalMoney": 25000,
       "id": 4
     }
   ],
@@ -613,6 +603,30 @@
   "statistical": [
     {
       "id": 1,
+      "ShoesSandals": 7,
+      "HighHeels": 50,
+      "Sneakers": 13,
+      "SportShoes": 45,
+      "DollShoes": 23
+    },
+    {
+      "id": 2,
+      "ShoesSandals": 0,
+      "HighHeels": 0,
+      "Sneakers": 0,
+      "SportShoes": 0,
+      "DollShoes": 0
+    },
+    {
+      "id": 3,
+      "ShoesSandals": 5,
+      "HighHeels": 36,
+      "Sneakers": 9,
+      "SportShoes": 33,
+      "DollShoes": 17
+    },
+    {
+      "id": 4,
       "ShoesSandals": 0,
       "HighHeels": 0,
       "Sneakers": 0,

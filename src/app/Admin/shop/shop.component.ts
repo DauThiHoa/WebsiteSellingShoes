@@ -10,6 +10,8 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 import {BillingService} from "../../services/billing.service";
 import {Billing} from "../../models/billing";
+import {StatisticalService} from "../../services/statistical.service";
+import {Statistical} from "../../models/statistical";
 
 @Component({
   selector: 'app-test',
@@ -22,12 +24,8 @@ export class ShopComponents implements OnInit {
   result : boolean = false;
   orderDate : string;
 
-  // constructor(private productService:ProductService) { }
-  //
-  // ngOnInit(): void {
-  //   this.productService.getProducts()
-  //     .subscribe(value => this.data = Object.entries(value).map(v => v[1]));
-  // }
+  // Tong Doanh So Theo Danh Muc San Pham
+  sumStatic : number ;
 
   banners : Array<Banner> = new Array<Banner>();
   products : Array<Product> = new Array<Product>();
@@ -35,11 +33,14 @@ export class ShopComponents implements OnInit {
 
   productsList : Array<Product> = [];
   billingList : Array<Billing> = [];
+  statisList : Statistical;
 
   cartFormOneQuantity: FormGroup = new FormGroup({
   });
   FromDate = new FormGroup({
     date: new FormControl(''),
+  });
+  staticForm : FormGroup = new FormGroup({
   });
 
   constructor(private bannerService:BannerService ,
@@ -48,7 +49,8 @@ export class ShopComponents implements OnInit {
               private categoryService:CategoryService,
               private prodSrv : ProductService,
               private route: Router,
-              private billingSrc : BillingService) { }
+              private billingSrc : BillingService,
+              private StaticSrc: StatisticalService) { }
 
 
   ngOnInit(): void {
@@ -73,6 +75,37 @@ export class ShopComponents implements OnInit {
     this.billingSrc.getBilling().subscribe(data =>{
       this.billingList = data ;
     })
+
+    this.StaticSrc.getOne(1).subscribe(data =>{
+      this.sumStatic = data.ShoesSandals + data.HighHeels + data.Sneakers +
+                       data.SportShoes + data.DollShoes ;
+
+        this.staticForm = new FormGroup({
+          id : new FormControl(3),
+          ShoesSandals : new FormControl(this.setPhanTramStatic (data.ShoesSandals )),
+          HighHeels : new FormControl(this.setPhanTramStatic (data.HighHeels )),
+          Sneakers : new FormControl(this.setPhanTramStatic (data.Sneakers )),
+          SportShoes : new FormControl(this.setPhanTramStatic (data.SportShoes )),
+          DollShoes : new FormControl(this.setPhanTramStatic (data.DollShoes )),
+        });
+
+        this.StaticSrc.setCategory(3, this.staticForm.value).subscribe(data =>{});
+
+    })
+    this.StaticSrc.getOne(3).subscribe(data =>{
+         this.statisList = data ;
+    });
+
+  }
+
+  setPhanTramStatic (count : number ) : number{
+    var count = (count / this.sumStatic ) * 100 ;
+    return Math.round(count);
+  }
+
+  setDoStatis (count : number ) : number{
+    var count = (count * 90 ) * 25 ;
+    return Math.round(count);
   }
 
   onSubmitDate(): void{

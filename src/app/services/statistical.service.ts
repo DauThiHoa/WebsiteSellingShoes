@@ -22,6 +22,10 @@ export class StatisticalService {
     return this.http.get<Array<Statistical>>(_api + '?page=' + page);
   }
 
+  setCategory(id : number, data: any): Observable<any>{
+    return this.http.put<any> ('http://localhost:3000/statistical/' + id , data);
+  }
+
   getProduct(): Observable<Array<Statistical>>{
     return this.http.get<Array<Statistical>>(_api + 'statistical');
   }

@@ -158,10 +158,31 @@
       <!-- PORCIONES GRAFICO CIRCULAR
            ELIMINADO #donut-chart
            MODIFICADO CSS de .donut-chart -->
-      <div id="porcion1" class="recorte"><div class="quesito no1" data-rel="21"></div></div>
-      <div id="porcion2" class="recorte"><div class="quesito no2" data-rel="39"></div></div>
-      <div id="porcion3" class="recorte"><div class="quesito no3" data-rel="31"></div></div>
-      <div id="porcionFin" class="recorte"><div class="quesito no4" data-rel="9"></div></div>
+      <div id="porcion1" style=" transform: rotate(0deg);" class="recorte">
+        <div style=" background-color: #e64c65;
+                     transform: rotate({{this.setDoStatis(statisList.ShoesSandals)}}deg);"
+             class="quesito no1" data-rel="21"></div>
+      </div>
+      <div id="porcion2" style=" transform: rotate({{this.setDoStatis(statisList.ShoesSandals)}}deg);"  class="recorte">
+        <div style=" background-color: #11a8ab;
+                     transform: rotate({{(this.setDoStatis(statisList.ShoesSandals)) + (this.setDoStatis(statisList.HighHeels))}}deg);"
+             class="quesito no2" data-rel="39"></div>
+      </div>
+      <div id="porcion3" style=" transform: rotate(0deg);"  class="recorte">
+        <div style=" background-color: #fcb150;
+                     transform: rotate(76deg);"
+             class="quesito no3" data-rel="31"></div>
+      </div>
+      <div id="porcion4" style=" transform: rotate(0deg);"  class="recorte">
+        <div style=" background-color: #4fc4f6;
+                     transform: rotate(76deg);"
+             class="quesito no4" data-rel="9"></div>
+      </div>
+      <div id="porcionFin" style=" transform: rotate(0deg);"  class="recorte">
+        <div style=" background-color: palegreen;
+                     transform: rotate(76deg);"
+             class="quesito no4" data-rel="9"></div>
+      </div>
 <!--      90 Do -> 25%-->
 <!--               21%-->
       <!-- FIN AÑADIDO GRÄFICO -->
@@ -169,20 +190,24 @@
     </div>
     <ul class="os-percentages horizontal-list">
       <li>
-        <p style="color: black; font-weight: bold;" class="no1 os scnd-font-color">iOS</p>
-        <p style="color: black; font-weight: bold;" class="os-percentage">21<sup>%</sup></p>
+        <p style="color: black; font-weight: bold;" class="no1 os scnd-font-color">ShoesSandals</p>
+        <p style="color: black; font-weight: bold;" class="os-percentage">{{statisList.ShoesSandals}}<sup>%</sup></p>
       </li>
       <li>
-        <p style="color: black; font-weight: bold;" class="no2 os scnd-font-color">Mac</p>
-        <p style="color: black; font-weight: bold;" class="os-percentage">39<sup>%</sup></p>
+        <p style="color: black; font-weight: bold;" class="no2 os scnd-font-color">HighHeels</p>
+        <p style="color: black; font-weight: bold;" class="os-percentage">{{statisList.HighHeels}}<sup>%</sup></p>
       </li>
       <li>
-        <p style="color: black; font-weight: bold;" class="no3 os scnd-font-color">Linux</p>
-        <p style="color: black; font-weight: bold;" class="os-percentage">9<sup>%</sup></p>
+        <p style="color: black; font-weight: bold;" class="no3 os scnd-font-color">Sneakers</p>
+        <p style="color: black; font-weight: bold;" class="os-percentage">{{statisList.Sneakers}}<sup>%</sup></p>
       </li>
       <li>
-        <p style="color: black; font-weight: bold;" class="no4 os scnd-font-color">Win</p>
-        <p style="color: black; font-weight: bold;" class="os-percentage">31<sup>%</sup></p>
+        <p style="color: black; font-weight: bold;" class="no4 os scnd-font-color">SportShoes</p>
+        <p style="color: black; font-weight: bold;" class="os-percentage">{{statisList.SportShoes}}<sup>%</sup></p>
+      </li>
+      <li>
+        <p style="color: black; font-weight: bold;" class="no5 os scnd-font-color">DollShoes</p>
+        <p style="color: black; font-weight: bold;" class="os-percentage">{{statisList.DollShoes}}<sup>%</sup></p>
       </li>
     </ul>
   </div>
