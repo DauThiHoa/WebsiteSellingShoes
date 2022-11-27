@@ -74,6 +74,7 @@
 <form style="margin-left: 50%; margin-bottom: 50%" class="form-horizontal form-material mx-2" method="POST" role="form" [formGroup]="FromDate" (ngSubmit)="onSubmitDate()" >
   <!--    <form action="">-->
   <div style="margin-left: 50%">
+    <h6 style="font-weight: bold; margin-bottom: 3%; margin-left: -18%; color: #00bcd4"> Statistical chart of the store's revenue by time option </h6>
     <h6 style="font-weight: bold; margin-bottom: 3%" >Birthday (date and time)</h6>
     <input style="margin-left: 1%" type="date" formControlName="date" name="bdaytime">
     <input type="submit" value="Send">
@@ -150,37 +151,37 @@
 
 
 <!-- https://codepen.io/jlalovi/details/bIyAr -->
-<div class="container">
+<div class="container" style="margin-left: 20%; margin-top: -14%">
   <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
   <div class="donut-chart-block block">
-    <h2 class="titular">OS AUDIENCE STATS</h2>
+    <h2 class="titular" >Revenue by category of goods</h2>
     <div class="donut-chart">
       <!-- PORCIONES GRAFICO CIRCULAR
            ELIMINADO #donut-chart
            MODIFICADO CSS de .donut-chart -->
       <div id="porcion1" style=" transform: rotate(0deg);" class="recorte">
         <div style=" background-color: #e64c65;
-                     transform: rotate({{this.setDoStatis(statisList.ShoesSandals)}}deg);"
+                     transform: rotate({{statisList2.ShoesSandals}}deg);"
              class="quesito no1" data-rel="21"></div>
       </div>
-      <div id="porcion2" style=" transform: rotate({{this.setDoStatis(statisList.ShoesSandals)}}deg);"  class="recorte">
+      <div id="porcion2" style=" transform: rotate({{statisList2.ShoesSandals}}deg);"  class="recorte">
         <div style=" background-color: #11a8ab;
-                     transform: rotate({{(this.setDoStatis(statisList.ShoesSandals)) + (this.setDoStatis(statisList.HighHeels))}}deg);"
+                     transform: rotate({{statisList2.HighHeels}}deg);"
              class="quesito no2" data-rel="39"></div>
       </div>
-      <div id="porcion3" style=" transform: rotate(0deg);"  class="recorte">
+      <div id="porcion3" style=" transform: rotate({{statisList2.ShoesSandals + statisList2.HighHeels }}deg);"  class="recorte">
         <div style=" background-color: #fcb150;
-                     transform: rotate(76deg);"
+                     transform: rotate({{statisList2.Sneakers}}deg);"
              class="quesito no3" data-rel="31"></div>
       </div>
-      <div id="porcion4" style=" transform: rotate(0deg);"  class="recorte">
+      <div id="porcion4" style=" transform: rotate({{statisList2.ShoesSandals + statisList2.HighHeels + statisList2.Sneakers }}deg);"  class="recorte">
         <div style=" background-color: #4fc4f6;
-                     transform: rotate(76deg);"
+                     transform: rotate({{statisList2.SportShoes}}deg);"
              class="quesito no4" data-rel="9"></div>
       </div>
-      <div id="porcionFin" style=" transform: rotate(0deg);"  class="recorte">
+      <div id="porcionFin" style=" transform: rotate({{statisList2.ShoesSandals + statisList2.HighHeels + statisList2.Sneakers + statisList2.SportShoes }}deg);"  class="recorte">
         <div style=" background-color: palegreen;
-                     transform: rotate(76deg);"
+                     transform: rotate({{statisList2.DollShoes}}deg);"
              class="quesito no4" data-rel="9"></div>
       </div>
 <!--      90 Do -> 25%-->
@@ -214,4 +215,4 @@
 
 </div>
 
-<p class='nota-final'>Este pen es sólo para que <strong>@jlalovi</strong> complemente con los gráficos <a href='https://codepen.io/jlalovi/details/bIyAr'>el suyo</a>.</p>
+<p style="margin-left: 23%" class='nota-final'>Statistics of the shop's sales pie chart in a month by category of goods</p>

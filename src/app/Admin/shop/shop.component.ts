@@ -34,6 +34,7 @@ export class ShopComponents implements OnInit {
   productsList : Array<Product> = [];
   billingList : Array<Billing> = [];
   statisList : Statistical;
+  statisList2 : Statistical;
 
   cartFormOneQuantity: FormGroup = new FormGroup({
   });
@@ -88,14 +89,29 @@ export class ShopComponents implements OnInit {
           SportShoes : new FormControl(this.setPhanTramStatic (data.SportShoes )),
           DollShoes : new FormControl(this.setPhanTramStatic (data.DollShoes )),
         });
-
         this.StaticSrc.setCategory(3, this.staticForm.value).subscribe(data =>{});
 
     })
-    this.StaticSrc.getOne(3).subscribe(data =>{
-         this.statisList = data ;
+
+    this.StaticSrc.getOne(3).subscribe(data => {
+      this.staticForm = new FormGroup({
+        id: new FormControl(4),
+        ShoesSandals: new FormControl(this.setDoStatis(data.ShoesSandals)),
+        HighHeels: new FormControl(this.setDoStatis(data.HighHeels)),
+        Sneakers: new FormControl(this.setDoStatis(data.Sneakers)),
+        SportShoes: new FormControl(this.setDoStatis(data.SportShoes)),
+        DollShoes: new FormControl(this.setDoStatis(data.DollShoes)),
+      });
+      this.StaticSrc.setCategory(4, this.staticForm.value).subscribe(data => {
+      });
     });
 
+    this.StaticSrc.getOne(3).subscribe(data =>{
+      this.statisList = data ;
+    });
+    this.StaticSrc.getOne(4).subscribe(data =>{
+      this.statisList2 = data ;
+    });
   }
 
   setPhanTramStatic (count : number ) : number{
@@ -104,7 +120,7 @@ export class ShopComponents implements OnInit {
   }
 
   setDoStatis (count : number ) : number{
-    var count = (count * 90 ) * 25 ;
+    var count = (count * 90 ) / 25 ;
     return Math.round(count);
   }
 
