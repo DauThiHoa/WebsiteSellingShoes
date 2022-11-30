@@ -19,7 +19,7 @@ export class ForgetPasswordComponent implements OnInit {
   title: 'google-signin';
   submited : boolean = false ;
 
-  user : gapi.auth2.GoogleUser;
+  // user : gapi.auth2.GoogleUser;
   password_User : string;
 
   FromLogin = new FormGroup({
@@ -62,20 +62,20 @@ export class ForgetPasswordComponent implements OnInit {
     //  SEND MAIL
     //   console.log(this.http.test);
 
-    this.signInService.observable().subscribe(user => {
-      this.user = user;
-      this.ref.detectChanges();
-    })
+    // this.signInService.observable().subscribe(user => {
+    //   this.user = user;
+    //   this.ref.detectChanges();
+    // })
 
 
   }
 
-  signIn (){
-    this.signInService.signIn()
-  }
-  signOut (){
-    this.signInService.signOut()
-  }
+  // signIn (){
+  //   this.signInService.signIn()
+  // }
+  // signOut (){
+  //   this.signInService.signOut()
+  // }
 
   onSubmit() {
 

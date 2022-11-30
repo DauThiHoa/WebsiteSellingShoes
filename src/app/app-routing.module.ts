@@ -36,6 +36,7 @@ const routers: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/history'},
   {path: '', pathMatch: 'full', redirectTo: '/email'},
   {path: '', pathMatch: 'full', redirectTo: '/forgetPassword'},
+  {path: '', pathMatch: 'full', redirectTo: '/google'},
 ];
 
 const child: Routes = [

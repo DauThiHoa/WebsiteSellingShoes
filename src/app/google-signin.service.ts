@@ -6,39 +6,39 @@ import { Observable, ReplaySubject} from "rxjs";
 })
 export class GoogleSigninService {
 
-  private auth2: gapi.auth2.GoogleAuth
-  private subject = new ReplaySubject<gapi.auth2.GoogleUser>(1);
-
-  constructor() {
-    gapi.load('auth2', () => {
-      this.auth2 = gapi.auth2.init({
-           client_id: '1083374614667-jkmecvrusquf8ppm7vdiv0skjg304vso.apps.googleusercontent.com'
-         })
-    })
-  }
-  public signIn(){
-
-    this.auth2.signIn({
-
-      scope: 'https://www.googleapis.com/auth/gmail.readonly'
-    }).then( user => {
-       this.subject.next(user)
-    }).catch(() => {
-       // @ts-ignore
-      this.subject.next(null)
-    })
-  }
-
-  public signOut(){
-
-    this.auth2.signOut()
-      .then( () => {
-        // @ts-ignore
-       this.subject.next(null)
-    })
-  }
-
-  public observable() : Observable<gapi.auth2.GoogleUser>{
-    return this.subject.asObservable()
-  }
+  // private auth2: gapi.auth2.GoogleAuth
+  // private subject = new ReplaySubject<gapi.auth2.GoogleUser>(1);
+  //
+  // constructor() {
+  //   gapi.load('auth2', () => {
+  //     this.auth2 = gapi.auth2.init({
+  //          client_id: '1083374614667-jkmecvrusquf8ppm7vdiv0skjg304vso.apps.googleusercontent.com'
+  //        })
+  //   })
+  // }
+  // public signIn(){
+  //
+  //   this.auth2.signIn({
+  //
+  //     scope: 'https://www.googleapis.com/auth/gmail.readonly'
+  //   }).then( user => {
+  //      this.subject.next(user)
+  //   }).catch(() => {
+  //      // @ts-ignore
+  //     this.subject.next(null)
+  //   })
+  // }
+  //
+  // public signOut(){
+  //
+  //   this.auth2.signOut()
+  //     .then( () => {
+  //       // @ts-ignore
+  //      this.subject.next(null)
+  //   })
+  // }
+  //
+  // public observable() : Observable<gapi.auth2.GoogleUser>{
+  //   return this.subject.asObservable()
+  // }
 }
