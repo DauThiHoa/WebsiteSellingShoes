@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from "@angular/core";
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from "@angular/core";
 import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
@@ -17,10 +17,14 @@ import {HttpHeaders} from "@angular/common/http";
 })
 
 export class LoginComponent implements OnInit {
-  title: 'google-signin';
+  title = 'Codingvila Login With Google';
+  auth2: any;
+  @ViewChild('loginRef', { static: true }) loginElement!: ElementRef;
+  imgGoogle : string ;
+
+  // title: 'google-signin';
   submited : boolean = false ;
 
-  // user : gapi.auth2.GoogleUser;
 
   FromLogin = new FormGroup({
     email : new FormControl(""),
@@ -52,32 +56,90 @@ export class LoginComponent implements OnInit {
               private signInService : GoogleSigninService,
               private ref : ChangeDetectorRef) {
 
-      // console.log('ElementRef: ', this.element);
-      // gapi.load('auth2', function () {
-      // gapi.auth2.init()
-    // });
   }
 
   ngOnInit(): void {
-  //  SEND MAIL
-  //   console.log(this.http.test);
+    this.googleAuthSDK();
+  }
+  callLogin() {
 
-    // this.signInService.observable().subscribe(user => {
-    //   this.user = user;
-    //   this.ref.detectChanges();
-    // })
+    this.auth2.attachClickHandler(this.loginElement.nativeElement, {},
+      (googleAuthUser: any) => {
+
+        //Print profile details in the console logs
+
+        let profile = googleAuthUser.getBasicProfile();
+        console.log('Token || ' + googleAuthUser.getAuthResponse().id_token);
+        console.log('ID: ' + profile.getId());
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+
+        // Đăng nhập tài khoản GOOGLE :))))
+        // => Thiết lập tài khoản đăng nhập
+        this.onLoginGoogle (profile.getEmail());
+
+        this.imgGoogle = profile.getImageUrl;
+      }, (error: any) => {
+        alert(JSON.stringify(error, undefined, 2));
+      });
 
   }
 
-  // signIn (){
-  //   this.signInService.signIn()
-  // }
-  // signOut (){
-  //   this.signInService.signOut()
-  // }
+  googleAuthSDK() {
+
+    (<any>window)['googleSDKLoaded'] = () => {
+      (<any>window)['gapi'].load('auth2', () => {
+        this.auth2 = (<any>window)['gapi'].auth2.init({
+          client_id: '475421461262-lssg7cvgfreuue3tk1ptqf2j7f9nbk88.apps.googleusercontent.com',
+          plugin_name:'login',
+          cookiepolicy: 'single_host_origin',
+          scope: 'profile email'
+        });
+        this.callLogin();
+      });
+    }
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement('script');
+      js.id = id;
+      js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
+      fjs?.parentNode?.insertBefore(js, fjs);
+    }(document, 'script', 'google-jssdk'));
+  }
+
 
   onSubmit() {
 
+  }
+
+  public onLoginGoogle (email : string): void {
+    this.submited = true ;
+    // if ( this.FromLogin.invalid){
+    //   if (confirm("Please fill in all the information")) {
+    //     this.route.navigate(['/login']);
+    //   }
+    //   return;
+    // }else {
+      this.prodSrv.getlogin().subscribe(data =>{
+        for (const datum of data) {
+          if(datum.email == email ){
+            // this.route.navigate(['/home']);
+            this.prodSrv.update(0, datum).subscribe(data => { });
+            this.profileSrv.update(1, datum).subscribe(data => { });
+
+            location.replace("/home");
+            return;
+            // location.reload();
+          }
+        }
+        if (confirm("Email or password error")) {
+          this.route.navigate(['/login']);
+        }
+      });
+    // }
   }
 
   public onLogin(): void {
