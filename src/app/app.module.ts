@@ -102,10 +102,12 @@ import {EmailRoutingModule} from "./Admin/email/email-routing.module";
 import {EmailService} from "./email.service";
 import {ForgetPasswordModule} from "./forgetPassword/forgetPassword.module";
 import {ForgetPasswordRoutingModule} from "./forgetPassword/forgetPassword-routing.module";
+import {GoogleModule} from "./google/google.module";
+import {GoogleRoutingModule} from "./google/google-routing.module";
 
 // @ts-ignore
 @NgModule({
-  // declarations: [AppComponent, MyTableComponent, HomeComponents],
+  // declarations: [GoogleComponent, MyTableComponent, HomeComponents],
   declarations: [AppComponent, MyTableComponent],
   exports:[
     CommonModule,
@@ -214,6 +216,9 @@ import {ForgetPasswordRoutingModule} from "./forgetPassword/forgetPassword-routi
     EmailRoutingModule,
     ForgetPasswordModule,
     ForgetPasswordRoutingModule,
+
+    GoogleModule,
+    GoogleRoutingModule,
 
 
   ],

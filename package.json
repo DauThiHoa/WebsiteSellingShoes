@@ -2,7 +2,6 @@
   "name": "mdb5-angular-ui-kit-pro-advanced",
   "version": "2.2.0",
   "description": "sending email through node js",
-  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

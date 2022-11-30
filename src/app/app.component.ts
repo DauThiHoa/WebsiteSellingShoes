@@ -37,7 +37,7 @@ export class AppComponent implements OnInit{
   erro: string;
   loginAdmin : Login;
 
-  user : gapi.auth2.GoogleUser;
+  // user : gapi.auth2.GoogleUser;
 
   public searchForm = new FormGroup({
     name: new FormControl(''),
@@ -80,10 +80,10 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.signInService.observable().subscribe(user => {
-         this.user = user;
-         this.ref.detectChanges();
-    })
+    // this.signInService.observable().subscribe(user => {
+    //      this.user = user;
+    //      this.ref.detectChanges();
+    // })
     this.title = 'Hello World';
     this.data = [
       [1, 'Nguyễn Văn A', '18130000', 'DH18DT', 10],
@@ -111,12 +111,12 @@ export class AppComponent implements OnInit{
     })
   }
 
-  signIn (){
-      this.signInService.signIn()
-  }
-  signOut (){
-    this.signInService.signOut()
-  }
+  // signIn (){
+  //     this.signInService.signIn()
+  // }
+  // signOut (){
+  //   this.signInService.signOut()
+  // }
 
   public logOut(): void {
     this.loginSrv.update(0, "").subscribe(data => {
