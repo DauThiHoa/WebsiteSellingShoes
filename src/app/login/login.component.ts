@@ -17,14 +17,14 @@ import {HttpHeaders} from "@angular/common/http";
 })
 
 export class LoginComponent implements OnInit {
-  title = 'Codingvila Login With Google';
+
+  title = 'Codingvila Login With Google' ;
   auth2: any;
   @ViewChild('loginRef', { static: true }) loginElement!: ElementRef;
   imgGoogle : string ;
 
   // title: 'google-signin';
   submited : boolean = false ;
-
 
   FromLogin = new FormGroup({
     email : new FormControl(""),
@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.googleAuthSDK();
   }
+
   callLogin() {
 
     this.auth2.attachClickHandler(this.loginElement.nativeElement, {},
