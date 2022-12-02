@@ -38,7 +38,7 @@
 
       <!-- Font Awesome Icons -->
       <div class="socialBtn">
-        <div class="facebook icon"><i class="fab fa-facebook-f"></i></div>
+        <div class="facebook icon"><i type="button" (click)="loginWithFacebook()" class="fab fa-facebook-f"></i></div>
         <div class="twitter icon"><i class="fab fa-twitter"></i></div>
         <div class="google icon"><i type="button" #loginRef class="fab fa-google"></i></div>
       </div>
@@ -78,7 +78,3 @@
 
   </div>
 </div>
-<img src="{{this.imgGoogle}}" height="50" width="50">
-
-<img src="https://lh3.googleusercontent.com/a/ALm5wu0lf-jM60PRm6b0O_WtOdUb41rkErnDPrSOTXSO=s96-c"
-      height="31" width="98"/>

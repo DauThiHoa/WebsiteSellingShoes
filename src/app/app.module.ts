@@ -111,7 +111,6 @@ import {
   SocialAuthServiceConfig,
 } from 'angularx-social-login';
 
-
 // @ts-ignore
 @NgModule({
   // declarations: [GoogleComponent, MyTableComponent, HomeComponents],

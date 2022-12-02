@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, OnInit, ViewChild} from "@angular/core";
-import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {LoginService} from "../services/login.service";
@@ -10,6 +10,14 @@ import { ElementRef, AfterViewInit} from '@angular/core';
 import {ProfileService} from "../services/profile.service";
 import {HttpHeaders} from "@angular/common/http";
 
+// FB
+import {
+  SocialAuthService,
+  FacebookLoginProvider,
+  SocialUser,
+} from 'angularx-social-login';
+
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -17,6 +25,11 @@ import {HttpHeaders} from "@angular/common/http";
 })
 
 export class LoginComponent implements OnInit {
+
+  // FB
+  loginForm!: FormGroup;
+  socialUser!: SocialUser;
+  isLoggedin?: boolean = undefined;
 
   title = 'Codingvila Login With Google' ;
   auth2: any;
@@ -54,12 +67,39 @@ export class LoginComponent implements OnInit {
               public http: HttpService,
               private element: ElementRef,
               private signInService : GoogleSigninService,
-              private ref : ChangeDetectorRef) {
+              private ref : ChangeDetectorRef,
+              private formBuilder: FormBuilder,
+              private socialAuthService: SocialAuthService) {
+
+    // FB
+    console.log(this.isLoggedin);
 
   }
 
   ngOnInit(): void {
     this.googleAuthSDK();
+
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = user != null;
+
+      // Dang nhap Login
+      this.onLoginGoogle ( this.socialUser.email);
+
+    });
+
+  }
+
+  loginWithFacebook(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+
+  }
+  signOut(): void {
+    this.socialAuthService.signOut();
   }
 
   callLogin() {
