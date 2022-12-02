@@ -105,6 +105,13 @@ import {ForgetPasswordRoutingModule} from "./forgetPassword/forgetPassword-routi
 import {GoogleModule} from "./google/google.module";
 import {GoogleRoutingModule} from "./google/google-routing.module";
 
+import {
+  FacebookLoginProvider,
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+
+
 // @ts-ignore
 @NgModule({
   // declarations: [GoogleComponent, MyTableComponent, HomeComponents],
@@ -120,6 +127,7 @@ import {GoogleRoutingModule} from "./google/google-routing.module";
   imports: [
     // THEM CAC MODULE VOI COMPONENT
     // HomeModule
+    SocialLoginModule,
     BrowserModule,
     HttpClientModule,
     // @ts-ignore
@@ -226,7 +234,20 @@ import {GoogleRoutingModule} from "./google/google-routing.module";
     MdbCookiesManagementService,
     MdbStorageManagementService,
     HttpService,
-    EmailService],
+    EmailService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('2184420821730309'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   entryComponents: [DogComponent,CowComponent,CatComponent],
   bootstrap: [AppComponent],
 })

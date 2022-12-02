@@ -6,7 +6,7 @@ import {Product} from "../../models/product";
 import {Category} from "../../models/category";
 import {CategoryService} from "../../services/category.service";
 import {Router} from "@angular/router";
-import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 import {LoginService} from "../../services/login.service";
 import {Login} from "../../models/login";
@@ -18,12 +18,26 @@ import {HttpService} from "../../Shared/http.service";
 // import nodemailer from "nodemailer";
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
+// FB
+import {
+  SocialAuthService,
+  FacebookLoginProvider,
+  SocialUser,
+} from 'angularx-social-login';
+
 @Component({
   selector: 'app-test',
   templateUrl: './email.component.html',
   styleUrls: ['./email.component.scss']
 })
 export class EmailComponents implements OnInit {
+
+  // FB
+  loginForm!: FormGroup;
+  socialUser!: SocialUser;
+  isLoggedin?: boolean = undefined;
+
+
   [x: string]: any;
   submited: boolean = false;
   data: any[];
@@ -96,9 +110,15 @@ export class EmailComponents implements OnInit {
               public loginSrv: LoginService ,
               public profileSrv: ProfileService ,
               public billingSrv: BillingService ,
-              public http: HttpService) {
+              public http: HttpService,
+              private formBuilder: FormBuilder,
+              private socialAuthService: SocialAuthService) {
+
+    // FB
+    console.log(this.isLoggedin);
 
     this.receipt.setDate(this.today.getDate() + 20);
+
   }
 
   public sendEmail(e: Event) {
@@ -115,6 +135,16 @@ export class EmailComponents implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = user != null;
+    });
+
     console.log(this.http.test);
 
     // LAY DU LIEU VAO TRANG HOME
@@ -162,6 +192,12 @@ export class EmailComponents implements OnInit {
 
   }
 
+  loginWithFacebook(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+  signOut(): void {
+    this.socialAuthService.signOut();
+  }
 
   onDelete(id:number){
     if (confirm("Do you want to delete the product?")){
