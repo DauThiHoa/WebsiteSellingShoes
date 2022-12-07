@@ -12,10 +12,10 @@ declare let Email: any;
 
 @Component({
   selector: 'app-forgetPassword',
-  templateUrl: './forgetPassword.component.html',
-  styleUrls: ['./forgetPassword.component.scss']
+  templateUrl: './changePassword.component.html',
+  styleUrls: ['./changePassword.component.scss']
 })
-export class ForgetPasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
   title: 'google-signin';
   submited : boolean = false ;
 
@@ -66,25 +66,22 @@ export class ForgetPasswordComponent implements OnInit {
     //   this.user = user;
     //   this.ref.detectChanges();
     // })
-     this.password_User = this.generateString();
+
+    alert("GenerateString : " + this.generateString());
+
   }
 
-  // signIn (){
-  //   this.signInService.signIn()
-  // }
-  // signOut (){
-  //   this.signInService.signOut()
-  // }
-
-  onChangePassword () {
-    if ( this.FromLogin.invalid){
-      if (confirm("Please fill in all the information")) {
-        this.route.navigate(['/forgetPassword']);
-      }
-      return;
-    }else {
-      this.password_User = this.generateString();
+  generateString () {
+    // program to generate random strings
+    // declare all characters
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    // function generateString(length) (
+    let result = ' ';
+    const charactersLength = characters.length;
+    for (let i = 0; i < 8; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
+    return result;
   }
 
   onSubmit() {
@@ -125,7 +122,7 @@ export class ForgetPasswordComponent implements OnInit {
               .then((result: EmailJSResponseStatus) => {
                 console.log(result.text);
                 if (confirm("Password has been sent to your email, please check your email")) {
-                  location.replace("/changePassword");
+                  location.replace("/login");
                 }
               }, (error) => {
                 console.log(error.text);
@@ -151,18 +148,6 @@ export class ForgetPasswordComponent implements OnInit {
       email: this.FromLogin.controls.email.value
     }
 
-  }
-  generateString () {
-    // program to generate random strings
-    // declare all characters
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    // function generateString(length) (
-    let result = ' ';
-    const charactersLength = characters.length;
-    for (let i = 0; i < 8; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
   }
 
 }

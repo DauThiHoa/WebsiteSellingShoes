@@ -110,6 +110,8 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig,
 } from 'angularx-social-login';
+import {ChangePasswordModule} from "./change/changePassword.module";
+import {ChangePasswordRoutingModule} from "./change/changePassword-routing.module";
 
 // @ts-ignore
 @NgModule({
@@ -226,7 +228,8 @@ import {
 
     GoogleModule,
     GoogleRoutingModule,
-
+    ChangePasswordModule,
+    ChangePasswordRoutingModule,
 
   ],
   providers: [
