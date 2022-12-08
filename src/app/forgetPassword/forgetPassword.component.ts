@@ -26,6 +26,23 @@ export class ForgetPasswordComponent implements OnInit {
     email : new FormControl(""),
     password : new FormControl(""),
   });
+
+  Login = new FormGroup({
+    id : new FormControl(""),
+    name : new FormControl(""),
+    email : new FormControl(""),
+    password : new FormControl(""),
+  });
+  FromProfile = new FormGroup({
+    id: new FormControl(""),
+    name: new FormControl(""),
+    email: new FormControl(""),
+    password: new FormControl(""),
+    phoneNo : new FormControl(""),
+    message : new FormControl(""),
+    selectCountry: new FormControl(""),
+  });
+
   // SEND MAIL
   image =
     "https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg";
@@ -84,6 +101,41 @@ export class ForgetPasswordComponent implements OnInit {
       return;
     }else {
       this.password_User = this.generateString();
+
+      this.prodSrv.getlogin().subscribe(data =>{
+        for (const datum of data) {
+          if(datum.email == this.FromLogin.controls.email.value){
+            this.Login = new FormGroup({
+              id : new FormControl(datum.id),
+              name : new FormControl(datum.name),
+              email : new FormControl(datum.email),
+              password : new FormControl( this.password_User),
+            });
+
+            this.prodSrv.update(datum.id, this.Login.value).subscribe(data => {
+               });
+            }
+        }
+      });
+
+      this.profileSrv.getProfile().subscribe(data =>{
+        for (const datum of data) {
+          if (datum.email == this.FromLogin.controls.email.value) {
+            this.FromProfile = new FormGroup({
+              id: new FormControl(datum.id),
+              name: new FormControl(datum.name),
+              email: new FormControl(datum.email),
+              password: new FormControl(this.password_User),
+              phoneNo: new FormControl(datum.phoneNo),
+              message: new FormControl(datum.message),
+              selectCountry: new FormControl(datum.selectCountry),
+            });
+
+            this.profileSrv.update(datum.id, this.FromProfile.value).subscribe(data => {
+            });
+          }
+        }
+      });
     }
   }
 
@@ -131,7 +183,7 @@ export class ForgetPasswordComponent implements OnInit {
                 console.log(error.text);
                 location.replace("/forgetPassword");
               });
-    }
+          }
   }
 
   changeImage() {
@@ -157,7 +209,7 @@ export class ForgetPasswordComponent implements OnInit {
     // declare all characters
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     // function generateString(length) (
-    let result = ' ';
+    let result = '';
     const charactersLength = characters.length;
     for (let i = 0; i < 8; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));

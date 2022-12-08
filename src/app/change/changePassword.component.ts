@@ -25,7 +25,33 @@ export class ChangePasswordComponent implements OnInit {
   FromLogin = new FormGroup({
     email : new FormControl(""),
     password : new FormControl(""),
+    confirm_password : new FormControl(""),
   });
+
+  FromChangePassword = new FormGroup({
+    email : new FormControl(""),
+    passwordOld : new FormControl(""),
+    passwordNew : new FormControl(""),
+    confirm_password : new FormControl(""),
+  });
+
+  Login = new FormGroup({
+    id : new FormControl(""),
+    name : new FormControl(""),
+    email : new FormControl(""),
+    password : new FormControl(""),
+  });
+
+  FromProfile = new FormGroup({
+    id: new FormControl(""),
+    name: new FormControl(""),
+    email: new FormControl(""),
+    password: new FormControl(""),
+    phoneNo : new FormControl(""),
+    message : new FormControl(""),
+    selectCountry: new FormControl(""),
+  });
+
   // SEND MAIL
   image =
     "https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg";
@@ -67,10 +93,92 @@ export class ChangePasswordComponent implements OnInit {
     //   this.ref.detectChanges();
     // })
 
-    alert("GenerateString : " + this.generateString());
+    // alert("GenerateString : " + this.generateString());
 
   }
+  public onConfirmPassword(){
 
+    if ( this.FromChangePassword.invalid){
+      if (confirm("Please fill in all the information")) {
+        this.route.navigate(['/changePassword']);
+      }
+    }
+else
+    if (this.FromChangePassword.controls.passwordNew.value != this.FromChangePassword.controls.confirm_password.value){
+      if (confirm("Password does not match")) {
+        this.route.navigate(['/changePassword']);
+      }
+    }
+else
+    if (this.FromChangePassword.controls.passwordNew.value == this.FromChangePassword.controls.passwordOld.value){
+      if (confirm("The password is the same as the old password")) {
+        this.route.navigate(['/changePassword']);
+      }
+    }
+else {
+
+      this.prodSrv.getlogin().subscribe(data => {
+        for (const datum of data) {
+          if (datum.email == this.FromChangePassword.controls.email.value) {
+            if (this.FromChangePassword.controls.passwordOld.value != datum.password) {
+              if (confirm("Incorrect password")) {
+                this.route.navigate(['/changePassword']);
+              }
+            }
+          }
+        }
+      });
+
+      this.prodSrv.getlogin().subscribe(data => {
+        for (const datum of data) {
+          if (datum.email == this.FromChangePassword.controls.email.value) {
+            if (!this.FromChangePassword.invalid
+              && this.FromChangePassword.controls.passwordNew.value == this.FromChangePassword.controls.confirm_password.value
+              && this.FromChangePassword.controls.passwordOld.value == datum.password
+              && this.FromChangePassword.controls.passwordNew.value != this.FromChangePassword.controls.passwordOld.value) {
+              this.prodSrv.getlogin().subscribe(data => {
+                for (const datum of data) {
+                  if (datum.email == this.FromChangePassword.controls.email.value) {
+                    this.Login = new FormGroup({
+                      id: new FormControl(datum.id),
+                      name: new FormControl(datum.name),
+                      email: new FormControl(datum.email),
+                      password: new FormControl(this.FromChangePassword.controls.passwordNew.value),
+                    });
+
+                    this.prodSrv.update(datum.id, this.Login.value).subscribe(data => {
+                    });
+                  }
+                }
+              });
+              this.profileSrv.getProfile().subscribe(data => {
+                for (const datum of data) {
+                  if (datum.email == this.FromChangePassword.controls.email.value) {
+                    this.FromProfile = new FormGroup({
+                      id: new FormControl(datum.id),
+                      name: new FormControl(datum.name),
+                      email: new FormControl(datum.email),
+                      password: new FormControl(this.FromChangePassword.controls.passwordNew.value),
+                      phoneNo: new FormControl(datum.phoneNo),
+                      message: new FormControl(datum.message),
+                      selectCountry: new FormControl(datum.selectCountry),
+                    });
+
+                    this.profileSrv.update(datum.id, this.FromProfile.value).subscribe(data => {
+                    });
+                  }
+                }
+              });
+
+              if (confirm("Change password successfully")) {
+                this.route.navigate(['/login']);
+              }
+            }
+          }
+        }
+      });
+    }
+  }
   generateString () {
     // program to generate random strings
     // declare all characters
@@ -104,6 +212,7 @@ export class ChangePasswordComponent implements OnInit {
       });
     }
   }
+
 
   public onForgetPassword(e: Event) {
 
