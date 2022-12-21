@@ -1,20 +1,12 @@
-<h2 class="text-center mb-4">Login with Facebook in Angular</h2>
-<div *ngIf="!isLoggedin">
-  <button type="button" (click)="loginWithFacebook()" class="btn btn-primary btn-block">Signin with Facebook</button>
-</div>
-<div *ngIf="isLoggedin === true">
-  <img src="{{socialUser.photoUrl}}">
-  <div class="form-group">
-    <label>First Name</label>
-    <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+<div class="container">
+  <h2 class="mt-5 mb-4">Angular Stripe Checkout Example</h2>
+  <div class="col-md-5 mb-2">
+    <button (click)="makePayment(15)" class="btn btn-danger btn-block">Pay $15</button>
   </div>
-  <div class="form-group">
-    <label>Last Name</label>
-    <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+  <div class="col-md-5 mb-2">
+    <button (click)="makePayment(25)" class="btn btn-primary btn-block">Pay $25</button>
   </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+  <div class="col-md-5">
+    <button (click)="makePayment(35)" class="btn btn-success btn-block">Pay $35</button>
   </div>
-  <button type="button" (click)="signOut()" class="btn btn-primary">Sign Out</button>
 </div>

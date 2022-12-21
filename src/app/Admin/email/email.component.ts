@@ -24,6 +24,7 @@ import {
   FacebookLoginProvider,
   SocialUser,
 } from 'angularx-social-login';
+import {CheckoutService} from "../../services/checkout.service";
 
 @Component({
   selector: 'app-test',
@@ -31,6 +32,30 @@ import {
   styleUrls: ['./email.component.scss']
 })
 export class EmailComponents implements OnInit {
+
+  paymentHandler: any = null;
+
+  success: boolean = false
+
+  failure:boolean = false
+
+  // method when component executes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // FB
   loginForm!: FormGroup;
@@ -84,12 +109,6 @@ export class EmailComponents implements OnInit {
     password: new FormControl(""),
   });
 
-  // constructor(private productService:ProductService) { }
-  //
-  // ngOnInit(): void {
-  //   this.productService.getProducts()
-  //     .subscribe(value => this.data = Object.entries(value).map(v => v[1]));
-  // }
 
   banners : Array<Banner> = new Array<Banner>();
   products : Array<Product> = new Array<Product>();
@@ -112,7 +131,8 @@ export class EmailComponents implements OnInit {
               public billingSrv: BillingService ,
               public http: HttpService,
               private formBuilder: FormBuilder,
-              private socialAuthService: SocialAuthService) {
+              private socialAuthService: SocialAuthService,
+              private checkout: CheckoutService) {
 
     // FB
     console.log(this.isLoggedin);
@@ -121,20 +141,26 @@ export class EmailComponents implements OnInit {
 
   }
 
-  public sendEmail(e: Event) {
-    alert(e.target);
-    e.preventDefault();
-    //service_7l0ixxe
-    emailjs.sendForm('service_ql1in7p', 'template_2c74bs8', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_PUBLIC_KEY')
-      .then((result: EmailJSResponseStatus) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-  }
-
   ngOnInit(): void {
+
+    // PAYMENT
+    this.invokeStripe();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -190,6 +216,37 @@ export class EmailComponents implements OnInit {
     })
 
 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  public sendEmail(e: Event) {
+    alert(e.target);
+    e.preventDefault();
+    //service_7l0ixxe
+    emailjs.sendForm('service_ql1in7p', 'template_2c74bs8', e.target as HTMLFormElement, 'QZDVBAB8rJEvzpViA')
+      // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target as HTMLFormElement, 'YOUR_PUBLIC_KEY')
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
   }
 
   loginWithFacebook(): void {
@@ -354,5 +411,51 @@ export class EmailComponents implements OnInit {
     );
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+  makePayment(amount: any) {
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log(stripeToken);
+        alert('Stripe token generated!');
+      },
+    });
+    paymentHandler.open({
+      name: 'Positronx',
+      description: '3 widgets',
+      amount: amount * 100,
+    });
+  }
+  invokeStripe() {
+    if (!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement('script');
+      script.id = 'stripe-script';
+      script.type = 'text/javascript';
+      script.src = 'https://checkout.stripe.com/checkout.js';
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken);
+            alert('Payment has been successfull!');
+          },
+        });
+      };
+      window.document.body.appendChild(script);
+    }
+  }
 
 }
