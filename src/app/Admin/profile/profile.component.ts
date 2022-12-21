@@ -34,6 +34,8 @@ export class ProfileComponents implements OnInit {
     selectCountry: new FormControl(""),
   });
 
+
+
   FromLogin = new FormGroup({
     id: new FormControl(0),
     name: new FormControl(""),

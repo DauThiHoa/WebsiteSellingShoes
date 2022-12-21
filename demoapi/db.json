@@ -35,10 +35,10 @@
       "password": "12345"
     },
     {
-      "id": 2,
-      "name": "Đậu Điệp",
-      "email": "daudiep2003@gmail.com",
-      "password": "12345"
+      "name": "Tào Dung",
+      "email": "19130052@st.hcmuaf.edu.vn",
+      "password": "12345",
+      "id": 2
     }
   ],
   "profile": [
@@ -455,13 +455,12 @@
   ],
   "cart": [
     {
-      "id": 3,
-      "name": "Slippers Cut Out Chain Decoration Same Color",
-      "image": "../../../assets/img/product/product-3.png",
-      "category": "ShoesSandals",
-      "price": 1000,
-      "quantitySold": null,
-      "total": 0
+      "id": 2,
+      "name": "Cross Strap Sandal Shoes With Patterns",
+      "image": "../../../assets/img/product/product-2.png",
+      "price": 600,
+      "quantitySold": 8,
+      "total": 4800
     }
   ],
   "billing": [
@@ -509,6 +508,21 @@
       "status": "Delivered",
       "totalMoney": 25000,
       "id": 4
+    },
+    {
+      "firstName": "uu",
+      "lastName": "ss",
+      "address": "ss",
+      "postCode": "s",
+      "phone": "s",
+      "email": "19130075@st.hcmuaf.edu.vn",
+      "paymentMethods": "s",
+      "accountNumber": "s",
+      "orderDate": "2022-11-22",
+      "receiptDate": "2022-11-29",
+      "status": "Ordered",
+      "totalMoney": 6700,
+      "id": 5
     }
   ],
   "contact": [
@@ -610,7 +624,7 @@
   "statistical": [
     {
       "id": 1,
-      "ShoesSandals": 7,
+      "ShoesSandals": 10,
       "HighHeels": 50,
       "Sneakers": 13,
       "SportShoes": 45,
@@ -618,7 +632,7 @@
     },
     {
       "id": 2,
-      "ShoesSandals": 0,
+      "ShoesSandals": 1,
       "HighHeels": 0,
       "Sneakers": 0,
       "SportShoes": 0,

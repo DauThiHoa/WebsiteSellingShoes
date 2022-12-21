@@ -17,6 +17,13 @@ import {StatisticalService} from "../../services/statistical.service";
 
 export class CheckOutComponent implements OnInit {
 
+  paymentHandler: any = null;
+
+  success: boolean = false
+
+  failure:boolean = false
+
+
   productList: Array<Product> = [];
   cartList: Array<Cart> = [];
   totalMoney : number = 0 ;
@@ -74,6 +81,11 @@ export class CheckOutComponent implements OnInit {
   });
 
   ngOnInit(): void {
+
+    // PAYMENT
+    this.invokeStripe();
+
+
 
     this.proSrv.getList(3).subscribe(data =>  {
       this.productList = data;
@@ -140,7 +152,7 @@ export class CheckOutComponent implements OnInit {
                   SportShoes: new FormControl(data.SportShoes + this.SportShoes),
                   DollShoes: new FormControl(data.DollShoes + this.DollShoes),
                 });
-                alert("Sneakers : + " + this.staticForm.controls.ShoesSandals.value);
+                // alert("Sneakers : + " + this.staticForm.controls.ShoesSandals.value);
                 this.StaticSrc.setCategory(1, this.staticForm.value).subscribe(data =>{});
               });
 
@@ -179,6 +191,43 @@ export class CheckOutComponent implements OnInit {
           this.route.navigate(['/product-list']);
         }
       });
+    }
+  }
+
+
+// THANH TOAN VISA
+  makePayment(amount: any) {
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log(stripeToken);
+        alert('Stripe token generated!');
+      },
+    });
+    paymentHandler.open({
+      name: 'Positronx',
+      description: '3 widgets',
+      amount: amount * 100,
+    });
+  }
+  invokeStripe() {
+    if (!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement('script');
+      script.id = 'stripe-script';
+      script.type = 'text/javascript';
+      script.src = 'https://checkout.stripe.com/checkout.js';
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken);
+            alert('Payment has been successfull!');
+          },
+        });
+      };
+      window.document.body.appendChild(script);
     }
   }
 }

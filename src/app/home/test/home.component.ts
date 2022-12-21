@@ -82,6 +82,7 @@ export class HomeComponents implements OnInit {
   }
   public onCreateOneQuantity (id :number): void {
 
+    //
     this.prodSrv.getOne(id).subscribe(data => {
 
       // alert(id)
@@ -123,6 +124,7 @@ export class HomeComponents implements OnInit {
       }
     })
 
+    //
     this.cartSrv.getOne(id).subscribe(data1 => {
       if (data1.id != null) {
         this.cartFormOneQuantity = new FormGroup({
